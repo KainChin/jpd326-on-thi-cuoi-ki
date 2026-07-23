@@ -1,121 +1,111 @@
-# 📚 TÀI LIỆU ÔN TẬP THI NÓI TIẾNG NHẬT (BÀI 6 - BÀI 10)
+# 📚 TÀI LIỆU ÔN TẬP THI NÓI TIẾNG NHẬT N3 (BÀI 6 - BÀI 10)
 
 ---
 
 ## 🟢 BÀI 6
 
-### Câu hỏi 1: あなたが住んでいるところの地形について話してください。
+### Câu 1: あなたが住んでいるところの地形について話してください。
 *(Hãy nói về địa hình nơi bạn đang sống.)*
 
-* **Trả lời:**
-  > 私が住んでいるところはビンズオン省の dĩ an 市です。dĩ an 市はホーチミン市に近くて、順安（Thuận An）市に接しています。隣はドンナイ省です。dĩ an 市にはとても大きい湖があります。緑も多くて、とても住みやすいところですよ。
-* **Dịch:**
-  > *(Nơi tôi sống là thành phố Dĩ An, tỉnh Bình Dương. Thành phố Dĩ An nằm gần Thành phố Hồ Chí Minh và giáp với thành phố Thuận An. Bên cạnh là tỉnh Đồng Nai. Ở thành phố Dĩ An có một cái hồ rất lớn. Cây xanh cũng nhiều nên là một nơi rất dễ sống đấy ạ.)*
+* **Câu trả lời mẫu:**
+  > 私が住んでいるところはホーチミン市です。ホーチミン市はベトナムの南部に位置しています。地形は平らで、高い山はありません。また、町の中心には大きなサイゴン川が流れています。そのため、景色がきれいで、とても住みやすい町だと思います。
+* **Dịch nghĩa:**
+  > *(Nơi tôi sống là Thành phố Hồ Chí Minh. TP.HCM nằm ở phía Nam của Việt Nam. Địa hình bằng phẳng, không có núi cao. Ngoài ra, ở trung tâm thành phố có dòng sông Sài Gòn lớn chảy qua. Vì thế phong cảnh rất đẹp, tôi nghĩ đây là một thành phố rất dễ sống.)*
 
 ---
 
-### Câu hỏi 2: あなたの町にどんな行事がありますか。その行事を紹介してください。
+### Câu 2: あなたの町にどんな行事がありますか。その行事を紹介してください。
 *(Ở thành phố/tỉnh của bạn có lễ hội/sự kiện gì? Hãy giới thiệu về lễ hội/sự kiện đó.)*
 
-* **Trả lời:**
-  > 私の出身はタイニン省です。タイニンと言えば、バーデン山（Ba Den山）をイメージする人が多いですね。バーデン山では毎年、旧暦の1月に大きいお祭りが行われています。その際には、山に登って安全を祈ったり、美味しいローカルフードを食べたりする人が多いです。賑やかでとても楽しいですよ。
-* **Dịch:**
-  > *(Quê tôi ở tỉnh Tây Ninh. Nói đến Tây Ninh thì nhiều người sẽ nhớ ngay đến núi Bà Đen. Ở núi Bà Đen hàng năm vào tháng 1 âm lịch đều tổ chức lễ hội rất lớn. Vào dịp này, nhiều người thường leo núi để cầu bình an và thưởng thức các món ăn đặc sản địa phương. Rất náo nhiệt và vui lắm ạ.)*
+* **Câu trả lời mẫu:**
+  > ベトナムには、様々なお祭りがあるんですけど、例えばテトや中秋節などです。僕は食べるのが好きな人なので、今日は食べ物について話しますね。まず、私の町では毎年、大きな食べ物のお祭りがあるんですけど、お祭りと言えば、歩行者天国(ほこうしゃてんごく-phố đi bộ)をイメージする人が多いんです。そこには、ベトナムの有名な料理、例えばフォーやバインミーのお店がたくさんあるんです。その時には、おいしいものを食べたり、写真を撮ったりする人でとても賑やかになるんです。私はよく友達と一緒に行くんですけど、とても楽しいです。
+* **Dịch nghĩa:**
+  > *(Ở Việt Nam có nhiều lễ hội khác nhau như Tết hay Tết Trung Thu. Vì tôi là người thích ăn uống nên hôm nay tôi sẽ nói về đồ ăn nhé. Đầu tiên, ở thành phố của tôi hàng năm đều có lễ hội ẩm thực lớn. Nhắc đến lễ hội thì nhiều người sẽ nhớ ngay đến Phố đi bộ. Ở đó có rất nhiều cửa hàng bán các món ăn nổi tiếng của Việt Nam như Phở hay Bánh mì. Vào lúc đó, nơi đây rất náo nhiệt bởi những người đến ăn đồ ngon và chụp ảnh. Tôi thường đi cùng bạn bè, rất vui.)*
 
 ---
 
 ## 🟢 BÀI 7
 
-### Câu hỏi 3: 大学のあるクラブに参加する前に、どうやってそのクラブの情報を調べましたか。あなたは自分の経験を話してください。
-*(Trước khi tham gia vào một câu lạc bộ ở trường đại học, bạn đã tìm hiểu thông tin như thế nào? Hãy nói về kinh nghiệm của bản thân.)*
+### Câu 3: 大学のあるクラブに参加する前に、どうやってそのクラブの情報を調べましたか。あなたは自分の経験を話してください。
+*(Trước khi tham gia một CLB ở trường đại học, bạn đã tìm hiểu thông tin như thế nào? Hãy nói về kinh nghiệm của bản thân.)*
 
-* **Trả lời:**
-  > 私は以前、日本語クラブに参加しました。参加する前に、学校のウェブサイトを見たり、すでにクラブに入っている先輩や友達に聞いたりして、情報を集めました。クラブの雰囲気や活動内容についていろいろ考えて、「楽しそうだな」と思ったので、参加することにしました。
-* **Dịch:**
-  > *(Trước đây tôi từng tham gia câu lạc bộ tiếng Nhật. Trước khi tham gia, tôi đã thu thập thông tin bằng cách xem trang web của trường và hỏi các anh chị khóa trên cũng như bạn bè đã vào câu lạc bộ. Sau khi suy nghĩ về không khí và nội dung hoạt động của câu lạc bộ, tôi thấy "có vẻ vui đấy" nên đã quyết định tham gia.)*
+* **Câu trả lời mẫu:**
+  > 私は以前、サッカークラブに参加したことがあるんですが、参加する前にホームページを見たり友達に聞いたりして、クラブについて調べました。また、実際にクラブのメンバーと会って話を聞いたことで、安心して参加することができました。健康のためでもありますし、新しい友達も作りたいと思ったので、そのサッカークラブに参加することにしました。
+* **Dịch nghĩa:**
+  > *(Trước đây tôi từng tham gia một câu lạc bộ bóng đá. Trước khi tham gia, tôi đã tìm hiểu về CLB bằng cách xem trang web và hỏi bạn bè. Ngoài ra, việc gặp gỡ và trò chuyện trực tiếp với các thành viên CLB đã giúp tôi yên tâm tham gia. Vừa vì sức khỏe, vừa muốn kết thêm bạn mới nên tôi đã quyết định tham gia CLB bóng đá đó.)*
 
 ---
 
-### Câu hỏi 4: 今までどんなボランティアや活動に参加しましたか。参加して感じたこと、考えたことを話してください。
-*(Từ trước đến nay bạn đã tham gia hoạt động tình nguyện hay hoạt động nào chưa? Hãy nói về cảm nhận, suy nghĩ của bạn sau khi tham gia.)*
+### Câu 4: 今までどんなボランティアや活動に参加しましたか。参加して感じたこと、考えたことを話してください。
+*(Từ trước đến nay bạn đã tham gia hoạt động tình nguyện nào chưa? Hãy nói về cảm nhận, suy nghĩ của bạn.)*
 
-* **Trả lời:**
-  > 私は大学の環境保護ボランティアに参加したことがあります。大学の周りや公園のゴミ拾いをしました。この活動に参加したことで、チームワークの大切さや環境を守る意識を学ぶことができました。少し大変でしたが、街がきれいになってすごく嬉しかったです。
-* **Dịch:**
-  > *(Tôi từng tham gia hoạt động tình nguyện bảo vệ môi trường ở trường đại học. Chúng tôi đã nhặt rác xung quanh trường và ở công viên. Nhờ tham gia hoạt động này, tôi đã học được sự quan trọng của làm việc nhóm và ý thức bảo vệ môi trường. Dù có hơi mệt một chút nhưng nhìn phố phường sạch đẹp hơn tôi cảm thấy rất vui.)*
+* **Câu trả lời mẫu:**
+  > 私は以前、公園でゴミ拾いのボランティアに参加したことがあります。環境を守りたいと思って参加しました。ボランティアでは、公園のゴミを拾ったり、落ち葉を集めたりしました。少し疲れましたが、公園がきれいになったので、とてもうれしかったです。この活動を通して、環境を守ることは大切だと分かりました。これからも機会があれば、ぜひまた参加したいと思います。
+* **Dịch nghĩa:**
+  > *(Trước đây tôi từng tham gia hoạt động tình nguyện nhặt rác ở công viên. Tôi tham gia vì muốn bảo vệ môi trường. Ở buổi tình nguyện, chúng tôi đã nhặt rác và gom lá cây rụng ở công viên. Dù hơi mệt một chút nhưng công viên trở nên sạch đẹp làm tôi rất vui. Qua hoạt động này, tôi hiểu rằng việc bảo vệ môi trường rất quan trọng. Sau này nếu có cơ hội, tôi nhất định sẽ lại tham gia.)*
 
 ---
 
 ## 🟢 BÀI 8
 
-### Câu hỏi 5: あなたは人に「ごめんなさい」という時、直接言いますか、それともメッセージで言いますか。どうしてですか。
-*(Khi nói "xin lỗi" với ai đó, bạn sẽ nói trực tiếp hay gửi tin nhắn? Tại sao?)*
+### Câu 5: あなたは人に「ごめんなさい」という時、直接言いますか、それともメッセージですか。どうしてですか。
+*(Khi xin lỗi ai đó, bạn thường xin lỗi trực tiếp hay qua tin nhắn? Tại sao?)*
 
-* **Trả lời (Cách 1 - Nói trực tiếp):**
-  > 私は直接言うようにしています。やっぱり直接話したほうが、自分の気持ちや反省の気持ちが相手によく伝わると思うからです。メッセージだと誤解されることもあるので、顔を見て正直に謝るのが一番だと思います。
-* **Dịch:**
-  > *(Tôi thường chọn cách nói trực tiếp. Vì tôi nghĩ nói chuyện trực tiếp thì tình cảm cũng như sự thành tâm sám hối của mình sẽ truyền tới đối phương tốt hơn. Qua tin nhắn đôi khi dễ bị hiểu nhầm, nên tôi nghĩ nhìn mặt nhau và xin lỗi chân thành là tốt nhất.)*
-
-* **Trả lời (Cách 2 - Gửi tin nhắn):**
-  > 私はメッセージで言うことが多いです。メッセージなら、相手に迷惑をかけない時間を選べるし、何を言うかちゃんと考えて書くことができますから。直接言うほど緊張もしないので、落ち着いて謝ることができると思います。
-* **Dịch:**
-  > *(Tôi thì hay xin lỗi qua tin nhắn hơn. Nếu nhắn tin thì mình có thể chọn lúc không làm phiền đối phương, lại có thời gian suy nghĩ kỹ xem nên nói gì. Với lại không bị quá run như khi nói trực tiếp, nên tôi có thể bình tĩnh xin lỗi hơn.)*
+* **Câu trả lời mẫu:**
+  > 私は直接言います。自分の気持ちが相手によく伝わると思うからです。また、相手は私の本心や正直な気持ちがわかると思います。そして、相手の表情を見ることもできるので、ちゃんと許してもらえたかどうかもわかります。ですから、私はできるだけ直接「ごめんなさい」と言うようにしています。
+* **Dịch nghĩa:**
+  > *(Tôi sẽ nói trực tiếp. Vì tôi nghĩ cảm xúc của mình sẽ truyền tới đối phương tốt hơn. Hơn nữa, đối phương cũng sẽ hiểu được sự thành tâm và thật lòng của tôi. Ngoài ra, tôi còn nhìn được nét mặt của đối phương nên sẽ biết được họ đã thực sự tha lỗi cho mình hay chưa. Do đó, tôi luôn cố gắng nói "xin lỗi" trực tiếp.)*
 
 ---
 
-### Câu hỏi 6: 人から悩みをシェアしてもらったことがありますか。そのとき、あなたの気持ちはどうでしたか。
-*(Bạn đã từng được ai đó tâm sự/chia sẻ tâm sự chưa? Lúc đó cảm xúc của bạn thế nào?)*
+### Câu 6: 人から悩みをシェアしてもらったことがありますか。そのとき、あなたの気持ちはどうでしたか。
+*(Bạn đã bao giờ được ai đó chia sẻ tâm sự hoặc nỗi lo với mình chưa? Khi đó bạn cảm thấy thế nào?)*
 
-* **Trả lời:**
-  > はい、高校からの親友から進路の悩みを相談されたことがあります。その時、「あ、私を信頼してくれているんだな」と思って、すごく嬉しかったです。私は適切なアドバイスをするのは少し苦手ですが、相手の話を最後までしっかり聞くようにしました。
-* **Dịch:**
-  > *(Vâng, tôi từng được đứa bạn thân từ hồi cấp 3 tâm sự về chuyện định hướng tương lai. Lúc đó tôi cảm thấy rất vui vì nghĩ "À, bạn ấy tin tưởng mình nên mới kể". Bản thân tôi hơi dở khoản đưa ra lời khuyên, nhưng tôi đã cố gắng lắng nghe bạn ấy thật cẩn thận đến cuối cùng.)*
+* **Câu trả lời mẫu:**
+  > 私は友達から悩みをシェアしてもらったことがあります。友達は勉強や将来の仕事について悩んでいました。私は友達が私を信頼できる人だと思ってくれたので、とてもうれしかったです。私はアドバイスをすることはあまり得意ではありませんが、人の話を聞くことは上手だと思います。ですから、友達の気持ちを大切にしながら、最後まで話を聞きました。
+* **Dịch nghĩa:**
+  > *(Tôi từng được bạn bè chia sẻ nỗi lo lắng. Bạn tôi lúc đó lo về chuyện học tập và công việc tương lai. Tôi cảm thấy rất vui vì bạn ấy xem tôi là người đáng tin cậy. Bản thân tôi không giỏi đưa ra lời khuyên cho lắm, nhưng tôi nghĩ mình nghe người khác nói khá tốt. Vì vậy, tôi đã trân trọng cảm xúc của bạn và lắng nghe đến cuối cùng.)*
 
 ---
 
 ## 🟢 BÀI 9
 
-### Câu hỏi 7: 一番好きな日本語の言葉を教えてください。理由も説明してください。
-*(Hãy cho biết từ tiếng Nhật bạn thích nhất và giải thích lý do.)*
+### Câu 7: 一番好きな日本語の言葉を教えてください。理由も説明してください。
+*(Hãy cho biết từ hoặc câu tiếng Nhật mà bạn thích nhất và giải thích lý do.)*
 
-* **Trả lời:**
-  > 私が一番好きな日本語の言葉は「お疲れ様です」です。授業やアルバイトが終わった時に、先生や友達、同僚によく使います。この言葉を聞くと、「今日も一日頑張ったな」という気持ちになれるし、相手への感謝の気持ちも伝えられるので、とても温かい言葉だと思います。
-* **Dịch:**
-  > *(Từ tiếng Nhật mà tôi thích nhất là "Otsukaresama desu" - Cảm ơn vì bạn đã làm việc chăm chỉ. Tôi hay dùng từ này với thầy cô, bạn bè, đồng nghiệp mỗi khi kết thúc buổi học hay ca làm thêm. Khi nghe từนี้, tôi cảm thấy "Hôm nay mình cũng đã cố gắng rồi", đồng thời cũng truyền tải được sự biết ơn đến đối phương, nên tôi thấy đây là một từ ngữ rất ấm áp.)*
+* **Câu trả lời mẫu:**
+  > 私の好きな日本語の言葉は「頑張る」です。私は勉強やアルバイトをするときによく使います。「頑張る」という言葉を聞くと、もっと努力しようという気持ちになります。また、友達にも「頑張って」と言うことがあります。この言葉は人を元気にしたり、勇気を与えたりすることができるので、とても好きです。
+* **Dịch nghĩa:**
+  > *(Từ tiếng Nhật tôi thích nhất là "Gambaru" - Cố gắng. Tôi hay dùng từ này khi học tập hoặc làm thêm. Khi nghe từ "Gambaru", tôi cảm thấy muốn nỗ lực hơn nữa. Ngoài ra, tôi cũng hay động viên bạn bè "Gambatte". Từ này có thể tiếp thêm năng lượng và dũng khí cho mọi người nên tôi rất thích.)*
 
 ---
 
-### Câu hỏi 8: 一番好きな本を教えてください。理由も説明してください。
+### Câu 8: 一番好きな本を教えてください。理由も説明してください。
 *(Hãy giới thiệu về cuốn sách bạn thích nhất và giải thích lý do.)*
 
-* **Trả lời:**
-  > 私が一番好きな本は、紫式部が書いた『源氏物語』です。高校生の時に日本語の授業で読んだことがあります。主人公の光源氏の生涯や恋についての話ですが、本に出てくる綺麗な和歌がとても印象的でした。日本人の昔の考え方や文化も分かって、とても面白かったです。
-* **Dịch:**
-  > *(Cuốn sách tôi thích nhất là "Chuyện Genji" do Murasaki Shikibu sáng tác. Tôi từng đọc cuốn này trong giờ học tiếng Nhật hồi cấp 3. Cuộc đời và các mối tình của nhân vật chính Hikaru Genji được khắc họa trong tác phẩm, đặc biệt các bài thơ Waka xuất hiện trong sách làm tôi rất ấn tượng. Cuốn sách giúp tôi hiểu thêm về văn hóa và tư tưởng của người Nhật xưa nên rất thú vị.)*
+* **Câu trả lời mẫu:**
+  > 私が一番好きな本は『ドラえもん』です。子どものころから何度も読みました。この本は、ドラえもんとのび太の楽しい話です。いろいろなひみつ道具が出てきて、とてもおもしろいです。また、この本を読むと、友情や人を助けることの大切さを学ぶことができます。だから、『ドラえもん』が一番好きです。
+* **Dịch nghĩa:**
+  > *(Cuốn sách tôi thích nhất là "Doraemon". Tôi đã đọc nó nhiều lần từ khi còn nhỏ. Cuốn sách là câu chuyện vui nhộn giữa Doraemon và Nobita. Có rất nhiều bảo bối thần kỳ xuất hiện nên rất thú vị. Ngoài ra, đọc cuốn sách này giúp tôi học được sự quan trọng của tình bạn và việc giúp đỡ người khác. Vì thế tôi thích "Doraemon" nhất.)*
 
 ---
 
 ## 🟢 BÀI 10
 
-### Câu hỏi 9: あなたの故郷に旅行に行きたい友達がいます。いいところを紹介してください。
-*(Có một người bạn muốn đi du lịch đến quê hương của bạn. Hãy giới thiệu những điểm tốt/nơi hay ở đó.)*
+### Câu 9: あなたの故郷に旅行に行きたい友達がいます。いいところを紹介してください。
+*(Một người bạn muốn đi du lịch đến quê bạn. Hãy giới thiệu điểm tốt/nơi hay ở đó.)*
 
-* **Trả lời:**
-  > 私のふるさとはダラット（Da Lat）です。ダラットと言えば、きれいな花と涼しい気候で有名ですね。スアンフオン湖の周りを散歩したり、カフェで美味しいコーヒーを飲んだりできますよ。景色も美しくて、静かでとてもリラックスできます。名物の「バインチャングオン（Bánh tráng nướng）」もすごく美味しいので、ぜひ食べてみてください。
-* **Dịch:**
-  > *(Quê hương của tôi là Đà Lạt. Nói đến Đà Lạt thì nổi tiếng với nhiều hoa đẹp và khí hậu mát mẻ. Bạn có thể đi dạo quanh hồ Xuân Hương hoặc uống cà phê ngon ở các quán cà phê. Phong cảnh rất đẹp, yên tĩnh nên thư giãn cực kỳ. Món đặc sản "Bánh tráng nướng" cũng siêu ngon nên bạn nhất định phải ăn thử nhé.)*
+* **Câu trả lời mẫu:**
+  > 私のふるさとはホーチミン市です。ホーチミン市といったら、ランドマーク81が有名です。そこでは、買い物をしたり、おいしい料理を食べたりすることができます。また、高いところからホーチミン市の景色を見ることもできます。夜の景色はとてもきれいです。ぜひ一度遊びに来てください。
+* **Dịch nghĩa:**
+  > *(Quê hương của tôi là Thành phố Hồ Chí Minh. Nhắc đến TP.HCM thì Landmark 81 rất nổi tiếng. Ở đó bạn có thể mua sắm và thưởng thức đồ ăn ngon. Bạn cũng có thể ngắm toàn cảnh TP.HCM từ trên cao. Phong cảnh ban đêm cực kỳ đẹp. Bạn nhất định hãy ghé chơi một lần nhé.)*
 
 ---
 
-### Câu hỏi 10: 【ハノイ/ホーチミン市】に行く友達がいます。泊まる時間は1日だけです。その1日にできる面白いことを紹介してください。
-*(Có một người bạn sắp đi [Hà Nội / TP.HCM]. Thời gian ở lại chỉ có 1 ngày. Hãy giới thiệu những điều thú vị có thể làm trong 1 ngày đó.)*
+### Câu 10: 【ハノイ／ホーチミン市】に行く友達がいます。泊まる時間は１日だけです。その１日にできる面白いことを紹介してください。
+*(Có người bạn sắp đi [Hà Nội / TP.HCM] trong 1 ngày. Gợi ý những điều thú vị nên làm.)*
 
-* **Trả lời (Giới thiệu TP. Hồ Chí Minh):**
-  > ホーチミン市に1日だけ行くなら、ベンタイン市場（Ben Thanh市場）に行くのを勧めます！市場でノンラーや手作りの可愛いお土産を買ったり、バインベオ（Banh Beo）やゴイクオン（Goi Cuon）などの美味しいベトナム料理を食べたりできます。もし歴史に興味があったら、クチトンネル（Cu Chiトンネル）に行ってみるのもとても面白いですよ。
-* **Dịch (TP. Hồ Chí Minh):**
-  > *(Nếu chỉ ở Thành phố Hồ Chí Minh 1 ngày thì tôi khuyên bạn nên đi chợ Bến Thành! Ở chợ bạn có thể mua nón lá hoặc đồ thủ công mỹ nghệ dễ thương làm quà, lại còn được ăn các món Việt Nam rất ngon như bánh bèo, gỏi cuốn... Nếu bạn có hứng thú với lịch sử thì đi thăm địa đạo Củ Chi cũng cực kỳ thú vị đấy.)*
-
-* **Trả lời (Giới thiệu Hà Nội):**
-  > ハノイに1日だけ行くなら、ホアンキエム湖の周りを観光するのが一番おすすめです。タートル・タワーを見たり、近くにあるハノイ郵便局やハノイ大教会を見学したりできます。湖の周りを散歩しながら、有名な「チャンティエン・アイス（Trang Tienアイス）」を食べるのが最高ですよ！
-* **Dịch (Hà Nội):**
-  > *(Nếu chỉ đến Hà Nội 1 ngày thì tôi gợi ý tốt nhất là đi tham quan quanh khu vực hồ Hoàn Kiếm. Bạn có thể ngắm tháp Rùa, ghé thăm Bưu điện Hà Nội hay Nhà thờ lớn ngay gần đó. Vừa đi dạo quanh hồ vừa ăn món "Kem Tràng Tiền" nổi tiếng thì tuyệt vời nhất luôn!)*
+* **Câu trả lời mẫu:**
+  > ホーチミン市に行くなら、サイゴン動植物園がおすすめです。とても広くて、いろいろな動物や植物を見ることができます。写真を撮ったり、散歩したりもできるので、ゆっくり楽しめます。自然もたくさんあって、とても気持ちがいいですよ。１日あれば十分楽しめると思うので、ぜひ行ってみてください。
+* **Dịch nghĩa:**
+  > *(Nếu đi TP.HCM thì Thảo Cầm Viên Sài Gòn (Saigon Zoo) là gợi ý tuyệt vời. Nơi đây rất rộng, có thể ngắm nhiều loại động vật và thực vật. Bạn có thể chụp ảnh, dạo mát và thư giãn thoải mái. Thiên nhiên cây xanh nhiều nên rất dễ chịu. Ở 1 ngày là thừa sức tận hưởng rồi nên bạn nhất định ghé thử nhé.)*
