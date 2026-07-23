@@ -1,5 +1,5 @@
 /**
- * Who Wants to Be a Millionaire - Immutable Game Engine
+ * Who Wants to Be a Millionaire - Game Engine with Furigana & Translation
  * Strictly < 200 lines
  */
 window.MillionaireGame = (function() {
@@ -22,13 +22,11 @@ window.MillionaireGame = (function() {
       pool = window.QuizStore ? window.QuizStore.getAllQuizzes() : [];
     }
 
-    // Build fresh question instances without mutating global template objects
     const freshQuestions = pool.map(item => {
       const origAnswerIdx = (typeof item.answer === 'number') ? item.answer : ((typeof item.correct === 'number') ? item.correct : 0);
       const rawOptions = Array.isArray(item.options) ? [...item.options] : ["A", "B", "C", "D"];
       const correctAnswerText = rawOptions[origAnswerIdx] || rawOptions[0];
 
-      // Shuffle options randomly
       const shuffledOptions = [...rawOptions].sort(() => Math.random() - 0.5);
       const newCorrectIdx = shuffledOptions.indexOf(correctAnswerText);
 
@@ -36,6 +34,7 @@ window.MillionaireGame = (function() {
         id: item.id,
         lesson: item.lesson,
         question: item.question,
+        translation: item.translation || "",
         options: shuffledOptions,
         correctIdx: newCorrectIdx >= 0 ? newCorrectIdx : 0,
         explanation: item.explanation
@@ -76,7 +75,10 @@ window.MillionaireGame = (function() {
 
         <div class="game-main-area">
           <div class="left-panel">
-            <div class="question-box">${q.question}</div>
+            <div class="question-box">
+              <div class="q-jp-text">${q.question}</div>
+              ${q.translation ? `<div class="q-vi-trans">👉 Dịch nghĩa: ${q.translation}</div>` : ''}
+            </div>
             <div class="options-grid" id="options-grid">
               ${q.options.map((opt, i) => `
                 <button class="option-btn" id="opt-btn-${i}" onclick="MillionaireGame.selectOption(${i})">

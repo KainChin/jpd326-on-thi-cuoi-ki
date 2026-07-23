@@ -1,4 +1,4 @@
-/* Who Wants to Be a Millionaire - Vibrant Stage Styling */
+/* Who Wants to Be a Millionaire - Stage & Furigana Styling */
 .millionaire-wrapper {
   background: linear-gradient(135deg, #0b0f19 0%, #111827 40%, #1e1b4b 100%);
   border-radius: 20px; border: 2px solid rgba(56, 189, 248, 0.4);
@@ -34,11 +34,14 @@
 
 .question-box {
   background: linear-gradient(180deg, #1e1b4b 0%, #0f172a 100%);
-  border: 2px solid #6366f1; border-radius: 16px; padding: 22px;
-  text-align: center; font-size: 1.2rem; font-weight: 700; color: #ffffff;
-  box-shadow: inset 0 0 25px rgba(99, 102, 241, 0.3), 0 10px 25px rgba(0,0,0,0.5);
-  line-height: 1.6; min-height: 110px; display: flex; align-items: center; justify-content: center;
+  border: 2px solid #6366f1; border-radius: 16px; padding: 20px;
+  text-align: center; box-shadow: inset 0 0 25px rgba(99, 102, 241, 0.3), 0 10px 25px rgba(0,0,0,0.5);
+  min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
 }
+.q-jp-text { font-size: 1.25rem; font-weight: 700; color: #ffffff; line-height: 1.9; word-break: break-word; }
+.q-jp-text ruby rt { font-size: 0.75rem; color: #38bdf8; font-weight: normal; }
+.q-vi-trans { font-size: 0.95rem; color: #fef08a; font-weight: 600; background: rgba(0,0,0,0.25); padding: 4px 12px; border-radius: 20px; }
+
 .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
 @media (max-width: 580px) { .options-grid { grid-template-columns: 1fr; } }
 
@@ -53,7 +56,7 @@
   border-color: #f59e0b; background: linear-gradient(90deg, #1e293b 0%, #312e81 100%);
   color: #fff; transform: scale(1.02); box-shadow: 0 0 18px rgba(245, 158, 11, 0.45);
 }
-.option-btn.selected { border-color: #f59e0b; background: #d97706; color: #fff; animation: pulse 0.4s infinite alternate; }
+.option-btn.selected { border-color: #f59e0b; background: #d97706; color: #fff; }
 .option-btn.correct { border-color: #22c55e; background: #15803d; color: #fff; box-shadow: 0 0 20px #22c55e; }
 .option-btn.wrong { border-color: #ef4444; background: #b91c1c; color: #fff; opacity: 0.8; }
 .option-btn.eliminated { opacity: 0.15; pointer-events: none; text-decoration: line-through; border-color: transparent; }
@@ -67,7 +70,7 @@
   font-size: 0.82rem; font-weight: 700; color: #64748b; transition: all 0.3s ease;
 }
 .ladder-step.milestone { color: #f59e0b; }
-.ladder-step.current { background: linear-gradient(90deg, #f59e0b, #d97706); color: #fff; box-shadow: 0 0 12px #f59e0b; font-scale: 1.05; }
+.ladder-step.current { background: linear-gradient(90deg, #f59e0b, #d97706); color: #fff; box-shadow: 0 0 12px #f59e0b; }
 .ladder-step.passed { color: #22c55e; }
 
 .hint-modal {
