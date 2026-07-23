@@ -1,5 +1,5 @@
 /**
- * Main Application Logic & View Router
+ * Main Application Router & Render Logic
  * Strictly < 200 lines
  */
 window.App = (function() {
@@ -27,14 +27,18 @@ window.App = (function() {
     if (btnG) btnG.classList.toggle("active", viewName === "grammar");
     if (btnS) btnS.classList.toggle("active", viewName === "situations");
 
+    if (viewName === "grammar") renderGrammarList();
+    if (viewName === "situations") renderSituations();
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function filterLesson(lesson) {
     currentLesson = lesson;
     document.querySelectorAll("#lesson-bar-grammar .lesson-btn").forEach(btn => {
-      const isAct = (lesson === 'all' && btn.innerText.includes('Tất Cả')) ||
-                    (btn.innerText.includes(`Bài ${lesson}`));
+      const btnText = btn.innerText.trim();
+      const isAct = (lesson === 'all' && btnText.includes('Tất Cả')) ||
+                    (lesson !== 'all' && btnText === `Bài ${lesson}`);
       btn.classList.toggle("active", isAct);
     });
     renderGrammarList();
@@ -62,24 +66,39 @@ window.App = (function() {
       );
     }
 
+    const lessonText = currentLesson === "all" ? "Tất Cả Bài 6 - 10" : `Bài ${currentLesson}`;
+
+    let html = `
+      <div class="lesson-game-banner">
+        <div>
+          <div class="banner-info-title">🏆 THỬ THÁCH AI LÀ TRIỆU PHÚ - ${lessonText.toUpperCase()}</div>
+          <div class="banner-info-sub">Ôn tập tổng hợp kiến thức ngữ pháp ${lessonText} với 15 câu hỏi tiền thưởng!</div>
+        </div>
+        <button class="btn-play-millionaire" onclick="App.startMillionaire('${currentLesson}')">
+          🎮 VÀO GAME NGAY
+        </button>
+      </div>
+    `;
+
     if (items.length === 0) {
-      root.innerHTML = `<div style="text-align:center; padding:40px; color:#94a3b8;">Không tìm thấy công thức phù hợp.</div>`;
+      html += `<div style="text-align:center; padding:40px; color:#94a3b8;">Không tìm thấy công thức phù hợp.</div>`;
+      root.innerHTML = html;
       return;
     }
 
-    root.innerHTML = items.map(item => `
+    html += items.map(item => `
       <div class="formula-card" id="card-${item.id}">
         <div class="formula-card-header" onclick="App.toggleCard('${item.id}')">
           <div class="formula-title-group">
             <span class="formula-badge">Bài ${item.lesson}</span>
             <span class="formula-main-title">${item.title}</span>
-            <span class="formula-meaning-preview">➔ ${item.meaning}</span>
+            <span class="formula-meaning-preview">( ${item.meaning} )</span>
           </div>
-          <span class="expand-icon">▼</span>
+          <span class="expand-icon">Xem chi tiết 🔽</span>
         </div>
         <div class="formula-card-body">
           <div class="section-block">
-            <div class="block-title">⚙️ Cấu Trúc / Công Thức</div>
+            <div class="block-title">⚙️ Cấu Trúc Chia / Công Thức</div>
             <div class="formula-box">${item.formula}</div>
           </div>
           ${item.nuance ? `
@@ -89,7 +108,7 @@ window.App = (function() {
           </div>` : ''}
 
           <div class="section-block">
-            <div class="block-title">📝 6 Ví Dụ Chi Tiết (Kèm Âm Thanh & Kanji)</div>
+            <div class="block-title">📝 6 Ví Dụ Chi Tiết (Kèm Phát Âm & Kanji)</div>
             <div class="examples-grid">
               ${item.examples ? item.examples.map((ex, exIdx) => `
                 <div class="example-item">
@@ -116,6 +135,8 @@ window.App = (function() {
         </div>
       </div>
     `).join('');
+
+    root.innerHTML = html;
   }
 
   function toggleCard(cardId) {
@@ -131,8 +152,9 @@ window.App = (function() {
   function filterSituations(lesson) {
     currentSituationLesson = lesson;
     document.querySelectorAll("#lesson-bar-situations .lesson-btn").forEach(btn => {
-      const isAct = (lesson === 'all' && btn.innerText.includes('Tất Cả')) ||
-                    (btn.innerText.includes(`Bài ${lesson}`));
+      const btnText = btn.innerText.trim();
+      const isAct = (lesson === 'all' && btnText.includes('Tất Cả')) ||
+                    (lesson !== 'all' && btnText === `Bài ${lesson}`);
       btn.classList.toggle("active", isAct);
     });
     renderSituations();
@@ -179,7 +201,11 @@ window.App = (function() {
     }
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 
   return { showView, filterLesson, handleSearch, toggleCard, toggleKanji, filterSituations, startMillionaire };
 })();
