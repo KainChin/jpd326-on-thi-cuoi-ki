@@ -1,19 +1,22 @@
 /**
- * Web Audio API Retro 8-Bit SFX Engine & Speech Synthesis Reader
- * < 200 lines requirement
+ * Web Audio API Retro SFX & Speech Synthesis (TTS) Engine
+ * Strictly < 200 lines
  */
 class AudioManager {
   constructor() {
     this.ctx = null;
     this.enabled = true;
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
   }
 
   initContext() {
     if (!this.ctx) {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (AudioCtx) {
-        this.ctx = new AudioCtx();
-      }
+      if (AudioCtx) this.ctx = new AudioCtx();
     }
     if (this.ctx && this.ctx.state === 'suspended') {
       this.ctx.resume();
@@ -30,8 +33,8 @@ class AudioManager {
     const gain = this.ctx.createGain();
 
     osc.type = 'square';
-    osc.frequency.setValueAtTime(987.77, now); // B5
-    osc.frequency.setValueAtTime(1318.51, now + 0.08); // E6
+    osc.frequency.setValueAtTime(987.77, now);
+    osc.frequency.setValueAtTime(1318.51, now + 0.08);
 
     gain.gain.setValueAtTime(0.15, now);
     gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
@@ -94,7 +97,7 @@ class AudioManager {
     this.initContext();
     if (!this.ctx) return;
 
-    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+    const notes = [523.25, 659.25, 783.99, 1046.50];
     notes.forEach((freq, idx) => {
       const now = this.ctx.currentTime + idx * 0.1;
       const osc = this.ctx.createOscillator();
@@ -114,22 +117,38 @@ class AudioManager {
     });
   }
 
+  speak(text) {
+    this.speakJapanese(text);
+  }
+
   speakJapanese(text) {
     if (!('speechSynthesis' in window)) {
-      alert("Trình duyệt không hỗ trợ đọc âm thanh TTS.");
+      alert("Trình duyệt của bạn không hỗ trợ phát âm đọc tiếng Nhật.");
       return;
     }
     window.speechSynthesis.cancel();
 
-    // Strip ruby html tags if present
-    const cleanText = text.replace(/<rt>.*?<\/rt>/g, '').replace(/<.*?>/g, '');
+    // Strip ruby HTML tags
+    const cleanText = (text || '').replace(/<rt>.*?<\/rt>/g, '').replace(/<.*?>/g, '').trim();
+    if (!cleanText) return;
 
     const utterance = new SpeechSynthesisUtterance(cleanText);
     utterance.lang = 'ja-JP';
-    utterance.rate = 0.9;
+    utterance.rate = 0.88;
+    utterance.pitch = 1.0;
+
+    const voices = window.speechSynthesis.getVoices();
+    const jpVoice = voices.find(v => v.lang.toLowerCase().includes('ja') || v.lang.toLowerCase().includes('jp'));
+    if (jpVoice) utterance.voice = jpVoice;
 
     window.speechSynthesis.speak(utterance);
   }
+
+  playCoin() { this.playCoinSound(); }
+  playVictory() { this.playClearSound(); }
+  playJump() { this.playJumpSound(); }
+  playWrong() { this.playWrongSound(); }
 }
 
-window.audioManager = new AudioManager();
+window.AudioEngine = new AudioManager();
+window.audioManager = window.AudioEngine;

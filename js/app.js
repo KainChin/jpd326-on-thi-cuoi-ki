@@ -127,26 +127,29 @@ window.App = (function() {
             <div class="section-block">
               <div class="block-title">📝 6 Ví Dụ Chi Tiết (Kèm Phát Âm & Kanji)</div>
               <div class="examples-grid">
-                ${item.examples ? item.examples.map((ex, exIdx) => `
-                  <div class="example-item">
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
-                      <div class="example-jp">${ex.jp}</div>
-                      <button class="kanji-detail-btn" title="Nghe phát âm" onclick="AudioEngine.speak('${ex.jp.replace(/<[^>]*>/g, '')}')">🔊 Nghe</button>
-                    </div>
-                    <div class="example-vi">👉 ${ex.vi}</div>
-                    ${ex.kanji && ex.kanji.length > 0 ? `
-                      <button class="kanji-detail-btn" onclick="App.toggleKanji('modal-kj-${exIdx}')">🔍 Giải thích Kanji</button>
-                      <div class="kanji-box" id="modal-kj-${exIdx}">
-                        ${ex.kanji.map(k => `
-                          <div class="kanji-chip">
-                            <span class="kanji-char">${k.char}</span>
-                            <span>[${k.amHan}] (${k.meaning})</span>
-                          </div>
-                        `).join('')}
+                ${item.examples ? item.examples.map((ex, exIdx) => {
+                  const cleanText = ex.jp.replace(/<rt>.*?<\/rt>/g, '').replace(/<.*?>/g, '').replace(/"/g, '&quot;');
+                  return `
+                    <div class="example-item">
+                      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+                        <div class="example-jp">${ex.jp}</div>
+                        <button class="kanji-detail-btn" title="Nghe phát âm" data-text="${cleanText}" onclick="event.stopPropagation(); AudioEngine.speak(this.getAttribute('data-text'))">🔊 Nghe</button>
                       </div>
-                    ` : ''}
-                  </div>
-                `).join('') : ''}
+                      <div class="example-vi">👉 ${ex.vi}</div>
+                      ${ex.kanji && ex.kanji.length > 0 ? `
+                        <button class="kanji-detail-btn" onclick="App.toggleKanji('modal-kj-${exIdx}')">🔍 Giải thích Kanji</button>
+                        <div class="kanji-box" id="modal-kj-${exIdx}">
+                          ${ex.kanji.map(k => `
+                            <div class="kanji-chip">
+                              <span class="kanji-char">${k.char}</span>
+                              <span>[${k.amHan}] (${k.meaning})</span>
+                            </div>
+                          `).join('')}
+                        </div>
+                      ` : ''}
+                    </div>
+                  `;
+                }).join('') : ''}
               </div>
             </div>
             <div style="text-align:right; margin-top:20px;">
@@ -190,7 +193,10 @@ window.App = (function() {
             <div style="font-weight:700; color:#38bdf8; margin-bottom:4px;">📌 ${sc.title}</div>
             <div style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;"><em>${sc.context}</em></div>
             <div style="background:#0f172a; padding:10px 14px; border-radius:8px; margin-bottom:8px;">
-              <div style="font-weight:600; color:#fff;">💬 "${sc.sampleJp}"</div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+                <div style="font-weight:600; color:#fff;">💬 "${sc.sampleJp}"</div>
+                <button class="kanji-detail-btn" title="Nghe phát âm" data-text="${sc.sampleJp.replace(/"/g, '&quot;')}" onclick="event.stopPropagation(); AudioEngine.speak(this.getAttribute('data-text'))">🔊 Nghe</button>
+              </div>
               <div style="color:#94a3b8; font-size:0.9rem; margin-top:4px;">➔ ${sc.sampleVi}</div>
             </div>
             <div style="margin-top:6px; font-size:0.85rem; color:#a7f3d0;">💡 <strong>Mẹo:</strong> ${sc.tip}</div>
