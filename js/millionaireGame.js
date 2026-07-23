@@ -1,17 +1,14 @@
 /**
- * Who Wants to Be a Millionaire - Game Engine with Confetti Victory FX
+ * Who Wants to Be a Millionaire - Lifeline Recharge Mechanic
  * Strictly < 200 lines
  */
 window.MillionaireGame = (function() {
   const LADDER_PRIZES = ["$100","$200","$300","$500","$1,000","$2,000","$4,000","$8,000","$16,000","$32,000","$64,000","$125,000","$250,000","$500,000","$1,000,000"];
-  let state = { questions: [], currentIdx: 0, used5050: false, usedHint: false, isAnswered: false, lesson: 6 };
+  let state = { questions: [], currentIdx: 0, used5050: false, usedHint: false, streak: 0, isAnswered: false, lesson: 6, toastMsg: "" };
 
   function init(lessonFilter = 6) {
-    state.lesson = lessonFilter;
-    state.currentIdx = 0;
-    state.used5050 = false;
-    state.usedHint = false;
-    state.isAnswered = false;
+    state.lesson = lessonFilter; state.currentIdx = 0; state.used5050 = false; state.usedHint = false;
+    state.streak = 0; state.isAnswered = false; state.toastMsg = "";
 
     let pool = window.QuizStore ? window.QuizStore.getQuizzesByLesson(lessonFilter) : [];
     if (!pool || pool.length === 0) pool = window.QuizStore ? window.QuizStore.getAllQuizzes() : [];
@@ -22,11 +19,7 @@ window.MillionaireGame = (function() {
       const correctAnswerText = rawOptions[origAnswerIdx] || rawOptions[0];
       const shuffledOptions = [...rawOptions].sort(() => Math.random() - 0.5);
       const newCorrectIdx = shuffledOptions.indexOf(correctAnswerText);
-
-      return {
-        id: item.id, lesson: item.lesson, question: item.question, translation: item.translation || "",
-        options: shuffledOptions, correctIdx: newCorrectIdx >= 0 ? newCorrectIdx : 0, explanation: item.explanation
-      };
+      return { id: item.id, lesson: item.lesson, question: item.question, translation: item.translation || "", options: shuffledOptions, correctIdx: newCorrectIdx >= 0 ? newCorrectIdx : 0, explanation: item.explanation };
     });
 
     state.questions = freshQuestions.sort(() => Math.random() - 0.5).slice(0, 15);
@@ -42,12 +35,16 @@ window.MillionaireGame = (function() {
     }
 
     const q = state.questions[state.currentIdx];
+    const needRecharge = state.used5050 || state.usedHint;
+    const streakBadge = needRecharge ? `<span class="streak-badge">⚡ Đúng ${state.streak}/2 câu để hồi trợ giúp!</span>` : '';
+
     container.innerHTML = `
       <div class="millionaire-wrapper">
         <div class="millionaire-header">
           <div class="millionaire-title">
             <span>🏆 AI LÀ TRIỆU PHÚ (BÀI ${state.lesson})</span>
             <small style="font-size:0.85rem; color:#cbd5e1;">[Câu ${state.currentIdx + 1}/${state.questions.length}]</small>
+            ${streakBadge}
           </div>
           <div class="lifelines-container">
             <button class="lifeline-btn" id="btn-5050" ${state.used5050 ? 'disabled' : ''} onclick="MillionaireGame.use5050()">⚡ 50:50</button>
@@ -56,6 +53,8 @@ window.MillionaireGame = (function() {
           </div>
         </div>
 
+        ${state.toastMsg ? `<div class="recharge-toast">${state.toastMsg}</div>` : ''}
+
         <div class="game-main-area">
           <div class="left-panel">
             <div class="question-box">
@@ -63,12 +62,7 @@ window.MillionaireGame = (function() {
               ${q.translation ? `<div class="q-vi-trans">👉 Dịch nghĩa: ${q.translation}</div>` : ''}
             </div>
             <div class="options-grid" id="options-grid">
-              ${q.options.map((opt, i) => `
-                <button class="option-btn" id="opt-btn-${i}" onclick="MillionaireGame.selectOption(${i})">
-                  <span class="opt-prefix">${['A', 'B', 'C', 'D'][i]}:</span>
-                  <span>${opt}</span>
-                </button>
-              `).join('')}
+              ${q.options.map((opt, i) => `<button class="option-btn" id="opt-btn-${i}" onclick="MillionaireGame.selectOption(${i})"><span class="opt-prefix">${['A', 'B', 'C', 'D'][i]}:</span><span>${opt}</span></button>`).join('')}
             </div>
           </div>
           <div class="ladder-container">
@@ -82,14 +76,12 @@ window.MillionaireGame = (function() {
           </div>
         </div>
       </div>
-      <div id="hint-modal-root"></div>
-    `;
+      <div id="hint-modal-root"></div>`;
   }
 
   function selectOption(idx) {
     if (state.isAnswered) return;
     state.isAnswered = true;
-
     const q = state.questions[state.currentIdx];
     const correctIdx = q.correctIdx;
     const btn = document.getElementById(`opt-btn-${idx}`);
@@ -102,12 +94,19 @@ window.MillionaireGame = (function() {
         if (btn) btn.classList.add("correct");
         if (window.AudioEngine) window.AudioEngine.playVictory();
 
+        state.streak++;
+        if (state.streak >= 2 && (state.used5050 || state.usedHint)) {
+          state.used5050 = false; state.usedHint = false; state.streak = 0;
+          state.toastMsg = "✨ HỒI LẠI TOÀN BỘ SỰ TRỢ GIÚP (50:50 & GỢI Ý) NHỜ TRẢ LỜI ĐÚNG 2 CÂU LIÊN TIẾP!";
+        } else { state.toastMsg = ""; }
+
         setTimeout(() => {
           if (state.currentIdx + 1 < state.questions.length) {
             state.currentIdx++; state.isAnswered = false; renderGame();
           } else { showWinModal(); }
         }, 1200);
       } else {
+        state.streak = 0;
         if (btn) btn.classList.add("wrong");
         const correctBtn = document.getElementById(`opt-btn-${correctIdx}`);
         if (correctBtn) correctBtn.classList.add("correct");
@@ -120,14 +119,9 @@ window.MillionaireGame = (function() {
     if (state.used5050 || state.isAnswered) return;
     state.used5050 = true;
     if (window.AudioEngine) window.AudioEngine.playJump();
-
     const q = state.questions[state.currentIdx];
-    const correctIdx = q.correctIdx;
-    const wrongIndices = [0, 1, 2, 3].filter(i => i !== correctIdx).sort(() => Math.random() - 0.5).slice(0, 2);
-    wrongIndices.forEach(i => {
-      const b = document.getElementById(`opt-btn-${i}`);
-      if (b) b.classList.add("eliminated");
-    });
+    const wrongIndices = [0, 1, 2, 3].filter(i => i !== q.correctIdx).sort(() => Math.random() - 0.5).slice(0, 2);
+    wrongIndices.forEach(i => { const b = document.getElementById(`opt-btn-${i}`); if (b) b.classList.add("eliminated"); });
     const btn = document.getElementById("btn-5050");
     if (btn) btn.disabled = true;
   }
@@ -136,19 +130,11 @@ window.MillionaireGame = (function() {
     if (state.usedHint || state.isAnswered) return;
     state.usedHint = true;
     if (window.AudioEngine) window.AudioEngine.playJump();
-
     const q = state.questions[state.currentIdx];
     const hintText = q.explanation || "Hãy chú ý cấu trúc ngữ pháp và ý nghĩa của câu!";
     const modalRoot = document.getElementById("hint-modal-root");
     if (modalRoot) {
-      modalRoot.innerHTML = `
-        <div class="hint-modal">
-          <div class="hint-card">
-            <h3>💡 Gợi Ý Ngữ Pháp</h3>
-            <p>${hintText}</p>
-            <button class="btn-play-millionaire" style="margin:0 auto;" onclick="document.getElementById('hint-modal-root').innerHTML=''">Đã Hiểu</button>
-          </div>
-        </div>`;
+      modalRoot.innerHTML = `<div class="hint-modal"><div class="hint-card"><h3>💡 Gợi Ý Ngữ Pháp</h3><p>${hintText}</p><button class="btn-play-millionaire" style="margin:0 auto;" onclick="document.getElementById('hint-modal-root').innerHTML=''">Đã Hiểu</button></div></div>`;
     }
     const btn = document.getElementById("btn-hint");
     if (btn) btn.disabled = true;
@@ -158,7 +144,6 @@ window.MillionaireGame = (function() {
     const container = document.getElementById("millionaire-root");
     const prize = LADDER_PRIZES[state.questions.length - 1] || "$1,000,000";
     if (window.AudioEngine) window.AudioEngine.playVictory();
-
     container.innerHTML = `
       <div class="millionaire-wrapper victory-celebration" style="text-align:center; padding:40px; position:relative; overflow:hidden;">
         <div class="confetti-container" id="confetti-canvas"></div>
@@ -183,8 +168,7 @@ window.MillionaireGame = (function() {
       const left = Math.random() * 100;
       const size = Math.random() * 8 + 6;
       const color = colors[Math.floor(Math.random() * colors.length)];
-      const delay = Math.random() * 2.5;
-      const duration = Math.random() * 2 + 2.5;
+      const delay = Math.random() * 2.5; const duration = Math.random() * 2 + 2.5;
       html += `<div class="confetti-piece" style="left:${left}%; width:${size}px; height:${size * 1.5}px; background:${color}; animation-delay:${delay}s; animation-duration:${duration}s;"></div>`;
     }
     root.innerHTML = html;
