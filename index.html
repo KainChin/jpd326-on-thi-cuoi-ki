@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tổng Hợp Ngữ Pháp JPD326 (Bài 6 - Bài 10) & Super Mario Gem Quest</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Press+Start+2P&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets (Modularized < 200 lines each) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/mario.css">
+</head>
+<body>
+
+  <!-- Falling Sakura Petals Background Canvas -->
+  <canvas id="sakura-canvas"></canvas>
+
+  <div class="app-wrapper">
+    <!-- Header -->
+    <header class="site-header">
+      <h1 class="site-title">
+        <span>⛩️</span> できる日本語 中級 • JPD326 <span>🌸</span>
+      </h1>
+      <p class="site-subtitle">Tổng hợp ngữ pháp Bài 6 đến Bài 10 & Game Mario Ôn Tập Kiến Thức</p>
+
+      <!-- Global Live Search -->
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="global-search-input" class="search-input" placeholder="Tìm kiếm công thức, Hán tự, hoặc nghĩa tiếng Việt (Vd: 囲まれている, 比べて, so với...)" />
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="lesson-nav">
+      <button id="nav-btn-6" class="nav-tab-btn active" onclick="app.setLesson(6)">📖 Bài 6</button>
+      <button id="nav-btn-7" class="nav-tab-btn" onclick="app.setLesson(7)">📖 Bài 7</button>
+      <button id="nav-btn-8" class="nav-tab-btn" onclick="app.setLesson(8)">📖 Bài 8</button>
+      <button id="nav-btn-9" class="nav-tab-btn" onclick="app.setLesson(9)">📖 Bài 9</button>
+      <button id="nav-btn-10" class="nav-tab-btn" onclick="app.setLesson(10)">📖 Bài 10</button>
+      <button id="nav-btn-flashcards" class="nav-tab-btn" onclick="app.setLesson('flashcards')">🎴 Flashcards</button>
+      <button id="nav-btn-mario" class="nav-tab-btn mario-tab-btn" onclick="app.setLesson('mario')">🎮 Mario Gem Quest</button>
+    </nav>
+
+    <!-- Main Content Area: Grammar Cards Grid -->
+    <main id="main-content-area" class="grammar-grid"></main>
+
+    <!-- Flashcards Container -->
+    <div id="flashcard-container" style="display: none;"></div>
+
+    <!-- Super Mario World Gem Quest Game Container -->
+    <div id="mario-game-container"></div>
+  </div>
+
+  <!-- Data Scripts (Modular < 200 lines each) -->
+  <script src="js/data/lesson6_p1.js"></script>
+  <script src="js/data/lesson6_p2.js"></script>
+  <script src="js/data/lesson6_p3.js"></script>
+
+  <script src="js/data/lesson7_p1.js"></script>
+  <script src="js/data/lesson7_p2.js"></script>
+
+  <script src="js/data/lesson8_p1.js"></script>
+  <script src="js/data/lesson8_p2.js"></script>
+
+  <script src="js/data/lesson9_p1.js"></script>
+  <script src="js/data/lesson9_p2.js"></script>
+  <script src="js/data/lesson9_p3.js"></script>
+
+  <script src="js/data/lesson10_p1.js"></script>
+  <script src="js/data/lesson10_p2.js"></script>
+  <script src="js/data/lesson10_p3.js"></script>
+  <script src="js/data/grammarStore.js"></script>
+
+  <!-- Mario Quiz Data -->
+  <script src="js/quiz/quizLesson6.js"></script>
+  <script src="js/quiz/quizLesson7.js"></script>
+  <script src="js/quiz/quizLesson8.js"></script>
+  <script src="js/quiz/quizLesson9.js"></script>
+  <script src="js/quiz/quizLesson10.js"></script>
+  <script src="js/quiz/quizStore.js"></script>
+
+  <!-- Logic & Engine Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/sakura.js"></script>
+  <script src="js/marioGame.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
