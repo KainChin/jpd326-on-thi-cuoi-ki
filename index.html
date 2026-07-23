@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Ôn Thi Ngữ Pháp N3 - Dekiru Nihongo Bài 6 - 10</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,19 +21,15 @@
         <button class="nav-tab-btn active" id="tab-btn-grammar" onclick="App.showView('grammar')">📖 Công Thức</button>
         <button class="nav-tab-btn" id="tab-btn-situations" onclick="App.showView('situations')">💬 Tình Huống</button>
       </nav>
-      <button class="game-launch-btn" onclick="App.startMillionaire('all')">
-        🏆 Game Ai Là Triệu Phú
-      </button>
     </header>
 
-    <!-- VIEW 1: CÔNG THỨC (GRAMMAR DRILL-DOWN) -->
+    <!-- VIEW 1: CÔNG THỨC -->
     <main id="view-grammar">
       <div class="search-filter-bar">
         <input type="text" id="search-input" class="search-input" placeholder="🔍 Tìm kiếm công thức, từ khóa, tiếng Việt..." oninput="App.handleSearch(this.value)">
       </div>
       <div class="lesson-bar" id="lesson-bar-grammar">
-        <button class="lesson-btn active" onclick="App.filterLesson('all')">Tất Cả (6-10)</button>
-        <button class="lesson-btn" onclick="App.filterLesson(6)">Bài 6</button>
+        <button class="lesson-btn active" onclick="App.filterLesson(6)">Bài 6</button>
         <button class="lesson-btn" onclick="App.filterLesson(7)">Bài 7</button>
         <button class="lesson-btn" onclick="App.filterLesson(8)">Bài 8</button>
         <button class="lesson-btn" onclick="App.filterLesson(9)">Bài 9</button>
@@ -43,11 +39,10 @@
       <div id="grammar-list-root"></div>
     </main>
 
-    <!-- VIEW 2: TÌNH HUỐNG (SITUATIONS) -->
+    <!-- VIEW 2: TÌNH HUỐNG -->
     <main id="view-situations" style="display: none;">
       <div class="lesson-bar" id="lesson-bar-situations">
-        <button class="lesson-btn active" onclick="App.filterSituations('all')">Tất Cả Tình Huống</button>
-        <button class="lesson-btn" onclick="App.filterSituations(6)">Bài 6</button>
+        <button class="lesson-btn active" onclick="App.filterSituations(6)">Bài 6</button>
         <button class="lesson-btn" onclick="App.filterSituations(7)">Bài 7</button>
         <button class="lesson-btn" onclick="App.filterSituations(8)">Bài 8</button>
         <button class="lesson-btn" onclick="App.filterSituations(9)">Bài 9</button>
@@ -57,13 +52,16 @@
       <div id="situations-root"></div>
     </main>
 
-    <!-- VIEW 3: GAME AI LÀ TRIỆU PHÚ (MILLIONAIRE GAME) -->
+    <!-- VIEW 3: GAME AI LÀ TRIỆU PHÚ -->
     <main id="view-millionaire" style="display: none;">
       <div id="millionaire-root"></div>
     </main>
   </div>
 
-  <!-- DATA & LOGIC SCRIPTS -->
+  <!-- POP-UP MODAL ROOT FOR FORMULA DETAILS -->
+  <div id="modal-root"></div>
+
+  <!-- SCRIPTS -->
   <script src="js/data/lesson6_p1.js"></script>
   <script src="js/data/lesson6_p2.js"></script>
   <script src="js/data/lesson6_p3.js"></script>

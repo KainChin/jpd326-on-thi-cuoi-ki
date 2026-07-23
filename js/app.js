@@ -1,15 +1,19 @@
 /**
- * Main Application Router & Render Logic
+ * Main App Router & Modal Handler
  * Strictly < 200 lines
  */
 window.App = (function() {
-  let currentLesson = "all";
-  let currentSituationLesson = "all";
+  let currentLesson = 6;
+  let currentSituationLesson = 6;
   let searchKeyword = "";
 
   function init() {
     renderGrammarList();
     renderSituations();
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
   }
 
   function showView(viewName) {
@@ -34,12 +38,9 @@ window.App = (function() {
   }
 
   function filterLesson(lesson) {
-    currentLesson = lesson;
+    currentLesson = parseInt(lesson);
     document.querySelectorAll("#lesson-bar-grammar .lesson-btn").forEach(btn => {
-      const btnText = btn.innerText.trim();
-      const isAct = (lesson === 'all' && btnText.includes('Tất Cả')) ||
-                    (lesson !== 'all' && btnText === `Bài ${lesson}`);
-      btn.classList.toggle("active", isAct);
+      btn.classList.toggle("active", btn.innerText.trim() === `Bài ${lesson}`);
     });
     renderGrammarList();
   }
@@ -53,10 +54,7 @@ window.App = (function() {
     const root = document.getElementById("grammar-list-root");
     if (!root || !window.GrammarStore) return;
 
-    let items = window.GrammarStore.getAllGrammar();
-    if (currentLesson !== "all") {
-      items = items.filter(g => g.lesson === parseInt(currentLesson));
-    }
+    let items = window.GrammarStore.getGrammarByLesson(currentLesson);
     if (searchKeyword) {
       items = items.filter(g =>
         g.title.toLowerCase().includes(searchKeyword) ||
@@ -66,15 +64,13 @@ window.App = (function() {
       );
     }
 
-    const lessonText = currentLesson === "all" ? "Tất Cả Bài 6 - 10" : `Bài ${currentLesson}`;
-
     let html = `
       <div class="lesson-game-banner">
         <div>
-          <div class="banner-info-title">🏆 THỬ THÁCH AI LÀ TRIỆU PHÚ - ${lessonText.toUpperCase()}</div>
-          <div class="banner-info-sub">Ôn tập tổng hợp kiến thức ngữ pháp ${lessonText} với 15 câu hỏi tiền thưởng!</div>
+          <div class="banner-info-title">🏆 THỬ THÁCH AI LÀ TRIỆU PHÚ - BÀI ${currentLesson}</div>
+          <div class="banner-info-sub">Ôn tập tổng hợp ngữ pháp Bài ${currentLesson} với 15 câu hỏi tiền thưởng!</div>
         </div>
-        <button class="btn-play-millionaire" onclick="App.startMillionaire('${currentLesson}')">
+        <button class="btn-play-millionaire" onclick="App.startMillionaire(${currentLesson})">
           🎮 VÀO GAME NGAY
         </button>
       </div>
@@ -87,61 +83,84 @@ window.App = (function() {
     }
 
     html += items.map(item => `
-      <div class="formula-card" id="card-${item.id}">
-        <div class="formula-card-header" onclick="App.toggleCard('${item.id}')">
-          <div class="formula-title-group">
-            <span class="formula-badge">Bài ${item.lesson}</span>
-            <span class="formula-main-title">${item.title}</span>
-            <span class="formula-meaning-preview">( ${item.meaning} )</span>
-          </div>
-          <span class="expand-icon">Xem chi tiết 🔽</span>
+      <div class="formula-card-row" onclick="App.openModal('${item.id}')">
+        <div class="formula-title-text">
+          <span style="color:#fff;">${item.title}</span>
+          <span class="formula-meaning-text">( ${item.meaning} )</span>
         </div>
-        <div class="formula-card-body">
-          <div class="section-block">
-            <div class="block-title">⚙️ Cấu Trúc Chia / Công Thức</div>
-            <div class="formula-box">${item.formula}</div>
-          </div>
-          ${item.nuance ? `
-          <div class="section-block">
-            <div class="block-title">💡 Sắc Thái & Lưu Ý</div>
-            <div class="nuance-box">${item.nuance}</div>
-          </div>` : ''}
-
-          <div class="section-block">
-            <div class="block-title">📝 6 Ví Dụ Chi Tiết (Kèm Phát Âm & Kanji)</div>
-            <div class="examples-grid">
-              ${item.examples ? item.examples.map((ex, exIdx) => `
-                <div class="example-item">
-                  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
-                    <div class="example-jp">${ex.jp}</div>
-                    <button class="kanji-detail-btn" title="Nghe phát âm" onclick="event.stopPropagation(); AudioEngine.speak('${ex.jp.replace(/<[^>]*>/g, '')}')">🔊 Nghe</button>
-                  </div>
-                  <div class="example-vi">👉 ${ex.vi}</div>
-                  ${ex.kanji && ex.kanji.length > 0 ? `
-                    <button class="kanji-detail-btn" onclick="event.stopPropagation(); App.toggleKanji('kj-${item.id}-${exIdx}')">🔍 解釈 Kanji khó</button>
-                    <div class="kanji-box" id="kj-${item.id}-${exIdx}">
-                      ${ex.kanji.map(k => `
-                        <div class="kanji-chip">
-                          <span class="kanji-char">${k.char}</span>
-                          <span>[${k.amHan}] (${k.meaning})</span>
-                        </div>
-                      `).join('')}
-                    </div>
-                  ` : ''}
-                </div>
-              `).join('') : ''}
-            </div>
-          </div>
-        </div>
+        <button class="btn-view-detail">Xem chi tiết 🔍</button>
       </div>
     `).join('');
 
     root.innerHTML = html;
   }
 
-  function toggleCard(cardId) {
-    const el = document.getElementById(`card-${cardId}`);
-    if (el) el.classList.toggle("open");
+  function openModal(id) {
+    const all = window.GrammarStore.getAllGrammar();
+    const item = all.find(g => g.id === id);
+    if (!item) return;
+
+    const modalRoot = document.getElementById("modal-root");
+    if (!modalRoot) return;
+
+    modalRoot.innerHTML = `
+      <div class="modal-overlay" onclick="if(event.target === this) App.closeModal()">
+        <div class="modal-container">
+          <div class="modal-header">
+            <div class="modal-title">
+              <span>${item.title}</span>
+              <span style="color:#f59e0b; font-size:1rem; font-weight:600; margin-left:8px;">( ${item.meaning} )</span>
+            </div>
+            <button class="modal-close-btn" onclick="App.closeModal()">✖</button>
+          </div>
+          <div class="modal-body">
+            <div class="section-block">
+              <div class="block-title">⚙️ Cấu Trúc Chia / Công Thức</div>
+              <div class="formula-box">${item.formula}</div>
+            </div>
+            ${item.nuance ? `
+            <div class="section-block">
+              <div class="block-title">💡 Sắc Thái & Lưu Ý</div>
+              <div class="nuance-box">${item.nuance}</div>
+            </div>` : ''}
+
+            <div class="section-block">
+              <div class="block-title">📝 6 Ví Dụ Chi Tiết (Kèm Phát Âm & Kanji)</div>
+              <div class="examples-grid">
+                ${item.examples ? item.examples.map((ex, exIdx) => `
+                  <div class="example-item">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+                      <div class="example-jp">${ex.jp}</div>
+                      <button class="kanji-detail-btn" title="Nghe phát âm" onclick="AudioEngine.speak('${ex.jp.replace(/<[^>]*>/g, '')}')">🔊 Nghe</button>
+                    </div>
+                    <div class="example-vi">👉 ${ex.vi}</div>
+                    ${ex.kanji && ex.kanji.length > 0 ? `
+                      <button class="kanji-detail-btn" onclick="App.toggleKanji('modal-kj-${exIdx}')">🔍 Giải thích Kanji</button>
+                      <div class="kanji-box" id="modal-kj-${exIdx}">
+                        ${ex.kanji.map(k => `
+                          <div class="kanji-chip">
+                            <span class="kanji-char">${k.char}</span>
+                            <span>[${k.amHan}] (${k.meaning})</span>
+                          </div>
+                        `).join('')}
+                      </div>
+                    ` : ''}
+                  </div>
+                `).join('') : ''}
+              </div>
+            </div>
+            <div style="text-align:right; margin-top:20px;">
+              <button class="btn-play-millionaire" style="background:#334155;" onclick="App.closeModal()">Đóng (✖)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function closeModal() {
+    const modalRoot = document.getElementById("modal-root");
+    if (modalRoot) modalRoot.innerHTML = "";
   }
 
   function toggleKanji(boxId) {
@@ -150,12 +169,9 @@ window.App = (function() {
   }
 
   function filterSituations(lesson) {
-    currentSituationLesson = lesson;
+    currentSituationLesson = parseInt(lesson);
     document.querySelectorAll("#lesson-bar-situations .lesson-btn").forEach(btn => {
-      const btnText = btn.innerText.trim();
-      const isAct = (lesson === 'all' && btnText.includes('Tất Cả')) ||
-                    (lesson !== 'all' && btnText === `Bài ${lesson}`);
-      btn.classList.toggle("active", isAct);
+      btn.classList.toggle("active", btn.innerText.trim() === `Bài ${lesson}`);
     });
     renderSituations();
   }
@@ -164,28 +180,18 @@ window.App = (function() {
     const root = document.getElementById("situations-root");
     if (!root || !window.SITUATIONS_DATA) return;
 
-    let data = window.SITUATIONS_DATA;
-    if (currentSituationLesson !== "all") {
-      data = data.filter(s => s.lesson === parseInt(currentSituationLesson));
-    }
+    let data = window.SITUATIONS_DATA.filter(s => s.lesson === currentSituationLesson);
 
     root.innerHTML = data.map(item => `
       <div class="situation-card">
-        <div class="situation-header">
-          <div class="situation-title">${item.title}</div>
-          <p style="color:#94a3b8; font-size:0.95rem; margin-top:4px;">${item.description}</p>
-        </div>
+        <div style="font-size:1.2rem; font-weight:800; color:#f59e0b; margin-bottom:12px;">${item.title}</div>
         ${item.scenarios.map(sc => `
           <div class="scenario-box">
-            <div style="font-weight:700; color:#38bdf8; margin-bottom:6px;">📌 ${sc.title}</div>
-            <div style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;"><em>Bối cảnh: ${sc.context}</em></div>
+            <div style="font-weight:700; color:#38bdf8; margin-bottom:4px;">📌 ${sc.title}</div>
+            <div style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;"><em>${sc.context}</em></div>
             <div style="background:#0f172a; padding:10px 14px; border-radius:8px; margin-bottom:8px;">
               <div style="font-weight:600; color:#fff;">💬 "${sc.sampleJp}"</div>
               <div style="color:#94a3b8; font-size:0.9rem; margin-top:4px;">➔ ${sc.sampleVi}</div>
-            </div>
-            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:0.85rem;">
-              <span style="color:#f59e0b; font-weight:700;">Công thức áp dụng:</span>
-              ${sc.grammarUsed.map(g => `<span style="background:#334155; padding:2px 8px; border-radius:4px; color:#fff;">${g}</span>`).join('')}
             </div>
             <div style="margin-top:6px; font-size:0.85rem; color:#a7f3d0;">💡 <strong>Mẹo:</strong> ${sc.tip}</div>
           </div>
@@ -194,7 +200,7 @@ window.App = (function() {
     `).join('');
   }
 
-  function startMillionaire(lesson = "all") {
+  function startMillionaire(lesson = 6) {
     showView("millionaire");
     if (window.MillionaireGame) {
       window.MillionaireGame.init(lesson);
@@ -207,5 +213,5 @@ window.App = (function() {
     init();
   }
 
-  return { showView, filterLesson, handleSearch, toggleCard, toggleKanji, filterSituations, startMillionaire };
+  return { showView, filterLesson, handleSearch, openModal, closeModal, toggleKanji, filterSituations, startMillionaire };
 })();
