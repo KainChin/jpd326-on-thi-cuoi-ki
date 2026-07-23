@@ -1,0 +1,218 @@
+/**
+ * Who Wants to Be a Millionaire - Game Engine
+ * Strictly < 200 lines
+ */
+window.MillionaireGame = (function() {
+  const LADDER_PRIZES = [
+    "$100", "$200", "$300", "$500", "$1,000",
+    "$2,000", "$4,000", "$8,000", "$16,000", "$32,000",
+    "$64,000", "$125,000", "$250,000", "$500,000", "$1,000,000"
+  ];
+  let state = {
+    questions: [],
+    currentIdx: 0,
+    used5050: false,
+    usedHint: false,
+    selectedOption: null,
+    isAnswered: false,
+    lesson: "all"
+  };
+
+  function init(lessonFilter = "all") {
+    state.lesson = lessonFilter;
+    state.currentIdx = 0;
+    state.used5050 = false;
+    state.usedHint = false;
+    state.selectedOption = null;
+    state.isAnswered = false;
+
+    let pool = [];
+    if (lessonFilter === "all") {
+      pool = window.QuizStore ? window.QuizStore.getAllQuizzes() : [];
+    } else {
+      pool = window.QuizStore ? window.QuizStore.getQuizzesByLesson(parseInt(lessonFilter)) : [];
+    }
+    // Shuffle and pick up to 15 questions
+    state.questions = pool.sort(() => Math.random() - 0.5).slice(0, 15);
+    renderGame();
+  }
+
+  function renderGame() {
+    const container = document.getElementById("millionaire-root");
+    if (!container) return;
+
+    if (!state.questions || state.questions.length === 0) {
+      container.innerHTML = `<div class="millionaire-wrapper"><p>Không có câu hỏi nào cho bài này.</p></div>`;
+      return;
+    }
+
+    const q = state.questions[state.currentIdx];
+    const isLast = state.currentIdx === state.questions.length - 1;
+
+    container.innerHTML = `
+      <div class="millionaire-wrapper">
+        <div class="millionaire-header">
+          <div class="millionaire-title">
+            <span>🏆 AI LÀ TRIỆU PHÚ NGỮ PHÁP</span>
+            <small style="font-size:0.9rem; color:#94a3b8; font-weight:normal;">(Câu ${state.currentIdx + 1}/${state.questions.length})</small>
+          </div>
+          <div class="lifelines-container">
+            <button class="lifeline-btn" id="btn-5050" ${state.used5050 ? 'disabled' : ''} onclick="MillionaireGame.use5050()">
+              ⚡ 50:50
+            </button>
+            <button class="lifeline-btn" id="btn-hint" ${state.usedHint ? 'disabled' : ''} onclick="MillionaireGame.useHint()">
+              💡 Gợi Ý
+            </button>
+            <button class="lifeline-btn" style="border-color:#ef4444; color:#ef4444;" onclick="MillionaireGame.exitGame()">
+              🚪 Thoát
+            </button>
+          </div>
+        </div>
+
+        <div class="game-main-area">
+          <div class="left-panel">
+            <div class="question-box">
+              ${q.question}
+            </div>
+            <div class="options-grid" id="options-grid">
+              ${q.options.map((opt, i) => `
+                <button class="option-btn" id="opt-btn-${i}" onclick="MillionaireGame.selectOption(${i})">
+                  <span class="opt-prefix">${['A', 'B', 'C', 'D'][i]}:</span>
+                  <span>${opt}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+          <div class="ladder-container">
+            ${LADDER_PRIZES.slice(0, state.questions.length).map((prize, i) => {
+              let cls = "ladder-step";
+              if (i === 4 || i === 9 || i === 14) cls += " milestone";
+              if (i === state.currentIdx) cls += " current";
+              if (i < state.currentIdx) cls += " passed";
+              return `<div class="${cls}"><span>${i + 1}</span> <span>${prize}</span></div>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>
+      <div id="hint-modal-root"></div>
+    `;
+  }
+
+  function selectOption(idx) {
+    if (state.isAnswered) return;
+    state.isAnswered = true;
+
+    const q = state.questions[state.currentIdx];
+    const btn = document.getElementById(`opt-btn-${idx}`);
+    btn.classList.add("selected");
+
+    if (window.AudioEngine) window.AudioEngine.playCoin();
+
+    setTimeout(() => {
+      btn.classList.remove("selected");
+      if (idx === q.correct) {
+        btn.classList.add("correct");
+        if (window.AudioEngine) window.AudioEngine.playVictory();
+
+        setTimeout(() => {
+          if (state.currentIdx + 1 < state.questions.length) {
+            state.currentIdx++;
+            state.isAnswered = false;
+            renderGame();
+          } else {
+            showWinModal();
+          }
+        }, 1200);
+      } else {
+        btn.classList.add("wrong");
+        const correctBtn = document.getElementById(`opt-btn-${q.correct}`);
+        if (correctBtn) correctBtn.classList.add("correct");
+
+        setTimeout(() => {
+          showGameOverModal(q);
+        }, 1500);
+      }
+    }, 800);
+  }
+
+  function use5050() {
+    if (state.used5050 || state.isAnswered) return;
+    state.used5050 = true;
+    if (window.AudioEngine) window.AudioEngine.playJump();
+
+    const q = state.questions[state.currentIdx];
+    const wrongIndices = [0, 1, 2, 3].filter(i => i !== q.correct);
+    wrongIndices.sort(() => Math.random() - 0.5);
+    const toEliminate = wrongIndices.slice(0, 2);
+
+    toEliminate.forEach(i => {
+      const b = document.getElementById(`opt-btn-${i}`);
+      if (b) b.classList.add("eliminated");
+    });
+
+    const btn = document.getElementById("btn-5050");
+    if (btn) btn.disabled = true;
+  }
+
+  function useHint() {
+    if (state.usedHint || state.isAnswered) return;
+    state.usedHint = true;
+    if (window.AudioEngine) window.AudioEngine.playJump();
+
+    const q = state.questions[state.currentIdx];
+    const hintText = q.explanation || "Hãy chú ý cấu trúc ngữ pháp và ý nghĩa ngữ cảnh của câu nhé!";
+
+    const modalRoot = document.getElementById("hint-modal-root");
+    if (modalRoot) {
+      modalRoot.innerHTML = `
+        <div class="hint-modal">
+          <div class="hint-card">
+            <h3>💡 Gợi Ý Từ Chuyên Gia</h3>
+            <p>${hintText}</p>
+            <button class="btn btn-primary" onclick="document.getElementById('hint-modal-root').innerHTML=''">Đã Hiểu</button>
+          </div>
+        </div>
+      `;
+    }
+    const btn = document.getElementById("btn-hint");
+    if (btn) btn.disabled = true;
+  }
+
+  function showWinModal() {
+    const container = document.getElementById("millionaire-root");
+    const maxPrize = LADDER_PRIZES[state.questions.length - 1] || "$1,000,000";
+    container.innerHTML = `
+      <div class="millionaire-wrapper" style="text-align:center; padding:40px;">
+        <h2 style="font-size:2.2rem; color:#f59e0b; margin-bottom:15px;">🎉 CHÚC MỪNG BẠN TRỞ THÀNH TRIỆU PHÚ!</h2>
+        <p style="font-size:1.3rem;">Bạn đã xuất sắc vượt qua toàn bộ ${state.questions.length} câu hỏi và giành phần thưởng <strong>${maxPrize}</strong>!</p>
+        <div style="margin-top:24px; display:flex; justify-content:center; gap:16px;">
+          <button class="btn btn-primary" onclick="MillionaireGame.init('${state.lesson}')">🔄 Chơi Lại</button>
+          <button class="btn btn-secondary" onclick="MillionaireGame.exitGame()">🔙 Quay Về</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function showGameOverModal(q) {
+    const container = document.getElementById("millionaire-root");
+    const achievedPrize = state.currentIdx > 0 ? LADDER_PRIZES[state.currentIdx - 1] : "$0";
+    container.innerHTML = `
+      <div class="millionaire-wrapper" style="text-align:center; padding:40px;">
+        <h2 style="font-size:2rem; color:#ef4444; margin-bottom:15px;">❌ RẤT TIẾC, CÂU TRẢ LỜI CHƯA CHÍNH XÁC!</h2>
+        <p style="font-size:1.1rem; color:#cbd5e1;">Đáp án đúng là: <strong style="color:#22c55e;">${q.options[q.correct]}</strong></p>
+        <p style="font-size:1rem; color:#94a3b8; margin-top:8px;">${q.explanation || ''}</p>
+        <h3 style="font-size:1.4rem; color:#f59e0b; margin-top:20px;">Phần thưởng mang về: ${achievedPrize}</h3>
+        <div style="margin-top:24px; display:flex; justify-content:center; gap:16px;">
+          <button class="btn btn-primary" onclick="MillionaireGame.init('${state.lesson}')">🔄 Chơi Lại</button>
+          <button class="btn btn-secondary" onclick="MillionaireGame.exitGame()">🔙 Quay Về</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function exitGame() {
+    if (window.App) window.App.showView("grammar");
+  }
+
+  return { init, selectOption, use5050, useHint, exitGame };
+})();

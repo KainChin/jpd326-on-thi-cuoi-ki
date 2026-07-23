@@ -1,176 +1,185 @@
 /**
- * Japanese Grammar SPA Controller & Navigation Router
- * < 200 lines per file requirement
+ * Main Application Logic & View Router
+ * Strictly < 200 lines
  */
-class AppController {
-  constructor() {
-    this.currentLesson = 6;
-    this.searchQuery = "";
-    this.bookmarks = JSON.parse(localStorage.getItem('jpd326_favs') || '[]');
-    this.flashcardIndex = 0;
-    this.flashcardList = [];
-    
-    document.addEventListener('DOMContentLoaded', () => this.init());
+window.App = (function() {
+  let currentLesson = "all";
+  let currentSituationLesson = "all";
+  let searchKeyword = "";
+
+  function init() {
+    renderGrammarList();
+    renderSituations();
   }
 
-  init() {
-    this.bindEvents();
-    this.renderCurrentLesson();
+  function showView(viewName) {
+    const vGrammar = document.getElementById("view-grammar");
+    const vSituations = document.getElementById("view-situations");
+    const vMillionaire = document.getElementById("view-millionaire");
+
+    const btnG = document.getElementById("tab-btn-grammar");
+    const btnS = document.getElementById("tab-btn-situations");
+
+    if (vGrammar) vGrammar.style.display = viewName === "grammar" ? "block" : "none";
+    if (vSituations) vSituations.style.display = viewName === "situations" ? "block" : "none";
+    if (vMillionaire) vMillionaire.style.display = viewName === "millionaire" ? "block" : "none";
+
+    if (btnG) btnG.classList.toggle("active", viewName === "grammar");
+    if (btnS) btnS.classList.toggle("active", viewName === "situations");
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  bindEvents() {
-    const searchInput = document.getElementById('global-search-input');
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        this.searchQuery = e.target.value.trim().toLowerCase();
-        this.renderCurrentLesson();
-      });
+  function filterLesson(lesson) {
+    currentLesson = lesson;
+    document.querySelectorAll("#lesson-bar-grammar .lesson-btn").forEach(btn => {
+      const isAct = (lesson === 'all' && btn.innerText.includes('Tất Cả')) ||
+                    (btn.innerText.includes(`Bài ${lesson}`));
+      btn.classList.toggle("active", isAct);
+    });
+    renderGrammarList();
+  }
+
+  function handleSearch(val) {
+    searchKeyword = val.trim().toLowerCase();
+    renderGrammarList();
+  }
+
+  function renderGrammarList() {
+    const root = document.getElementById("grammar-list-root");
+    if (!root || !window.GrammarStore) return;
+
+    let items = window.GrammarStore.getAllGrammar();
+    if (currentLesson !== "all") {
+      items = items.filter(g => g.lesson === parseInt(currentLesson));
     }
-  }
-
-  setLesson(lessonNum) {
-    this.currentLesson = lessonNum;
-    document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
-    const targetBtn = document.getElementById(`nav-btn-${lessonNum}`);
-    if (targetBtn) targetBtn.classList.add('active');
-
-    const mainArea = document.getElementById('main-content-area');
-    const marioArea = document.getElementById('mario-game-container');
-    const flashcardArea = document.getElementById('flashcard-container');
-
-    if (lessonNum === 'mario') {
-      mainArea.style.display = 'none';
-      flashcardArea.style.display = 'none';
-      marioArea.style.display = 'block';
-      window.marioGame.startLessonGame(6);
-    } else if (lessonNum === 'flashcards') {
-      mainArea.style.display = 'none';
-      marioArea.style.display = 'none';
-      flashcardArea.style.display = 'block';
-      this.initFlashcards();
-    } else {
-      marioArea.style.display = 'none';
-      flashcardArea.style.display = 'none';
-      mainArea.style.display = 'grid';
-      this.renderCurrentLesson();
-    }
-  }
-
-  getFilteredData() {
-    let list = window.ALL_GRAMMAR_DATA || [];
-    if (typeof this.currentLesson === 'number') {
-      list = list.filter(item => item.lesson === this.currentLesson);
-    }
-    if (this.searchQuery) {
-      const q = this.searchQuery;
-      list = (window.ALL_GRAMMAR_DATA || []).filter(item => 
-        item.title.toLowerCase().includes(q) ||
-        item.meaning.toLowerCase().includes(q) ||
-        item.romaji.toLowerCase().includes(q) ||
-        item.formula.toLowerCase().includes(q)
+    if (searchKeyword) {
+      items = items.filter(g =>
+        g.title.toLowerCase().includes(searchKeyword) ||
+        g.meaning.toLowerCase().includes(searchKeyword) ||
+        g.formula.toLowerCase().includes(searchKeyword) ||
+        (g.examples && g.examples.some(ex => ex.jp.includes(searchKeyword) || ex.vi.toLowerCase().includes(searchKeyword)))
       );
     }
-    return list;
-  }
 
-  renderCurrentLesson() {
-    const container = document.getElementById('main-content-area');
-    if (!container) return;
-
-    const data = this.getFilteredData();
-    if (data.length === 0) {
-      container.innerHTML = `<div class="no-results">🌸 Không tìm thấy mẫu ngữ pháp nào phù hợp với từ khóa!</div>`;
+    if (items.length === 0) {
+      root.innerHTML = `<div style="text-align:center; padding:40px; color:#94a3b8;">Không tìm thấy công thức phù hợp.</div>`;
       return;
     }
 
-    container.innerHTML = data.map((item, idx) => `
-      <div class="grammar-card" id="card-${item.id}">
-        <div class="card-header">
-          <div class="card-badge">BÀI ${item.lesson} • ${item.part}</div>
-          <button class="speak-btn" onclick="audioManager.speakJapanese('${item.title}')" title="Nghe phát âm">🔊 Nghe</button>
+    root.innerHTML = items.map(item => `
+      <div class="formula-card" id="card-${item.id}">
+        <div class="formula-card-header" onclick="App.toggleCard('${item.id}')">
+          <div class="formula-title-group">
+            <span class="formula-badge">Bài ${item.lesson}</span>
+            <span class="formula-main-title">${item.title}</span>
+            <span class="formula-meaning-preview">➔ ${item.meaning}</span>
+          </div>
+          <span class="expand-icon">▼</span>
         </div>
+        <div class="formula-card-body">
+          <div class="section-block">
+            <div class="block-title">⚙️ Cấu Trúc / Công Thức</div>
+            <div class="formula-box">${item.formula}</div>
+          </div>
+          ${item.nuance ? `
+          <div class="section-block">
+            <div class="block-title">💡 Sắc Thái & Lưu Ý</div>
+            <div class="nuance-box">${item.nuance}</div>
+          </div>` : ''}
 
-        <h3 class="card-title">${item.title} <small>(${item.romaji})</small></h3>
-        <div class="card-meaning">💡 <strong>Ý nghĩa:</strong> ${item.meaning}</div>
-        <div class="card-formula">⚙️ <strong>Cấu trúc:</strong> <code>${item.formula}</code></div>
-        <div class="card-nuance">📌 <strong>Sử dụng:</strong> ${item.nuance}</div>
-
-        <div class="examples-section">
-          <h4>📝 Ví dụ minh họa (${item.examples.length} ví dụ):</h4>
-          <div class="examples-list">
-            ${item.examples.map((ex, exIdx) => `
-              <div class="example-item">
-                <div class="ex-jp">
-                  <span class="ex-num">${exIdx + 1}.</span> ${ex.jp}
-                  <button class="mini-speak-btn" onclick="audioManager.speakJapanese('${ex.jp.replace(/<\/?[^>]+(>|$)/g, "")}')">🔊</button>
-                </div>
-                <div class="ex-vi">➜ ${ex.vi}</div>
-                ${ex.kanji && ex.kanji.length > 0 ? `
-                  <details class="kanji-accordion">
-                    <summary>🔍 Giải thích Kanji khó (${ex.kanji.length} từ)</summary>
-                    <div class="kanji-grid">
+          <div class="section-block">
+            <div class="block-title">📝 6 Ví Dụ Chi Tiết (Kèm Âm Thanh & Kanji)</div>
+            <div class="examples-grid">
+              ${item.examples ? item.examples.map((ex, exIdx) => `
+                <div class="example-item">
+                  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+                    <div class="example-jp">${ex.jp}</div>
+                    <button class="kanji-detail-btn" title="Nghe phát âm" onclick="event.stopPropagation(); AudioEngine.speak('${ex.jp.replace(/<[^>]*>/g, '')}')">🔊 Nghe</button>
+                  </div>
+                  <div class="example-vi">👉 ${ex.vi}</div>
+                  ${ex.kanji && ex.kanji.length > 0 ? `
+                    <button class="kanji-detail-btn" onclick="event.stopPropagation(); App.toggleKanji('kj-${item.id}-${exIdx}')">🔍 解釈 Kanji khó</button>
+                    <div class="kanji-box" id="kj-${item.id}-${exIdx}">
                       ${ex.kanji.map(k => `
-                        <div class="kanji-box">
-                          <span class="k-char">${k.char}</span>
-                          <span class="k-han">[${k.amHan}]</span>
-                          <span class="k-meaning">${k.meaning}</span>
+                        <div class="kanji-chip">
+                          <span class="kanji-char">${k.char}</span>
+                          <span>[${k.amHan}] (${k.meaning})</span>
                         </div>
                       `).join('')}
                     </div>
-                  </details>
-                ` : ''}
-              </div>
-            `).join('')}
+                  ` : ''}
+                </div>
+              `).join('') : ''}
+            </div>
           </div>
         </div>
       </div>
     `).join('');
   }
 
-  initFlashcards() {
-    this.flashcardList = (window.ALL_GRAMMAR_DATA || []).sort(() => Math.random() - 0.5);
-    this.flashcardIndex = 0;
-    this.renderFlashcard();
+  function toggleCard(cardId) {
+    const el = document.getElementById(`card-${cardId}`);
+    if (el) el.classList.toggle("open");
   }
 
-  renderFlashcard() {
-    const container = document.getElementById('flashcard-container');
-    if (!container || this.flashcardList.length === 0) return;
+  function toggleKanji(boxId) {
+    const el = document.getElementById(boxId);
+    if (el) el.classList.toggle("show");
+  }
 
-    const item = this.flashcardList[this.flashcardIndex];
-    container.innerHTML = `
-      <div class="flashcard-wrapper">
-        <div class="flashcard-counter">Thẻ ${this.flashcardIndex + 1} / ${this.flashcardList.length}</div>
-        <div class="flashcard-inner" id="fc-inner" onclick="this.classList.toggle('flipped')">
-          <div class="flashcard-front">
-            <div class="fc-badge">Bài ${item.lesson}</div>
-            <div class="fc-title">${item.title}</div>
-            <div class="fc-hint">💡 Nhấp để xem mặt sau</div>
-          </div>
-          <div class="flashcard-back">
-            <div class="fc-meaning">${item.meaning}</div>
-            <div class="fc-formula"><code>${item.formula}</code></div>
-            <div class="fc-ex">${item.examples[0].jp}</div>
-          </div>
+  function filterSituations(lesson) {
+    currentSituationLesson = lesson;
+    document.querySelectorAll("#lesson-bar-situations .lesson-btn").forEach(btn => {
+      const isAct = (lesson === 'all' && btn.innerText.includes('Tất Cả')) ||
+                    (btn.innerText.includes(`Bài ${lesson}`));
+      btn.classList.toggle("active", isAct);
+    });
+    renderSituations();
+  }
+
+  function renderSituations() {
+    const root = document.getElementById("situations-root");
+    if (!root || !window.SITUATIONS_DATA) return;
+
+    let data = window.SITUATIONS_DATA;
+    if (currentSituationLesson !== "all") {
+      data = data.filter(s => s.lesson === parseInt(currentSituationLesson));
+    }
+
+    root.innerHTML = data.map(item => `
+      <div class="situation-card">
+        <div class="situation-header">
+          <div class="situation-title">${item.title}</div>
+          <p style="color:#94a3b8; font-size:0.95rem; margin-top:4px;">${item.description}</p>
         </div>
-        <div class="fc-nav-btns">
-          <button onclick="app.prevFlashcard()">⬅️ Thẻ Trước</button>
-          <button onclick="audioManager.speakJapanese('${item.title}')">🔊 Nghe</button>
-          <button onclick="app.nextFlashcard()">Thẻ Tiêp ➡️</button>
-        </div>
+        ${item.scenarios.map(sc => `
+          <div class="scenario-box">
+            <div style="font-weight:700; color:#38bdf8; margin-bottom:6px;">📌 ${sc.title}</div>
+            <div style="font-size:0.9rem; color:#cbd5e1; margin-bottom:8px;"><em>Bối cảnh: ${sc.context}</em></div>
+            <div style="background:#0f172a; padding:10px 14px; border-radius:8px; margin-bottom:8px;">
+              <div style="font-weight:600; color:#fff;">💬 "${sc.sampleJp}"</div>
+              <div style="color:#94a3b8; font-size:0.9rem; margin-top:4px;">➔ ${sc.sampleVi}</div>
+            </div>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:0.85rem;">
+              <span style="color:#f59e0b; font-weight:700;">Công thức áp dụng:</span>
+              ${sc.grammarUsed.map(g => `<span style="background:#334155; padding:2px 8px; border-radius:4px; color:#fff;">${g}</span>`).join('')}
+            </div>
+            <div style="margin-top:6px; font-size:0.85rem; color:#a7f3d0;">💡 <strong>Mẹo:</strong> ${sc.tip}</div>
+          </div>
+        `).join('')}
       </div>
-    `;
+    `).join('');
   }
 
-  nextFlashcard() {
-    this.flashcardIndex = (this.flashcardIndex + 1) % this.flashcardList.length;
-    this.renderFlashcard();
+  function startMillionaire(lesson = "all") {
+    showView("millionaire");
+    if (window.MillionaireGame) {
+      window.MillionaireGame.init(lesson);
+    }
   }
 
-  prevFlashcard() {
-    this.flashcardIndex = (this.flashcardIndex - 1 + this.flashcardList.length) % this.flashcardList.length;
-    this.renderFlashcard();
-  }
-}
+  document.addEventListener("DOMContentLoaded", init);
 
-window.app = new AppController();
+  return { showView, filterLesson, handleSearch, toggleCard, toggleKanji, filterSituations, startMillionaire };
+})();
