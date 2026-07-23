@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ôn Thi Ngữ Pháp N3 - Dekiru Nihongo Bài 6 - 10</title>
+  <title>Ôn Thi Ngữ Pháp & Thi Nói N3 - Dekiru Nihongo Bài 6 - 10</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
       <nav class="nav-tabs">
         <button class="nav-tab-btn active" id="tab-btn-grammar" onclick="App.showView('grammar')">📖 Công Thức</button>
         <button class="nav-tab-btn" id="tab-btn-situations" onclick="App.showView('situations')">💬 Tình Huống</button>
+        <button class="nav-tab-btn" id="tab-btn-speaking" onclick="App.showView('speaking')">🗣️ 10 Câu Hỏi</button>
       </nav>
     </header>
 
@@ -35,7 +36,6 @@
         <button class="lesson-btn" onclick="App.filterLesson(9)">Bài 9</button>
         <button class="lesson-btn" onclick="App.filterLesson(10)">Bài 10</button>
       </div>
-
       <div id="grammar-list-root"></div>
     </main>
 
@@ -48,43 +48,33 @@
         <button class="lesson-btn" onclick="App.filterSituations(9)">Bài 9</button>
         <button class="lesson-btn" onclick="App.filterSituations(10)">Bài 10</button>
       </div>
-
       <div id="situations-root"></div>
     </main>
 
-    <!-- VIEW 3: GAME AI LÀ TRIỆU PHÚ -->
+    <!-- VIEW 3: 10 CÂU HỎI THI NÓI -->
+    <main id="view-speaking" style="display: none;">
+      <div id="speaking-root"></div>
+    </main>
+
+    <!-- VIEW 4: GAME AI LÀ TRIỆU PHÚ -->
     <main id="view-millionaire" style="display: none;">
       <div id="millionaire-root"></div>
     </main>
   </div>
 
-  <!-- POP-UP MODAL ROOT FOR FORMULA DETAILS -->
+  <!-- POP-UP MODAL ROOT -->
   <div id="modal-root"></div>
 
   <!-- SCRIPTS -->
-  <script src="js/data/lesson6_p1.js"></script>
-  <script src="js/data/lesson6_p2.js"></script>
-  <script src="js/data/lesson6_p3.js"></script>
-  <script src="js/data/lesson7_p1.js"></script>
-  <script src="js/data/lesson7_p2.js"></script>
-  <script src="js/data/lesson8_p1.js"></script>
-  <script src="js/data/lesson8_p2.js"></script>
-  <script src="js/data/lesson9_p1.js"></script>
-  <script src="js/data/lesson9_p2.js"></script>
-  <script src="js/data/lesson9_p3.js"></script>
-  <script src="js/data/lesson10_p1.js"></script>
-  <script src="js/data/lesson10_p2.js"></script>
-  <script src="js/data/lesson10_p3.js"></script>
+  <script src="js/data/lesson6_p1.js"></script><script src="js/data/lesson6_p2.js"></script><script src="js/data/lesson6_p3.js"></script>
+  <script src="js/data/lesson7_p1.js"></script><script src="js/data/lesson7_p2.js"></script>
+  <script src="js/data/lesson8_p1.js"></script><script src="js/data/lesson8_p2.js"></script>
+  <script src="js/data/lesson9_p1.js"></script><script src="js/data/lesson9_p2.js"></script><script src="js/data/lesson9_p3.js"></script>
+  <script src="js/data/lesson10_p1.js"></script><script src="js/data/lesson10_p2.js"></script><script src="js/data/lesson10_p3.js"></script>
   <script src="js/data/grammarStore.js"></script>
   <script src="js/data/situationsData.js"></script>
-
-  <script src="js/quiz/quizLesson6.js"></script>
-  <script src="js/quiz/quizLesson7.js"></script>
-  <script src="js/quiz/quizLesson8.js"></script>
-  <script src="js/quiz/quizLesson9.js"></script>
-  <script src="js/quiz/quizLesson10.js"></script>
-  <script src="js/quiz/quizStore.js"></script>
-
+  <script src="js/data/speakingData.js"></script>
+  <script src="js/quiz/quizLesson6.js"></script><script src="js/quiz/quizLesson7.js"></script><script src="js/quiz/quizLesson8.js"></script><script src="js/quiz/quizLesson9.js"></script><script src="js/quiz/quizLesson10.js"></script><script src="js/quiz/quizStore.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/millionaireGame.js"></script>
   <script src="js/app.js"></script>
