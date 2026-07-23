@@ -1,13 +1,9 @@
 /**
- * Who Wants to Be a Millionaire - Game Engine with Furigana & Translation
+ * Who Wants to Be a Millionaire - Game Engine with Confetti Victory FX
  * Strictly < 200 lines
  */
 window.MillionaireGame = (function() {
-  const LADDER_PRIZES = [
-    "$100", "$200", "$300", "$500", "$1,000",
-    "$2,000", "$4,000", "$8,000", "$16,000", "$32,000",
-    "$64,000", "$125,000", "$250,000", "$500,000", "$1,000,000"
-  ];
+  const LADDER_PRIZES = ["$100","$200","$300","$500","$1,000","$2,000","$4,000","$8,000","$16,000","$32,000","$64,000","$125,000","$250,000","$500,000","$1,000,000"];
   let state = { questions: [], currentIdx: 0, used5050: false, usedHint: false, isAnswered: false, lesson: 6 };
 
   function init(lessonFilter = 6) {
@@ -18,26 +14,18 @@ window.MillionaireGame = (function() {
     state.isAnswered = false;
 
     let pool = window.QuizStore ? window.QuizStore.getQuizzesByLesson(lessonFilter) : [];
-    if (!pool || pool.length === 0) {
-      pool = window.QuizStore ? window.QuizStore.getAllQuizzes() : [];
-    }
+    if (!pool || pool.length === 0) pool = window.QuizStore ? window.QuizStore.getAllQuizzes() : [];
 
     const freshQuestions = pool.map(item => {
       const origAnswerIdx = (typeof item.answer === 'number') ? item.answer : ((typeof item.correct === 'number') ? item.correct : 0);
       const rawOptions = Array.isArray(item.options) ? [...item.options] : ["A", "B", "C", "D"];
       const correctAnswerText = rawOptions[origAnswerIdx] || rawOptions[0];
-
       const shuffledOptions = [...rawOptions].sort(() => Math.random() - 0.5);
       const newCorrectIdx = shuffledOptions.indexOf(correctAnswerText);
 
       return {
-        id: item.id,
-        lesson: item.lesson,
-        question: item.question,
-        translation: item.translation || "",
-        options: shuffledOptions,
-        correctIdx: newCorrectIdx >= 0 ? newCorrectIdx : 0,
-        explanation: item.explanation
+        id: item.id, lesson: item.lesson, question: item.question, translation: item.translation || "",
+        options: shuffledOptions, correctIdx: newCorrectIdx >= 0 ? newCorrectIdx : 0, explanation: item.explanation
       };
     });
 
@@ -48,13 +36,8 @@ window.MillionaireGame = (function() {
   function renderGame() {
     const container = document.getElementById("millionaire-root");
     if (!container) return;
-
     if (!state.questions || state.questions.length === 0) {
-      container.innerHTML = `
-        <div class="millionaire-wrapper" style="text-align:center; padding:40px;">
-          <h3>Chưa có câu hỏi cho bài này.</h3>
-          <button class="btn-play-millionaire" style="margin-top:16px;" onclick="MillionaireGame.exitGame()">🔙 Quay Về</button>
-        </div>`;
+      container.innerHTML = `<div class="millionaire-wrapper" style="text-align:center; padding:40px;"><h3>Chưa có câu hỏi cho bài này.</h3><button class="btn-play-millionaire" style="margin-top:16px;" onclick="MillionaireGame.exitGame()">🔙 Quay Về</button></div>`;
       return;
     }
 
@@ -111,7 +94,6 @@ window.MillionaireGame = (function() {
     const correctIdx = q.correctIdx;
     const btn = document.getElementById(`opt-btn-${idx}`);
     if (btn) btn.classList.add("selected");
-
     if (window.AudioEngine) window.AudioEngine.playCoin();
 
     setTimeout(() => {
@@ -122,18 +104,13 @@ window.MillionaireGame = (function() {
 
         setTimeout(() => {
           if (state.currentIdx + 1 < state.questions.length) {
-            state.currentIdx++;
-            state.isAnswered = false;
-            renderGame();
-          } else {
-            showWinModal();
-          }
+            state.currentIdx++; state.isAnswered = false; renderGame();
+          } else { showWinModal(); }
         }, 1200);
       } else {
         if (btn) btn.classList.add("wrong");
         const correctBtn = document.getElementById(`opt-btn-${correctIdx}`);
         if (correctBtn) correctBtn.classList.add("correct");
-
         setTimeout(() => { showGameOverModal(q); }, 1400);
       }
     }, 700);
@@ -162,7 +139,6 @@ window.MillionaireGame = (function() {
 
     const q = state.questions[state.currentIdx];
     const hintText = q.explanation || "Hãy chú ý cấu trúc ngữ pháp và ý nghĩa của câu!";
-
     const modalRoot = document.getElementById("hint-modal-root");
     if (modalRoot) {
       modalRoot.innerHTML = `
@@ -181,15 +157,37 @@ window.MillionaireGame = (function() {
   function showWinModal() {
     const container = document.getElementById("millionaire-root");
     const prize = LADDER_PRIZES[state.questions.length - 1] || "$1,000,000";
+    if (window.AudioEngine) window.AudioEngine.playVictory();
+
     container.innerHTML = `
-      <div class="millionaire-wrapper" style="text-align:center; padding:40px;">
-        <h2 style="font-size:2rem; color:#f59e0b; margin-bottom:12px;">🎉 BẠN LÀ TRIỆU PHÚ NGỮ PHÁP!</h2>
-        <p style="font-size:1.2rem;">Phần thưởng giành được: <strong>${prize}</strong></p>
-        <div style="margin-top:24px; display:flex; justify-content:center; gap:12px;">
+      <div class="millionaire-wrapper victory-celebration" style="text-align:center; padding:40px; position:relative; overflow:hidden;">
+        <div class="confetti-container" id="confetti-canvas"></div>
+        <div class="victory-trophy-box">🏆</div>
+        <h2 class="victory-title">🎉 BẠN ĐÃ TRỞ THÀNH TRIỆU PHÚ NGỮ PHÁP! 🎉</h2>
+        <p class="victory-subtitle">Xuất sắc vượt qua 15/15 câu hỏi bài ${state.lesson}!</p>
+        <div class="grand-prize-badge">💰 TIỀN THƯỞNG: ${prize} 💰</div>
+        <div style="margin-top:28px; display:flex; justify-content:center; gap:12px; position:relative; z-index:10;">
           <button class="btn-play-millionaire" onclick="MillionaireGame.init(${state.lesson})">🔄 Chơi Lại</button>
-          <button class="btn-play-millionaire" style="background:#334155;" onclick="MillionaireGame.exitGame()">🔙 Quay Về</button>
+          <button class="btn-play-millionaire" style="background:#334155;" onclick="MillionaireGame.exitGame()">🔙 Quay Về Bài Học</button>
         </div>
       </div>`;
+    triggerConfetti();
+  }
+
+  function triggerConfetti() {
+    const root = document.getElementById("confetti-canvas");
+    if (!root) return;
+    const colors = ['#f59e0b', '#38bdf8', '#22c55e', '#ec4899', '#a855f7', '#fbbf24'];
+    let html = '';
+    for (let i = 0; i < 60; i++) {
+      const left = Math.random() * 100;
+      const size = Math.random() * 8 + 6;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const delay = Math.random() * 2.5;
+      const duration = Math.random() * 2 + 2.5;
+      html += `<div class="confetti-piece" style="left:${left}%; width:${size}px; height:${size * 1.5}px; background:${color}; animation-delay:${delay}s; animation-duration:${duration}s;"></div>`;
+    }
+    root.innerHTML = html;
   }
 
   function showGameOverModal(q) {
