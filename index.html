@@ -51,8 +51,15 @@
       <div id="situations-root"></div>
     </main>
 
-    <!-- VIEW 3: 10 CÂU HỎI THI NÓI -->
+    <!-- VIEW 3: 10 CÂU HỎI THI NÓI (FILTER BY LESSON) -->
     <main id="view-speaking" style="display: none;">
+      <div class="lesson-bar" id="lesson-bar-speaking">
+        <button class="lesson-btn active" onclick="App.filterSpeaking(6)">Bài 6</button>
+        <button class="lesson-btn" onclick="App.filterSpeaking(7)">Bài 7</button>
+        <button class="lesson-btn" onclick="App.filterSpeaking(8)">Bài 8</button>
+        <button class="lesson-btn" onclick="App.filterSpeaking(9)">Bài 9</button>
+        <button class="lesson-btn" onclick="App.filterSpeaking(10)">Bài 10</button>
+      </div>
       <div id="speaking-root"></div>
     </main>
 

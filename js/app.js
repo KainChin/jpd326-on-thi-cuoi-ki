@@ -5,6 +5,7 @@
 window.App = (function() {
   let currentLesson = 6;
   let currentSituationLesson = 6;
+  let currentSpeakingLesson = 6;
   let searchKeyword = "";
 
   function init() {
@@ -47,6 +48,22 @@ window.App = (function() {
       btn.classList.toggle("active", btn.innerText.trim() === `Bài ${lesson}`);
     });
     renderGrammarList();
+  }
+
+  function filterSituations(lesson) {
+    currentSituationLesson = parseInt(lesson);
+    document.querySelectorAll("#lesson-bar-situations .lesson-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.innerText.trim() === `Bài ${lesson}`);
+    });
+    renderSituations();
+  }
+
+  function filterSpeaking(lesson) {
+    currentSpeakingLesson = parseInt(lesson);
+    document.querySelectorAll("#lesson-bar-speaking .lesson-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.innerText.trim() === `Bài ${lesson}`);
+    });
+    renderSpeakingList();
   }
 
   function handleSearch(val) { searchKeyword = val.trim().toLowerCase(); renderGrammarList(); }
@@ -94,7 +111,12 @@ window.App = (function() {
   function renderSpeakingList() {
     const root = document.getElementById("speaking-root");
     if (!root || !window.SPEAKING_DATA) return;
-    root.innerHTML = window.SPEAKING_DATA.map(item => `
+    let data = window.SPEAKING_DATA.filter(s => s.lesson === currentSpeakingLesson);
+    if (data.length === 0) {
+      root.innerHTML = `<div style="text-align:center; padding:40px; color:#94a3b8;">Chưa có câu hỏi thi nói cho bài này.</div>`;
+      return;
+    }
+    root.innerHTML = data.map(item => `
       <div class="formula-card-row" onclick="App.openSpeakingModal('${item.id}')">
         <div>
           <div class="formula-title-text"><span style="color:#f59e0b; margin-right:6px;">[Bài ${item.lesson} - Câu ${item.qNum}]</span><span>${item.questionJp}</span></div>
@@ -155,7 +177,6 @@ window.App = (function() {
   }
 
   function toggleKanji(boxId) { const el = document.getElementById(boxId); if (el) el.classList.toggle("show"); }
-  function filterSituations(lesson) { currentSituationLesson = parseInt(lesson); document.querySelectorAll("#lesson-bar-situations .lesson-btn").forEach(btn => { btn.classList.toggle("active", btn.innerText.trim() === `Bài ${lesson}`); }); renderSituations(); }
   function renderSituations() {
     const root = document.getElementById("situations-root"); if (!root || !window.SITUATIONS_DATA) return;
     let data = window.SITUATIONS_DATA.filter(s => s.lesson === currentSituationLesson);
@@ -164,5 +185,5 @@ window.App = (function() {
   function startMillionaire(lesson = 6) { showView("millionaire"); if (window.MillionaireGame) window.MillionaireGame.init(lesson); }
   if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", init); } else { init(); }
 
-  return { showView, filterLesson, handleSearch, openModal, openSpeakingModal, closeModal, toggleKanji, filterSituations, startMillionaire };
+  return { showView, filterLesson, filterSituations, filterSpeaking, handleSearch, openModal, openSpeakingModal, closeModal, toggleKanji, startMillionaire };
 })();
