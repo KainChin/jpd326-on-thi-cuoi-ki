@@ -1,5 +1,5 @@
 /**
- * Who Wants to Be a Millionaire - Game Engine
+ * Who Wants to Be a Millionaire - Robust Game Engine
  * Strictly < 200 lines
  */
 window.MillionaireGame = (function() {
@@ -9,6 +9,13 @@ window.MillionaireGame = (function() {
     "$64,000", "$125,000", "$250,000", "$500,000", "$1,000,000"
   ];
   let state = { questions: [], currentIdx: 0, used5050: false, usedHint: false, isAnswered: false, lesson: 6 };
+
+  function getCorrectIdx(q) {
+    if (q.correctIdx !== undefined) return q.correctIdx;
+    if (q.correct !== undefined) return q.correct;
+    if (q.answer !== undefined) return q.answer;
+    return 0;
+  }
 
   function init(lessonFilter = 6) {
     state.lesson = lessonFilter;
@@ -21,7 +28,22 @@ window.MillionaireGame = (function() {
     if (!pool || pool.length === 0) {
       pool = window.QuizStore ? window.QuizStore.getAllQuizzes() : [];
     }
-    state.questions = pool.sort(() => Math.random() - 0.5).slice(0, 15);
+
+    // Clone and shuffle options so answer position varies (A, B, C, D)
+    const shuffledPool = pool.map(item => {
+      const origCorrectIdx = getCorrectIdx(item);
+      const correctOptionText = item.options[origCorrectIdx];
+      const shuffledOptions = [...item.options].sort(() => Math.random() - 0.5);
+      const newCorrectIdx = shuffledOptions.indexOf(correctOptionText);
+
+      return {
+        ...item,
+        options: shuffledOptions,
+        correctIdx: newCorrectIdx
+      };
+    });
+
+    state.questions = shuffledPool.sort(() => Math.random() - 0.5).slice(0, 15);
     renderGame();
   }
 
@@ -85,6 +107,7 @@ window.MillionaireGame = (function() {
     state.isAnswered = true;
 
     const q = state.questions[state.currentIdx];
+    const correctIdx = getCorrectIdx(q);
     const btn = document.getElementById(`opt-btn-${idx}`);
     if (btn) btn.classList.add("selected");
 
@@ -92,7 +115,7 @@ window.MillionaireGame = (function() {
 
     setTimeout(() => {
       if (btn) btn.classList.remove("selected");
-      if (idx === q.correct) {
+      if (idx === correctIdx) {
         if (btn) btn.classList.add("correct");
         if (window.AudioEngine) window.AudioEngine.playVictory();
 
@@ -107,7 +130,7 @@ window.MillionaireGame = (function() {
         }, 1200);
       } else {
         if (btn) btn.classList.add("wrong");
-        const correctBtn = document.getElementById(`opt-btn-${q.correct}`);
+        const correctBtn = document.getElementById(`opt-btn-${correctIdx}`);
         if (correctBtn) correctBtn.classList.add("correct");
 
         setTimeout(() => { showGameOverModal(q); }, 1400);
@@ -121,7 +144,8 @@ window.MillionaireGame = (function() {
     if (window.AudioEngine) window.AudioEngine.playJump();
 
     const q = state.questions[state.currentIdx];
-    const wrongIndices = [0, 1, 2, 3].filter(i => i !== q.correct).sort(() => Math.random() - 0.5).slice(0, 2);
+    const correctIdx = getCorrectIdx(q);
+    const wrongIndices = [0, 1, 2, 3].filter(i => i !== correctIdx).sort(() => Math.random() - 0.5).slice(0, 2);
     wrongIndices.forEach(i => {
       const b = document.getElementById(`opt-btn-${i}`);
       if (b) b.classList.add("eliminated");
@@ -169,11 +193,13 @@ window.MillionaireGame = (function() {
 
   function showGameOverModal(q) {
     const container = document.getElementById("millionaire-root");
+    const correctIdx = getCorrectIdx(q);
     const prize = state.currentIdx > 0 ? LADDER_PRIZES[state.currentIdx - 1] : "$0";
+    const letter = ['A', 'B', 'C', 'D'][correctIdx];
     container.innerHTML = `
       <div class="millionaire-wrapper" style="text-align:center; padding:40px;">
         <h2 style="font-size:1.8rem; color:#ef4444; margin-bottom:12px;">❌ RẤT TIẾC, CHƯA CHÍNH XÁC!</h2>
-        <p style="font-size:1.1rem; color:#e2e8f0;">Đáp án đúng: <strong style="color:#22c55e;">${q.options[q.correct]}</strong></p>
+        <p style="font-size:1.1rem; color:#e2e8f0;">Đáp án đúng là <strong>${letter}</strong>: <strong style="color:#22c55e;">${q.options[correctIdx]}</strong></p>
         <p style="color:#94a3b8; margin-top:8px;">${q.explanation || ''}</p>
         <h3 style="font-size:1.3rem; color:#f59e0b; margin-top:16px;">Phần thưởng mang về: ${prize}</h3>
         <div style="margin-top:24px; display:flex; justify-content:center; gap:12px;">
