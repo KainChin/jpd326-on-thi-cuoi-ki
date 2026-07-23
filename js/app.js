@@ -15,6 +15,7 @@ window.App = (function() {
   }
 
   function showView(viewName) {
+    if (window.AudioEngine) window.AudioEngine.stop();
     const vG = document.getElementById("view-grammar");
     const vS = document.getElementById("view-situations");
     const vSpk = document.getElementById("view-speaking");
@@ -147,7 +148,12 @@ window.App = (function() {
       </div>`;
   }
 
-  function closeModal() { const modalRoot = document.getElementById("modal-root"); if (modalRoot) modalRoot.innerHTML = ""; }
+  function closeModal() {
+    if (window.AudioEngine) window.AudioEngine.stop();
+    const modalRoot = document.getElementById("modal-root");
+    if (modalRoot) modalRoot.innerHTML = "";
+  }
+
   function toggleKanji(boxId) { const el = document.getElementById(boxId); if (el) el.classList.toggle("show"); }
   function filterSituations(lesson) { currentSituationLesson = parseInt(lesson); document.querySelectorAll("#lesson-bar-situations .lesson-btn").forEach(btn => { btn.classList.toggle("active", btn.innerText.trim() === `Bài ${lesson}`); }); renderSituations(); }
   function renderSituations() {
