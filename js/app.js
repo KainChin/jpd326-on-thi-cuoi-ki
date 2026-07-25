@@ -198,6 +198,8 @@ window.App = (function() {
       root.innerHTML = bamenButtonsHtml + window.Bamen2.render();
     } else if (currentBamen === 3 && window.Bamen3) {
       root.innerHTML = bamenButtonsHtml + window.Bamen3.render();
+    } else if (currentBamen === 4 && window.Bamen4) {
+      root.innerHTML = bamenButtonsHtml + window.Bamen4.render();
     } else {
       root.innerHTML = bamenButtonsHtml + `
         <div class="situation-card" style="text-align: center; padding: 40px; color: #94a3b8;">
@@ -217,6 +219,7 @@ window.App = (function() {
     if (bamenNum === 1) window._showImgBamen1 = !window._showImgBamen1;
     if (bamenNum === 2) window._showImgBamen2 = !window._showImgBamen2;
     if (bamenNum === 3) window._showImgBamen3 = !window._showImgBamen3;
+    if (bamenNum === 4) window._showImgBamen4 = !window._showImgBamen4;
     renderSituations();
   }
 
@@ -224,6 +227,7 @@ window.App = (function() {
     if (bamenNum === 1) window._showScriptBamen1 = !window._showScriptBamen1;
     if (bamenNum === 2) window._showScriptBamen2 = !window._showScriptBamen2;
     if (bamenNum === 3) window._showScriptBamen3 = !window._showScriptBamen3;
+    if (bamenNum === 4) window._showScriptBamen4 = !window._showScriptBamen4;
     renderSituations();
   }
 
@@ -231,6 +235,7 @@ window.App = (function() {
     if (bamenNum === 1) window._showSitBamen1 = !window._showSitBamen1;
     if (bamenNum === 2) window._showSitBamen2 = !window._showSitBamen2;
     if (bamenNum === 3) window._showSitBamen3 = !window._showSitBamen3;
+    if (bamenNum === 4) window._showSitBamen4 = !window._showSitBamen4;
     renderSituations();
   }
 
