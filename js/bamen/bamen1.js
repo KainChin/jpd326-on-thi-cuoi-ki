@@ -13,7 +13,7 @@ window.Bamen1 = (function() {
     return `
       <div class="situation-card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-          <div style="font-size: 1.3rem; font-weight: 800; color: #38bdf8;">🎬 場面 1: Luyện Tập Hội Thoại N3</div>
+          <div style="font-size: 1.3rem; font-weight: 800; color: #38bdf8;">🍵 場面 1: Lời Khuyên Sức Khỏe & Ăn Uống (健康と食生活の助言)</div>
           <div style="display: flex; gap: 8px;">
             <button class="kanji-detail-btn" style="background: #0284c7; color: white;" onclick="App.toggleBamenImg(1)">
               ${window._showImgBamen1 ? '🖼️ Ẩn Ảnh 場面 1' : '🖼️ Hiện Ảnh 場面 1'}
