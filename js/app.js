@@ -17,24 +17,6 @@ window.App = (function() {
       const btn = document.getElementById("btn-scroll-top");
       if (btn) btn.style.display = window.scrollY > 300 ? "block" : "none";
     });
-    setup3DTilt();
-  }
-
-  function setup3DTilt() {
-    document.addEventListener("mousemove", (e) => {
-      const card = e.target.closest(".formula-card-row, .lesson-game-banner, .scenario-box");
-      if (!card) return;
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const rotX = (y / (rect.height / 2)) * -5;
-      const rotY = (x / (rect.width / 2)) * 5;
-      card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(8px)`;
-    });
-    document.addEventListener("mouseout", (e) => {
-      const card = e.target.closest(".formula-card-row, .lesson-game-banner, .scenario-box");
-      if (card && !card.contains(e.relatedTarget)) card.style.transform = "";
-    });
   }
 
   function showView(viewName) {
