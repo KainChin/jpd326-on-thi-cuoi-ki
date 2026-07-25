@@ -40,14 +40,24 @@ window.Bamen4 = (function() {
           </div>
           
           <div style="text-align: left; background: rgba(15, 23, 42, 0.8); padding: 14px; border-radius: 10px; line-height: 1.7; border: 1px solid rgba(255,255,255,0.08);">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">場面 4: Rủ bạn bè tham gia gian hàng ở Chợ đồ cũ (フリーマーケット)</div>
-            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">Tình huống 1 (Ảnh Situation 4.1): Rủ tham gia Chợ đồ cũ (フリーマーケット)</div>
+            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px; margin-bottom: 14px;">
               <strong style="color: #f43f5e;">Vai A (Người mời):</strong> Bạn đã quyết định mở gian hàng bán hàng ở chợ đồ cũ cùng bạn bè. Bạn muốn B - người cùng học lớp tiếng Anh với bạn đến tham gia cùng. Với B thì thỉnh thoảng bạn mới chào hỏi một chút. Khi gặp ở lớp học, hãy giải thích/giới thiệu về chợ đồ cũ, hỏi xem lịch trình/thời gian của B có tiện không và đưa ra lời rủ rê.<br>
               <em style="color: #fbbf24;">*Thông tin chợ đồ cũ:</em><br>
               - Thời gian: Từ 8h sáng thứ 7 và Chủ nhật tuần sau.<br>
               - Ở chợ đồ cũ này được phép bán đồ ăn do mình tự làm.<br>
               - 20% (2割) giá bán sản phẩm sẽ được dùng làm quỹ quyên góp cho người vô gia cư (Homeless).<br><br>
               <strong style="color: #38bdf8;">Vai B (Người được mời):</strong> Bạn đang học cùng lớp tiếng Anh với A. Với A thì thỉnh thoảng bạn mới chào hỏi một chút ở lớp. A bắt chuyện với bạn. Hãy lắng nghe kỹ câu chuyện và đón nhận/đồng ý lời rủ rê từ A.
+            </div>
+
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">Tình huống 2 (Ảnh Situation 4.2): Rủ tham gia Hoạt động Tình nguyện (ボランティア活動)</div>
+            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">Vai A (Người mời):</strong> Bạn đã quyết định tham gia hoạt động tình nguyện. Bạn muốn B - người cùng học lớp tiếng Anh trung cấp với bạn đến tham gia cùng. Với B thì thỉnh thoảng bạn mới chào hỏi một chút. Khi gặp ở lớp học, hãy giải thích/giới thiệu về hoạt động tình nguyện, hỏi xem lịch trình/thời gian của B có tiện không và đưa ra lời rủ rê.<br>
+              <em style="color: #fbbf24;">*Thông tin hoạt động tình nguyện:</em><br>
+              - Thời gian: Từ 8h đến 10h sáng Thứ 7 hàng tuần.<br>
+              - Dạy tiếng Anh trình độ sơ cấp cho các bé ở cô nhi viện địa phương (孤児院).<br>
+              - Người tham gia hoạt động sau đó có thể tham gia khóa học tiếng Anh trung cấp miễn phí.<br><br>
+              <strong style="color: #38bdf8;">Vai B (Người được mời):</strong> Bạn đang học cùng lớp tiếng Anh trung cấp với A. Với A thì thỉnh thoảng bạn mới chào hỏi một chút ở lớp. A bắt chuyện với bạn. Hãy lắng nghe kỹ câu chuyện và đón nhận/đồng ý lời rủ rê từ A.
             </div>
           </div>
         </div>
