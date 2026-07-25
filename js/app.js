@@ -192,10 +192,10 @@ window.App = (function() {
       </div>
     `;
 
-    if (currentBamen === 1 && window.BamenHelper) {
-      root.innerHTML = bamenButtonsHtml + window.BamenHelper.renderBamen1();
-    } else if (currentBamen === 2 && window.BamenHelper) {
-      root.innerHTML = bamenButtonsHtml + window.BamenHelper.renderBamen2();
+    if (currentBamen === 1 && window.Bamen1) {
+      root.innerHTML = bamenButtonsHtml + window.Bamen1.render();
+    } else if (currentBamen === 2 && window.Bamen2) {
+      root.innerHTML = bamenButtonsHtml + window.Bamen2.render();
     } else {
       root.innerHTML = bamenButtonsHtml + `
         <div class="situation-card" style="text-align: center; padding: 40px; color: #94a3b8;">
