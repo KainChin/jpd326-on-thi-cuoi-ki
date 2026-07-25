@@ -14,34 +14,34 @@ window.Bamen3 = (function() {
     return `
       <div class="situation-card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-          <div style="font-size: 1.3rem; font-weight: 800; color: #38bdf8;">📦 場面 3: Để Quên Đồ Ở Quán (置き忘れ)</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #38bdf8;">場面 3: Để Quên Đồ Ở Quán (置き忘れ)</div>
           <div style="display: flex; gap: 8px;">
-            <button class="kanji-detail-btn" style="background: #0284c7; color: white;" onclick="App.toggleBamenImg(3)">
-              ${window._showImgBamen3 ? '🖼️ Ẩn Ảnh 場面 3' : '🖼️ Hiện Ảnh 場面 3'}
+            <button class="kanji-detail-btn" style="background: rgba(2, 132, 199, 0.2); border-color: #38bdf8; color: #38bdf8;" onclick="App.toggleBamenImg(3)">
+              ${window._showImgBamen3 ? 'Ẩn Ảnh 場面 3' : 'Hiện Ảnh 場面 3'}
             </button>
-            <button class="kanji-detail-btn" style="background: #d97706; color: white;" onclick="App.toggleBamenScript(3)">
-              ${window._showScriptBamen3 ? '📜 Ẩn Kịch Bản' : '📜 Hiện Kịch Bản'}
+            <button class="kanji-detail-btn" style="background: rgba(217, 119, 6, 0.2); border-color: #f59e0b; color: #fbbf24;" onclick="App.toggleBamenScript(3)">
+              ${window._showScriptBamen3 ? 'Ẩn Kịch Bản' : 'Hiện Kịch Bản'}
             </button>
           </div>
         </div>
 
         <div style="display: flex; justify-content: flex-end; margin-bottom: 15px;">
-          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(3)">
-            ${window._showSitBamen3 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
+          <button class="kanji-detail-btn" style="background: rgba(16, 185, 129, 0.2); border-color: #34d399; color: #34d399;" onclick="App.toggleBamenSituations(3)">
+            ${window._showSitBamen3 ? 'Ẩn Situations Ôn Tập N3' : 'Xem Situations Ôn Tập N3'}
           </button>
         </div>
 
         <!-- SITUATIONS OVERVIEW (ĐÃ ĐẶT TRÊN BAMEN) -->
         <div id="bamen3-situations-container" style="display: ${window._showSitBamen3 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 3 - Bài 10 N3):</div>
-          <img src="assets/images/situation3.jpg" alt="Situation 3" onclick="App.openImageModal('assets/images/situation3.jpg', 'Situation 3')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer; margin-bottom: 12px;">
+          <div style="font-weight: 600; color: #fbbf24; margin-bottom: 12px; font-size: 0.95rem; text-align: left;">Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 3 - Bài 10 N3):</div>
+          <img src="assets/images/situation3.jpg" alt="Situation 3" onclick="App.openImageModal('assets/images/situation3.jpg', 'Situation 3')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); cursor: pointer; margin-bottom: 12px;">
           
-          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.7;">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📌 場面 6 (Bài 10): Để quên ví ở quán Cafe & Nhờ gửi bưu điện</div>
-            <div style="background: #1e293b; padding: 10px 12px; border-radius: 6px;">
-              <strong style="color: #f43f5e;">• Vai A (Khách hàng):</strong> Bạn để quên chiếc ví ở quán cafe. Khi đang trên xe buýt lượt về thì bạn mới nhận ra điều đó. Hãy gọi điện cho quán cafe. Bạn nhớ mình đã ngồi ở ghế phía bên phải gần cửa sổ, nghĩ là đã để ví ở trên bàn nhưng không nhớ rõ. Nhờ quán gửi bưu điện trả phí người nhận (chakubarai) nếu tìm thấy.<br>
-              <em style="color: #f59e0b;">*Thông tin chiếc ví:</em> Hình vuông, màu xám, có họa tiết hoa, có ghi tên trên đó.<br><br>
-              <strong style="color: #38bdf8;">• Vai B (Nhân viên quán):</strong> Bạn là nhân viên quán cafe. Có cuộc gọi liên hệ tìm đồ thất lạc. Hãy hỏi khách về vị trí ngồi và đặc điểm đồ để quên (màu sắc, hình dáng...). Sau khi kiểm tra khu vực khách nói thì tìm thấy đồ. Hãy hỏi xem khách muốn xử lý thế nào.
+          <div style="text-align: left; background: rgba(15, 23, 42, 0.8); padding: 14px; border-radius: 10px; line-height: 1.7; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">場面 6 (Bài 10): Để quên ví ở quán Cafe & Nhờ gửi bưu điện</div>
+            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">Vai A (Khách hàng):</strong> Bạn để quên chiếc ví ở quán cafe. Khi đang trên xe buýt lượt về thì bạn mới nhận ra điều đó. Hãy gọi điện cho quán cafe. Bạn nhớ mình đã ngồi ở ghế phía bên phải gần cửa sổ, nghĩ là đã để ví ở trên bàn nhưng không nhớ rõ. Nhờ quán gửi bưu điện trả phí người nhận (chakubarai) nếu tìm thấy.<br>
+              <em style="color: #fbbf24;">*Thông tin chiếc ví:</em> Hình vuông, màu xám, có họa tiết hoa, có ghi tên trên đó.<br><br>
+              <strong style="color: #38bdf8;">Vai B (Nhân viên quán):</strong> Bạn là nhân viên quán cafe. Có cuộc gọi liên hệ tìm đồ thất lạc. Hãy hỏi khách về vị trí ngồi và đặc điểm đồ để quên (màu sắc, hình dáng...). Sau khi kiểm tra khu vực khách nói thì tìm thấy đồ. Hãy hỏi xem khách muốn xử lý thế nào.
             </div>
           </div>
         </div>

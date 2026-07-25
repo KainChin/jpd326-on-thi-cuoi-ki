@@ -14,41 +14,40 @@ window.Bamen4 = (function() {
     return `
       <div class="situation-card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-          <div style="font-size: 1.3rem; font-weight: 800; color: #38bdf8;">🤝 場面 4: Rủ Rê Tham Gia Hoạt Động (誘い)</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #38bdf8;">場面 4: Rủ Rê Tham Gia Hoạt Động (誘い)</div>
           <div style="display: flex; gap: 8px;">
-            <button class="kanji-detail-btn" style="background: #0284c7; color: white;" onclick="App.toggleBamenImg(4)">
-              ${window._showImgBamen4 ? '🖼️ Ẩn Ảnh 場面 4' : '🖼️ Hiện Ảnh 場面 4'}
+            <button class="kanji-detail-btn" style="background: rgba(2, 132, 199, 0.2); border-color: #38bdf8; color: #38bdf8;" onclick="App.toggleBamenImg(4)">
+              ${window._showImgBamen4 ? 'Ẩn Ảnh 場面 4' : 'Hiện Ảnh 場面 4'}
             </button>
-            <button class="kanji-detail-btn" style="background: #d97706; color: white;" onclick="App.toggleBamenScript(4)">
-              ${window._showScriptBamen4 ? '📜 Ẩn Kịch Bản' : '📜 Hiện Kịch Bản'}
+            <button class="kanji-detail-btn" style="background: rgba(217, 119, 6, 0.2); border-color: #f59e0b; color: #fbbf24;" onclick="App.toggleBamenScript(4)">
+              ${window._showScriptBamen4 ? 'Ẩn Kịch Bản' : 'Hiện Kịch Bản'}
             </button>
           </div>
         </div>
 
-        <!-- BUTTON SITUATIONS TRÊN BAMEN -->
         <div style="display: flex; justify-content: flex-end; margin-bottom: 15px;">
-          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(4)">
-            ${window._showSitBamen4 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
+          <button class="kanji-detail-btn" style="background: rgba(16, 185, 129, 0.2); border-color: #34d399; color: #34d399;" onclick="App.toggleBamenSituations(4)">
+            ${window._showSitBamen4 ? 'Ẩn Situations Ôn Tập N3' : 'Xem Situations Ôn Tập N3'}
           </button>
         </div>
 
         <!-- SITUATIONS OVERVIEW (ĐẶT TRÊN BAMEN) -->
         <div id="bamen4-situations-container" style="display: ${window._showSitBamen4 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 4 - Bài 9/10 N3):</div>
+          <div style="font-weight: 600; color: #fbbf24; margin-bottom: 12px; font-size: 0.95rem; text-align: left;">Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 4 - Bài 9/10 N3):</div>
           <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px;">
-            <img src="assets/images/situation4_1.jpg" alt="Situation 4.1" onclick="App.openImageModal('assets/images/situation4_1.jpg', 'Situation 4.1')" style="max-width: 48%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
-            <img src="assets/images/situation4_2.jpg" alt="Situation 4.2" onclick="App.openImageModal('assets/images/situation4_2.jpg', 'Situation 4.2')" style="max-width: 48%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
+            <img src="assets/images/situation4_1.jpg" alt="Situation 4.1" onclick="App.openImageModal('assets/images/situation4_1.jpg', 'Situation 4.1')" style="max-width: 48%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); cursor: pointer;">
+            <img src="assets/images/situation4_2.jpg" alt="Situation 4.2" onclick="App.openImageModal('assets/images/situation4_2.jpg', 'Situation 4.2')" style="max-width: 48%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); cursor: pointer;">
           </div>
           
-          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.7;">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📌 場面 4: Rủ bạn bè tham gia gian hàng ở Chợ đồ cũ (フリーマーケット)</div>
-            <div style="background: #1e293b; padding: 10px 12px; border-radius: 6px;">
-              <strong style="color: #f43f5e;">• Vai A (Người mời):</strong> Bạn đã quyết định mở gian hàng bán hàng ở chợ đồ cũ cùng bạn bè. Bạn muốn B - người cùng học lớp tiếng Anh với bạn đến tham gia cùng. Với B thì thỉnh thoảng bạn mới chào hỏi một chút. Khi gặp ở lớp học, hãy giải thích/giới thiệu về chợ đồ cũ, hỏi xem lịch trình/thời gian của B có tiện không và đưa ra lời rủ rê.<br>
-              <em style="color: #f59e0b;">*Thông tin chợ đồ cũ:</em><br>
+          <div style="text-align: left; background: rgba(15, 23, 42, 0.8); padding: 14px; border-radius: 10px; line-height: 1.7; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">場面 4: Rủ bạn bè tham gia gian hàng ở Chợ đồ cũ (フリーマーケット)</div>
+            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">Vai A (Người mời):</strong> Bạn đã quyết định mở gian hàng bán hàng ở chợ đồ cũ cùng bạn bè. Bạn muốn B - người cùng học lớp tiếng Anh với bạn đến tham gia cùng. Với B thì thỉnh thoảng bạn mới chào hỏi một chút. Khi gặp ở lớp học, hãy giải thích/giới thiệu về chợ đồ cũ, hỏi xem lịch trình/thời gian của B có tiện không và đưa ra lời rủ rê.<br>
+              <em style="color: #fbbf24;">*Thông tin chợ đồ cũ:</em><br>
               - Thời gian: Từ 8h sáng thứ 7 và Chủ nhật tuần sau.<br>
               - Ở chợ đồ cũ này được phép bán đồ ăn do mình tự làm.<br>
               - 20% (2割) giá bán sản phẩm sẽ được dùng làm quỹ quyên góp cho người vô gia cư (Homeless).<br><br>
-              <strong style="color: #38bdf8;">• Vai B (Người được mời):</strong> Bạn đang học cùng lớp tiếng Anh với A. Với A thì thỉnh thoảng bạn mới chào hỏi một chút ở lớp. A bắt chuyện với bạn. Hãy lắng nghe kỹ câu chuyện và đón nhận/đồng ý lời rủ rê từ A.
+              <strong style="color: #38bdf8;">Vai B (Người được mời):</strong> Bạn đang học cùng lớp tiếng Anh với A. Với A thì thỉnh thoảng bạn mới chào hỏi một chút ở lớp. A bắt chuyện với bạn. Hãy lắng nghe kỹ câu chuyện và đón nhận/đồng ý lời rủ rê từ A.
             </div>
           </div>
         </div>

@@ -14,33 +14,33 @@ window.Bamen2 = (function() {
     return `
       <div class="situation-card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-          <div style="font-size: 1.3rem; font-weight: 800; color: #38bdf8;">🏪 場面 2: Xin Nghỉ Làm Thêm (バイトを休む)</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #38bdf8;">場面 2: Xin Nghỉ Làm Thêm (バイトを休む)</div>
           <div style="display: flex; gap: 8px;">
-            <button class="kanji-detail-btn" style="background: #0284c7; color: white;" onclick="App.toggleBamenImg(2)">
-              ${window._showImgBamen2 ? '🖼️ Ẩn Ảnh 場面 2' : '🖼️ Hiện Ảnh 場面 2'}
+            <button class="kanji-detail-btn" style="background: rgba(2, 132, 199, 0.2); border-color: #38bdf8; color: #38bdf8;" onclick="App.toggleBamenImg(2)">
+              ${window._showImgBamen2 ? 'Ẩn Ảnh 場面 2' : 'Hiện Ảnh 場面 2'}
             </button>
-            <button class="kanji-detail-btn" style="background: #d97706; color: white;" onclick="App.toggleBamenScript(2)">
-              ${window._showScriptBamen2 ? '📜 Ẩn Kịch Bản' : '📜 Hiện Kịch Bản'}
+            <button class="kanji-detail-btn" style="background: rgba(217, 119, 6, 0.2); border-color: #f59e0b; color: #fbbf24;" onclick="App.toggleBamenScript(2)">
+              ${window._showScriptBamen2 ? 'Ẩn Kịch Bản' : 'Hiện Kịch Bản'}
             </button>
           </div>
         </div>
 
         <div style="display: flex; justify-content: flex-end; margin-bottom: 15px;">
-          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(2)">
-            ${window._showSitBamen2 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
+          <button class="kanji-detail-btn" style="background: rgba(16, 185, 129, 0.2); border-color: #34d399; color: #34d399;" onclick="App.toggleBamenSituations(2)">
+            ${window._showSitBamen2 ? 'Ẩn Situations Ôn Tập N3' : 'Xem Situations Ôn Tập N3'}
           </button>
         </div>
 
         <!-- SITUATIONS OVERVIEW (ĐÃ ĐẶT TRÊN BAMEN) -->
         <div id="bamen2-situations-container" style="display: ${window._showSitBamen2 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 2 - Bài 8 N3):</div>
-          <img src="assets/images/situation2.jpg" alt="Situation 2" onclick="App.openImageModal('assets/images/situation2.jpg', 'Situation 2')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer; margin-bottom: 12px;">
+          <div style="font-weight: 600; color: #fbbf24; margin-bottom: 12px; font-size: 0.95rem; text-align: left;">Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 2 - Bài 8 N3):</div>
+          <img src="assets/images/situation2.jpg" alt="Situation 2" onclick="App.openImageModal('assets/images/situation2.jpg', 'Situation 2')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); cursor: pointer; margin-bottom: 12px;">
           
-          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.7;">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📌 場面 5 (Bài 8): Xin phép Cửa hàng trưởng cho nghỉ làm thêm</div>
-            <div style="background: #1e293b; padding: 10px 12px; border-radius: 6px;">
-              <strong style="color: #f43f5e;">• Vai A (Nhân viên):</strong> Bạn đang làm công việc bán thời gian (arubaito). Bạn muốn nghỉ làm 1 tuần vào cuối tháng sau vì bạn thân của bạn kết hôn nên bạn muốn về quê. Hãy xin phép Cửa hàng trưởng một cách lịch sự để được nghỉ phép.<br><br>
-              <strong style="color: #38bdf8;">• Vai B (Cửa hàng trưởng):</strong> Bạn là Cửa hàng trưởng (Tencho). Quán rất bận rộn vào thời điểm cuối tháng. Hãy lắng nghe kỹ câu chuyện của A, xác nhận xem có ai làm thay ca cho A hay không, sau đó mới đưa ra sự đồng ý/cho phép nghỉ.
+          <div style="text-align: left; background: rgba(15, 23, 42, 0.8); padding: 14px; border-radius: 10px; line-height: 1.7; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">場面 5 (Bài 8): Xin phép Cửa hàng trưởng cho nghỉ làm thêm</div>
+            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">Vai A (Nhân viên):</strong> Bạn đang làm công việc bán thời gian (arubaito). Bạn muốn nghỉ làm 1 tuần vào cuối tháng sau vì bạn thân của bạn kết hôn nên bạn muốn về quê. Hãy xin phép Cửa hàng trưởng một cách lịch sự để được nghỉ phép.<br><br>
+              <strong style="color: #38bdf8;">Vai B (Cửa hàng trưởng):</strong> Bạn là Cửa hàng trưởng (Tencho). Quán rất bận rộn vào thời điểm cuối tháng. Hãy lắng nghe kỹ câu chuyện của A, xác nhận xem có ai làm thay ca cho A hay không, sau đó mới đưa ra sự đồng ý/cho phép nghỉ.
             </div>
           </div>
         </div>

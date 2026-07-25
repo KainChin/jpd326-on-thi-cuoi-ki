@@ -14,39 +14,39 @@ window.Bamen1 = (function() {
     return `
       <div class="situation-card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-          <div style="font-size: 1.3rem; font-weight: 800; color: #38bdf8;">🍵 場面 1: Lời Khuyên Sức Khỏe & Ăn Uống (健康と食生活の助言)</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: #38bdf8;">場面 1: Lời Khuyên Sức Khỏe & Ăn Uống (健康と食生活の助言)</div>
           <div style="display: flex; gap: 8px;">
-            <button class="kanji-detail-btn" style="background: #0284c7; color: white;" onclick="App.toggleBamenImg(1)">
-              ${window._showImgBamen1 ? '🖼️ Ẩn Ảnh 場面 1' : '🖼️ Hiện Ảnh 場面 1'}
+            <button class="kanji-detail-btn" style="background: rgba(2, 132, 199, 0.2); border-color: #38bdf8; color: #38bdf8;" onclick="App.toggleBamenImg(1)">
+              ${window._showImgBamen1 ? 'Ẩn Ảnh 場面 1' : 'Hiện Ảnh 場面 1'}
             </button>
-            <button class="kanji-detail-btn" style="background: #d97706; color: white;" onclick="App.toggleBamenScript(1)">
-              ${window._showScriptBamen1 ? '📜 Ẩn Kịch Bản' : '📜 Hiện Kịch Bản'}
+            <button class="kanji-detail-btn" style="background: rgba(217, 119, 6, 0.2); border-color: #f59e0b; color: #fbbf24;" onclick="App.toggleBamenScript(1)">
+              ${window._showScriptBamen1 ? 'Ẩn Kịch Bản' : 'Hiện Kịch Bản'}
             </button>
           </div>
         </div>
 
         <div style="display: flex; justify-content: flex-end; margin-bottom: 15px;">
-          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(1)">
-            ${window._showSitBamen1 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
+          <button class="kanji-detail-btn" style="background: rgba(16, 185, 129, 0.2); border-color: #34d399; color: #34d399;" onclick="App.toggleBamenSituations(1)">
+            ${window._showSitBamen1 ? 'Ẩn Situations Ôn Tập N3' : 'Xem Situations Ôn Tập N3'}
           </button>
         </div>
 
         <!-- SITUATIONS OVERVIEW (ĐÃ ĐẶT TRÊN BAMEN) -->
         <div id="bamen1-situations-container" style="display: ${window._showSitBamen1 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 1 - Bài 6 N3):</div>
-          <img src="assets/images/situation1.jpg" alt="Situation 1" onclick="App.openImageModal('assets/images/situation1.jpg', 'Situation 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer; margin-bottom: 12px;">
+          <div style="font-weight: 600; color: #fbbf24; margin-bottom: 12px; font-size: 0.95rem; text-align: left;">Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 1 - Bài 6 N3):</div>
+          <img src="assets/images/situation1.jpg" alt="Situation 1" onclick="App.openImageModal('assets/images/situation1.jpg', 'Situation 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); cursor: pointer; margin-bottom: 12px;">
           
-          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.7;">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📌 場面 1 (Bài 6): Khuyên bạn chán ăn do giao mùa</div>
-            <div style="margin-bottom: 10px; background: #1e293b; padding: 8px 12px; border-radius: 6px;">
-              <strong style="color: #f43f5e;">• Vai A (Bạn):</strong> Bạn thấy B người không được khỏe. Hãy lắng nghe câu chuyện, đưa ra lời khuyên xem nên làm thế nào, đồng thời hãy nói về đồ ăn tốt cho sức khỏe mà mọi người hay khuyên dùng.<br>
-              <strong style="color: #38bdf8;">• Vai B (Người bệnh):</strong> Dạo này bạn không có cảm giác thèm ăn. Có vẻ do thời tiết chuyển mùa nên bạn bị ốm. Hãy lắng nghe lời khuyên từ A.
+          <div style="text-align: left; background: rgba(15, 23, 42, 0.8); padding: 14px; border-radius: 10px; line-height: 1.7; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">場面 1 (Bài 6): Khuyên bạn chán ăn do giao mùa</div>
+            <div style="margin-bottom: 10px; background: rgba(30, 41, 69, 0.6); padding: 8px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">Vai A (Bạn):</strong> Bạn thấy B người không được khỏe. Hãy lắng nghe câu chuyện, đưa ra lời khuyên xem nên làm thế nào, đồng thời hãy nói về đồ ăn tốt cho sức khỏe mà mọi người hay khuyên dùng.<br>
+              <strong style="color: #38bdf8;">Vai B (Người bệnh):</strong> Dạo này bạn không có cảm giác thèm ăn. Có vẻ do thời tiết chuyển mùa nên bạn bị ốm. Hãy lắng nghe lời khuyên từ A.
             </div>
             
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px; margin-top: 12px;">📌 場面 2 (Bài 6): Khuyên bạn mất ngủ do bận rộn</div>
-            <div style="background: #1e293b; padding: 8px 12px; border-radius: 6px;">
-              <strong style="color: #f43f5e;">• Vai A (Bạn):</strong> Bạn thấy B tình trạng sức khỏe không tốt. Hãy lắng nghe câu chuyện, đưa ra lời khuyên xem nên làm thế nào, đồng thời hãy nói về phương pháp tốt để có thể ngủ được.<br>
-              <strong style="color: #38bdf8;">• Vai B (Người bệnh):</strong> Dạo này bạn không ngủ được mấy. Có vẻ do công việc bận rộn nên bạn bị ốm. Hãy lắng nghe lời khuyên từ A.
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px; margin-top: 12px;">場面 2 (Bài 6): Khuyên bạn mất ngủ do bận rộn</div>
+            <div style="background: rgba(30, 41, 69, 0.6); padding: 8px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">Vai A (Bạn):</strong> Bạn thấy B tình trạng sức khỏe không tốt. Hãy lắng nghe câu chuyện, đưa ra lời khuyên xem nên làm thế nào, đồng thời hãy nói về phương pháp tốt để có thể ngủ được.<br>
+              <strong style="color: #38bdf8;">Vai B (Người bệnh):</strong> Dạo này bạn không ngủ được mấy. Có vẻ do công việc bận rộn nên bạn bị ốm. Hãy lắng nghe lời khuyên từ A.
             </div>
           </div>
         </div>
