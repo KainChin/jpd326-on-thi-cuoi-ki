@@ -80,6 +80,25 @@ window.Bamen2 = (function() {
               <div><strong style="color: #38bdf8;">A:</strong> ありがとうございます。ご迷惑をかけてすみません。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Em cảm ơn anh/chị rất nhiều. Em xin lỗi vì đã làm phiền ạ.)</span></div>
             </div>
           </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 15px;">
+          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(2)">
+            ${window._showSitBamen2 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
+          </button>
+        </div>
+
+        <!-- SITUATIONS OVERVIEW -->
+        <div id="bamen2-situations-container" style="display: ${window._showSitBamen2 ? 'block' : 'none'}; margin-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px;">
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 10px; font-size: 1rem;">📚 Mẫu Situations mở rộng (Dekiru Nihongo N3):</div>
+          <div style="background: #0f172a; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
+            <div style="color: #38bdf8; font-weight: 600;">📌 Tình huống 1: Từ chối cuộc hẹn vì bận thi</div>
+            <div style="color: #fff; font-size: 0.95rem; margin-top: 4px;">💬 "明日は試験だから、遊ぶどころではないよ。"</div>
+            <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">➔ Mai thi rồi, tớ không có tâm trí đâu mà đi chơi.</div>
+          </div>
+          <div style="background: #0f172a; padding: 12px; border-radius: 8px;">
+            <div style="color: #38bdf8; font-weight: 600;">📌 Tình huống 2: Mời rủ lịch sự & Cảm thán</div>
+            <div style="color: #fff; font-size: 0.95rem; margin-top: 4px;">💬 "お時間もよかったらこのお菓子をどうぞ。"</div>
+            <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">➔ Nếu được xin mời anh dùng chút bánh này.</div>
+          </div>
         </div>
       </div>
     `;

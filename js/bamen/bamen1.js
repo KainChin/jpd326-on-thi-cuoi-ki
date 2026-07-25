@@ -90,6 +90,25 @@ window.Bamen1 = (function() {
               <div><strong style="color: #f43f5e;">B:</strong> へえ。じゃあ、今夜はそれを飲んでみるよ。ありがとう。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Chà. Vậy đêm nay tôi sẽ uống thử xem sao. Cảm ơn nhé.)</span></div>
             </div>
           </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 15px;">
+          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(1)">
+            ${window._showSitBamen1 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
+          </button>
+        </div>
+
+        <!-- SITUATIONS OVERVIEW -->
+        <div id="bamen1-situations-container" style="display: ${window._showSitBamen1 ? 'block' : 'none'}; margin-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px;">
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 10px; font-size: 1rem;">📚 Mẫu Situations mở rộng (Dekiru Nihongo N3):</div>
+          <div style="background: #0f172a; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
+            <div style="color: #38bdf8; font-weight: 600;">📌 Tình huống 1: Giới thiệu quê hương & Vị trí địa lý</div>
+            <div style="color: #fff; font-size: 0.95rem; margin-top: 4px;">💬 "私の故郷は美しい山に囲まれています。"</div>
+            <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">➔ Quê tôi được bao bọc bởi những ngọn núi tuyệt đẹp.</div>
+          </div>
+          <div style="background: #0f172a; padding: 12px; border-radius: 8px;">
+            <div style="color: #38bdf8; font-weight: 600;">📌 Tình huống 2: Chuẩn bị ứng phó thiên tai / sự cố</div>
+            <div style="color: #fff; font-size: 0.95rem; margin-top: 4px;">💬 "地震に備えて非常避難場所を確認しておきましょう。"</div>
+            <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">➔ Hãy xác định trước nơi sơ tán khẩn cấp để phòng khi động đất.</div>
+          </div>
         </div>
       </div>
     `;

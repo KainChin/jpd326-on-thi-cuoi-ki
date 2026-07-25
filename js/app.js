@@ -227,6 +227,13 @@ window.App = (function() {
     renderSituations();
   }
 
+  function toggleBamenSituations(bamenNum = 1) {
+    if (bamenNum === 1) window._showSitBamen1 = !window._showSitBamen1;
+    if (bamenNum === 2) window._showSitBamen2 = !window._showSitBamen2;
+    if (bamenNum === 3) window._showSitBamen3 = !window._showSitBamen3;
+    renderSituations();
+  }
+
   function openImageModal(imgSrc, title) {
     const modalRoot = document.getElementById("modal-root");
     if (!modalRoot) return;
@@ -244,5 +251,5 @@ window.App = (function() {
   function startMillionaire(lesson = 6) { showView("millionaire"); if (window.MillionaireGame) window.MillionaireGame.init(lesson); }
   if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", init); } else { init(); }
 
-  return { showView, filterLesson, filterSituations, filterSpeaking, handleSearch, openModal, openSpeakingModal, openImageModal, closeModal, toggleKanji, startMillionaire, selectBamen, toggleBamenImg, toggleBamenScript };
+  return { showView, filterLesson, filterSituations, filterSpeaking, handleSearch, openModal, openSpeakingModal, openImageModal, closeModal, toggleKanji, startMillionaire, selectBamen, toggleBamenImg, toggleBamenScript, toggleBamenSituations };
 })();

@@ -80,6 +80,25 @@ window.Bamen3 = (function() {
               <div><strong style="color: #f43f5e;">B:</strong> はい、わかりました。では、お名前（なまえ）とご住所（じゅうしょ）を……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, tôi hiểu rồi. Vậy xin vui lòng cho biết tên và địa chỉ của anh/chị...)</span></div>
             </div>
           </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 15px;">
+          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(3)">
+            ${window._showSitBamen3 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
+          </button>
+        </div>
+
+        <!-- SITUATIONS OVERVIEW -->
+        <div id="bamen3-situations-container" style="display: ${window._showSitBamen3 ? 'block' : 'none'}; margin-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px;">
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 10px; font-size: 1rem;">📚 Mẫu Situations mở rộng (Dekiru Nihongo N3):</div>
+          <div style="background: #0f172a; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
+            <div style="color: #38bdf8; font-weight: 600;">📌 Tình huống 1: Xin phép nghỉ làm một cách khiêm tốn</div>
+            <div style="color: #fff; font-size: 0.95rem; margin-top: 4px;">💬 "熱が出たものだから、本日休ませていただけませんか。"</div>
+            <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">➔ Vì em bị sốt nên anh cho phép em nghỉ hôm nay được không ạ?</div>
+          </div>
+          <div style="background: #0f172a; padding: 12px; border-radius: 8px;">
+            <div style="color: #38bdf8; font-weight: 600;">📌 Tình huống 2: Khuyến khích & Trấn an bạn bè</div>
+            <div style="color: #fff; font-size: 0.95rem; margin-top: 4px;">💬 "毎日練習したんだから合格するに決まっているよ。"</div>
+            <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">➔ Cậu tập luyện hàng ngày rồi thì chắc chắn sẽ đỗ thôi.</div>
+          </div>
         </div>
       </div>
     `;
