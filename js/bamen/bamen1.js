@@ -97,18 +97,9 @@ window.Bamen1 = (function() {
         </div>
 
         <!-- SITUATIONS OVERVIEW -->
-        <div id="bamen1-situations-container" style="display: ${window._showSitBamen1 ? 'block' : 'none'}; margin-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 10px; font-size: 1rem;">📚 Mẫu Situations mở rộng (Dekiru Nihongo N3):</div>
-          <div style="background: #0f172a; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
-            <div style="color: #38bdf8; font-weight: 600;">📌 Tình huống 1: Giới thiệu quê hương & Vị trí địa lý</div>
-            <div style="color: #fff; font-size: 0.95rem; margin-top: 4px;">💬 "私の故郷は美しい山に囲まれています。"</div>
-            <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">➔ Quê tôi được bao bọc bởi những ngọn núi tuyệt đẹp.</div>
-          </div>
-          <div style="background: #0f172a; padding: 12px; border-radius: 8px;">
-            <div style="color: #38bdf8; font-weight: 600;">📌 Tình huống 2: Chuẩn bị ứng phó thiên tai / sự cố</div>
-            <div style="color: #fff; font-size: 0.95rem; margin-top: 4px;">💬 "地震に備えて非常避難場所を確認しておきましょう。"</div>
-            <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">➔ Hãy xác định trước nơi sơ tán khẩn cấp để phòng khi động đất.</div>
-          </div>
+        <div id="bamen1-situations-container" style="display: ${window._showSitBamen1 ? 'block' : 'none'}; margin-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px; text-align: center;">
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh Situations mở rộng (Dekiru Nihongo N3):</div>
+          <img src="assets/images/situation1.jpg" alt="Situation 1" onclick="App.openImageModal('assets/images/situation1.jpg', 'Situation 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
         </div>
       </div>
     `;
