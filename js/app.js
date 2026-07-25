@@ -221,63 +221,63 @@ window.App = (function() {
 
           <!-- SCRIPTS SECTION -->
           <div id="bamen1-scripts-container" style="display: ${scriptDisplay};">
-            <!-- Tình huống 1 -->
+            <!-- Tình huống 1: Bamen 1 (Chán ăn do giao mùa) -->
             <div class="scenario-box" style="margin-bottom: 20px; border-left: 4px solid #38bdf8; background: #0f172a; padding: 16px; border-radius: 10px;">
               <div style="font-weight: 800; font-size: 1.1rem; color: #f59e0b; margin-bottom: 6px;">
-                ☕ Tình huống 1: Mất ngủ do uống nhiều cà phê để ôn thi
+                🍲 Tình huống 1: Chán ăn, mệt mỏi do giao mùa (季節が変わったため)
               </div>
               <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px;">
-                <em>Bối cảnh: Bạn (A) thấy giáo viên (B) mệt mỏi vì mất ngủ, bạn khuyên giáo viên uống sữa nóng.</em>
+                <em>Bối cảnh: B bị mệt và không có cảm giác thèm ăn do thay đổi thời tiết. A khuyên B ăn cháo (お粥).</em>
               </div>
               <div style="display: flex; flex-direction: column; gap: 8px; line-height: 1.6;">
                 <div><strong style="color: #38bdf8;">A:</strong> Bさん、どうしたの？元気ないね。<br><span style="color: #94a3b8; font-size: 0.88rem;">(B này, sao thế? Trông thầy/cô không được khỏe nhỉ.)</span></div>
-                <div><strong style="color: #f43f5e;">B:</strong> うん、なんだか最近夜よく眠れなくて。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừ, không hiểu sao dạo này tối tôi không ngủ được.)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> うん、なんだか最近体の調子が良くなくて。季節が変わったために、体調を崩してしまったみたいなんだ。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừ, dạo này người không khỏe. Có vẻ do chuyển mùa nên tôi bị ốm mất rồi.)</span></div>
                 <div><strong style="color: #38bdf8;">A:</strong> ええ、大丈夫？<br><span style="color: #94a3b8; font-size: 0.88rem;">(Hả, thầy/cô có sao không?)</span></div>
-                <div><strong style="color: #f43f5e;">B:</strong> うーん。それに、昼間もずっと頭がぼーっとして。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừm. Với lại, ban ngày đầu óc cứ đờ đẫn ra.)</span></div>
-                <div><strong style="color: #38bdf8;">A:</strong> コーヒーばかり飲んでいるんじゃない？<br><span style="color: #94a3b8; font-size: 0.88rem;">(Không phải là thầy/cô cứ toàn uống cà phê suốt đấy chứ?)</span></div>
-                <div><strong style="color: #f43f5e;">B:</strong> うん。最近勉強が忙しいから。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừ. Tại dạo này việc học/nghiên cứu bận quá.)</span></div>
-                <div><strong style="color: #38bdf8;">A:</strong> それじゃ、体調を崩すよ。きっとストレスだね。疲れているときこそハーブティーのようなリラックスできる物が体にいいんだよ。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thế thì ốm mất. Chắc chắn là do stress rồi. Chính những lúc mệt mỏi thế này thì những thứ giúp thư giãn như trà thảo mộc lại rất tốt cho cơ thể đấy.)</span></div>
-                <div><strong style="color: #f43f5e;">B:</strong> リラックスできる物ね。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Những thứ giúp thư giãn nhỉ.)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> うーん。それに、あまり食欲もなくて。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừm. Với lại, cũng chẳng có cảm giác thèm ăn.)</span></div>
+                <div><strong style="color: #38bdf8;">A:</strong> 冷（つめ）たい物ばかり飲んでいるんじゃない？<br><span style="color: #94a3b8; font-size: 0.88rem;">(Không phải là thầy/cô cứ toàn uống đồ lạnh suốt đấy chứ?)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> うん。暑いから。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừ. Tại vì trời nóng quá.)</span></div>
+                <div><strong style="color: #38bdf8;">A:</strong> それじゃ、体調を崩すよ。きっと夏バテだね。食欲がないときこそ、スープのような温かい物が体にいいんだよ。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thế thì ốm mất. Chắc chắn là bị mệt mỏi do nắng hè rồi. Chính những lúc không có cảm giác thèm ăn thế này thì những thứ ấm áp như súp lại rất tốt cho cơ thể đấy.)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> 温かい物ね。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Những đồ ấm áp nhỉ.)</span></div>
                 <div style="background: #1e293b; padding: 10px; border-radius: 8px; border-left: 3px solid #f59e0b;">
                   <strong style="color: #38bdf8;">A (Cách 2):</strong><br>
-                  そう。それに、日本では眠れない時の飲み物としてホットミルクをよく飲むよ。<br>
-                  <span style="color: #94a3b8; font-size: 0.88rem;">(Đúng vậy. Hơn nữa, ở Nhật mọi người thường uống sữa nóng như một thức uống khi không ngủ được.)</span><br>
-                  ホットミルクは心（こころ）にいいからね。<br>
-                  <span style="color: #94a3b8; font-size: 0.88rem;">(Vì sữa nóng rất tốt cho tâm trạng mà.)</span><br>
-                  眠れない時はホットミルクに限るって言われてるんだよ。<br>
-                  <span style="color: #94a3b8; font-size: 0.88rem;">(Người ta hay nói khi không ngủ được thì sữa nóng là tuyệt nhất đấy.)</span>
+                  そう。それに、日本では食欲（しょくよく）がない時の食べ物としてお粥（かゆ）をよく食べるよ。<br>
+                  <span style="color: #94a3b8; font-size: 0.88rem;">(Đúng vậy. Hơn nữa, ở Nhật mọi người thường ăn cháo như một món ăn khi không có cảm giác thèm ăn.)</span><br>
+                  お粥は体（からだ）にいいからね。<br>
+                  <span style="color: #94a3b8; font-size: 0.88rem;">(Vì cháo rất tốt cho cơ thể mà.)</span><br>
+                  食欲がない時はお粥に限るって言われてるんだよ。<br>
+                  <span style="color: #94a3b8; font-size: 0.88rem;">(Người ta hay nói khi không có cảm giác thèm ăn thì cháo là tuyệt nhất đấy.)</span>
                 </div>
-                <div><strong style="color: #f43f5e;">B:</strong> へえ。じゃあ、今夜はそれを飲んでみるよ。ありがとう。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Chà. Vậy đêm nay tôi sẽ uống thử xem sao. Cảm ơn nhé.)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> へえ。じゃあ、今日はそれを食べてみるよ。ありがとう。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Chà. Vậy hôm nay tôi sẽ ăn thử món đó xem sao. Cảm ơn nhé.)</span></div>
               </div>
             </div>
 
-            <!-- Tình huống 2 -->
+            <!-- Tình huống 2: Bamen 2 (Mất ngủ do bận rộn) -->
             <div class="scenario-box" style="border-left: 4px solid #10b981; background: #0f172a; padding: 16px; border-radius: 10px;">
               <div style="font-weight: 800; font-size: 1.1rem; color: #f59e0b; margin-bottom: 6px;">
-                🍜 Tình huống 2: Đau dạ dày do ăn nhiều đồ cay vì stress
+                ☕ Tình huống 2: Mất ngủ, mệt mỏi do bận rộn (忙しくて、体調を崩してしまった)
               </div>
               <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px;">
-                <em>Bối cảnh: Bạn (A) thấy giáo viên (B) chán ăn do đau dạ dày, bạn khuyên giáo viên ăn mì Udon.</em>
+                <em>Bối cảnh: B bị ốm do bận rộn và dạo này không ngủ được. A khuyên B uống sữa nóng (ホットミルク).</em>
               </div>
               <div style="display: flex; flex-direction: column; gap: 8px; line-height: 1.6;">
-                <div><strong style="color: #38bdf8;">A:</strong> Bさん、どうしたの？元気ないね。<br><span style="color: #94a3b8; font-size: 0.88rem;">(B này, sao thế? Trông thầy/cô không được khỏe nhỉ.)</span></div>
-                <div><strong style="color: #f43f5e;">B:</strong> うん、なんだか最近、お腹が痛くて。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừ, không hiểu sao dạo này tôi hay bị đau bụng.)</span></div>
+                <div><strong style="color: #38bdf8;">A:</strong> Bさん、どうしたの？具合（ぐあい）が良くないね。<br><span style="color: #94a3b8; font-size: 0.88rem;">(B này, sao thế? Trông tình trạng sức khỏe của thầy/cô không tốt nhỉ.)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> うん、なんだか最近あまり寝られなくて。忙しくて、体調を崩してしまったみたいなんだ。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừ, dạo này tôi không ngủ được mấy. Có vẻ do bận quá nên ốm mất rồi.)</span></div>
                 <div><strong style="color: #38bdf8;">A:</strong> ええ、大丈夫？<br><span style="color: #94a3b8; font-size: 0.88rem;">(Hả, thầy/cô có sao không?)</span></div>
-                <div><strong style="color: #f43f5e;">B:</strong> うーん。それに、全然食欲もなくて。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừm. Với lại, cũng chẳng có cảm giác thèm ăn chút nào.)</span></div>
-                <div><strong style="color: #38bdf8;">A:</strong> 辛（から）い物ばかり食べているんじゃない？<br><span style="color: #94a3b8; font-size: 0.88rem;">(Không phải là thầy/cô cứ toàn ăn đồ cay suốt đấy chứ?)</span></div>
-                <div><strong style="color: #f43f5e;">B:</strong> うん。ストレスがたまっているから。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừ. Tại đang bị stress tích tụ mà.)</span></div>
-                <div><strong style="color: #38bdf8;">A:</strong> それじゃ、体調を崩すよ。きっと胃（い）が疲れているんだね。お腹が痛いときこそ、うどんのようなお腹に優しい物が体にいいんだよ。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thế thì ốm mất. Chắc chắn là dạ dày đang bị mệt rồi. Chính những lúc đau bụng thế này thì những thứ dễ tiêu như Udon lại rất tốt cho cơ thể đấy.)</span></div>
-                <div><strong style="color: #f43f5e;">B:</strong> お腹に優しい物ね。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Những món dễ tiêu nhỉ.)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> うーん。それに、昼間もずっと頭がぼーっとして。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừm. Với lại, ban ngày đầu óc cứ đờ đẫn ra.)</span></div>
+                <div><strong style="color: #38bdf8;">A:</strong> コーヒーばかり飲んでいるんじゃない？<br><span style="color: #94a3b8; font-size: 0.88rem;">(Không phải là thầy/cô cứ toàn uống cà phê suốt đấy chứ?)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> うん。仕事が忙しいから。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ừ. Tại vì công việc bận quá.)</span></div>
+                <div><strong style="color: #38bdf8;">A:</strong> それじゃ、体調を崩すよ。きっとストレスだね。寝られないときこそ、ハーブティーのようなリラックスできる物が体にいいんだよ。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thế thì ốm mất. Chắc chắn là do stress rồi. Chính những lúc không ngủ được thế này thì những thứ giúp thư giãn như trà thảo mộc lại rất tốt cho cơ thể đấy.)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> リラックスできる物ね。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Những thứ giúp thư giãn nhỉ.)</span></div>
                 <div style="background: #1e293b; padding: 10px; border-radius: 8px; border-left: 3px solid #f59e0b;">
                   <strong style="color: #38bdf8;">A (Cách 2):</strong><br>
-                  そう。それに、日本ではお腹が痛い時の食べ物としてうどんをよく食べるよ。<br>
-                  <span style="color: #94a3b8; font-size: 0.88rem;">(Đúng vậy. Hơn nữa, ở Nhật mọi người thường ăn mì Udon như một món ăn khi bị đau bụng.)</span><br>
-                  うどんは体（からだ）にいいからね。<br>
-                  <span style="color: #94a3b8; font-size: 0.88rem;">(Vì mì Udon rất tốt cho cơ thể mà.)</span><br>
-                  お腹が痛い時はうどんに限るって言われてるんだよ。<br>
-                  <span style="color: #94a3b8; font-size: 0.88rem;">(Người ta hay nói khi đau bụng thì mì Udon là tuyệt nhất đấy.)</span>
+                  そう。それに、日本では寝られない時の飲み物としてホットミルクをよく飲むよ。<br>
+                  <span style="color: #94a3b8; font-size: 0.88rem;">(Đúng vậy. Hơn nữa, ở Nhật mọi người thường uống sữa nóng như một thức uống khi không ngủ được.)</span><br>
+                  ホットミルクは心（こころ）にいいからね。<br>
+                  <span style="color: #94a3b8; font-size: 0.88rem;">(Vì sữa nóng rất tốt cho tâm trạng mà.)</span><br>
+                  寝られない時はホットミルクに限るって言われてるんだよ。<br>
+                  <span style="color: #94a3b8; font-size: 0.88rem;">(Người ta hay nói khi không ngủ được thì sữa nóng là tuyệt nhất đấy.)</span>
                 </div>
-                <div><strong style="color: #f43f5e;">B:</strong> へえ。じゃあ、今日はうどんを食べてみるよ。ありがとう。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Chà. Vậy hôm nay tôi sẽ thử ăn mì Udon xem sao. Cảm ơn nhé.)</span></div>
+                <div><strong style="color: #f43f5e;">B:</strong> へえ。じゃあ、今夜はそれを飲んでみるよ。ありがとう。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Chà. Vậy đêm nay tôi sẽ uống thử xem sao. Cảm ơn nhé.)</span></div>
               </div>
             </div>
           </div>
