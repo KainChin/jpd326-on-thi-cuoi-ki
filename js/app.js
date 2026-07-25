@@ -216,7 +216,12 @@ window.App = (function() {
 
           <!-- IMAGES SECTION -->
           <div id="bamen1-img-container" style="display: ${imgDisplay}; text-align: center; margin-bottom: 20px;">
-            <img src="bamen1.jpg" alt="場面 1" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155;">
+            <div style="position: relative; display: inline-block; cursor: pointer;" onclick="App.openImageModal('bamen1.jpg', '場面 1')">
+              <img src="bamen1.jpg" alt="場面 1" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; transition: transform 0.2s ease-in-out;">
+              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); color: #38bdf8; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; border: 1px solid #38bdf8; font-weight: 600; pointer-events: none;">
+                🔍 Chạm để phóng to
+              </div>
+            </div>
           </div>
 
           <!-- SCRIPTS SECTION -->
@@ -308,8 +313,22 @@ window.App = (function() {
     renderSituations();
   }
 
+  function openImageModal(imgSrc, title) {
+    const modalRoot = document.getElementById("modal-root");
+    if (!modalRoot) return;
+    modalRoot.innerHTML = `
+      <div class="modal-overlay" onclick="App.closeModal()" style="display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.92); z-index: 9999; padding: 10px;">
+        <div style="position: relative; max-width: 95vw; max-height: 95vh; overflow: auto; text-align: center;" onclick="event.stopPropagation()">
+          <button onclick="App.closeModal()" style="position: fixed; top: 15px; right: 15px; background: #f43f5e; color: white; border: none; font-size: 1.3rem; font-weight: bold; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10000; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">✕</button>
+          <div style="color: #38bdf8; font-weight: 700; margin-bottom: 8px; font-size: 1.1rem; text-align: center;">🔍 ${title} - Phóng to toàn màn hình</div>
+          <img src="${imgSrc}" alt="${title}" style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8);">
+        </div>
+      </div>
+    `;
+  }
+
   function startMillionaire(lesson = 6) { showView("millionaire"); if (window.MillionaireGame) window.MillionaireGame.init(lesson); }
   if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", init); } else { init(); }
 
-  return { showView, filterLesson, filterSituations, filterSpeaking, handleSearch, openModal, openSpeakingModal, closeModal, toggleKanji, startMillionaire, selectBamen, toggleBamenImg, toggleBamenScript };
+  return { showView, filterLesson, filterSituations, filterSpeaking, handleSearch, openModal, openSpeakingModal, openImageModal, closeModal, toggleKanji, startMillionaire, selectBamen, toggleBamenImg, toggleBamenScript };
 })();
