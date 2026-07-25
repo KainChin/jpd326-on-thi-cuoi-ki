@@ -34,25 +34,21 @@ window.Bamen4 = (function() {
 
         <!-- SITUATIONS OVERVIEW (ĐẶT TRÊN BAMEN) -->
         <div id="bamen4-situations-container" style="display: ${window._showSitBamen4 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh & Dịch nghĩa Situations mở rộng (Dekiru Nihongo N3 - Bamen 4):</div>
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 4 - Bài 9/10 N3):</div>
           <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px;">
             <img src="assets/images/situation4_1.jpg" alt="Situation 4.1" onclick="App.openImageModal('assets/images/situation4_1.jpg', 'Situation 4.1')" style="max-width: 48%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
             <img src="assets/images/situation4_2.jpg" alt="Situation 4.2" onclick="App.openImageModal('assets/images/situation4_2.jpg', 'Situation 4.2')" style="max-width: 48%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
           </div>
           
-          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.6;">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 6px;">📝 Bản dịch nghĩa & Ngữ pháp trọng tâm (Bài 9 - 10 N3):</div>
-            <div style="margin-bottom: 8px;">
-              <strong style="color: #f59e0b;">1. Tiếp đón khách hàng & Nhờ vả lịch sự:</strong><br>
-              🇯🇵 「少々お待ちください。確認したいことがあるんですが、お時間よろしいでしょうか。」<br>
-              🇻🇳 <em>(Xin quý khách vui lòng đợi một chút ạ. Tôi có điều muốn xác nhận, xin hỏi anh/chị có thời gian không ạ?)</em><br>
-              💡 <em>Cấu trúc: お・ご〜ください (Xin hãy...) / 〜たいことがあるんですが (Tôi có việc muốn...)</em>
-            </div>
-            <div>
-              <strong style="color: #f59e0b;">2. Báo cáo công việc ngay sau khi hoàn thành:</strong><br>
-              🇯🇵 「資料ができ次第すぐにご報告いたします。」<br>
-              🇻🇳 <em>(Ngay sau khi làm xong tài liệu em sẽ báo cáo ngay ạ.)</em><br>
-              💡 <em>Cấu trúc: 〜次第 (Ngay sau khi...)</em>
+          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.7;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📌 場面 4: Rủ bạn bè tham gia gian hàng ở Chợ đồ cũ (フリーマーケット)</div>
+            <div style="background: #1e293b; padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">• Vai A (Người mời):</strong> Bạn đã quyết định mở gian hàng bán hàng ở chợ đồ cũ cùng bạn bè. Bạn muốn B - người cùng học lớp tiếng Anh với bạn đến tham gia cùng. Với B thì thỉnh thoảng bạn mới chào hỏi một chút. Khi gặp ở lớp học, hãy giải thích/giới thiệu về chợ đồ cũ, hỏi xem lịch trình/thời gian của B có tiện không và đưa ra lời rủ rê.<br>
+              <em style="color: #f59e0b;">*Thông tin chợ đồ cũ:</em><br>
+              - Thời gian: Từ 8h sáng thứ 7 và Chủ nhật tuần sau.<br>
+              - Ở chợ đồ cũ này được phép bán đồ ăn do mình tự làm.<br>
+              - 20% (2割) giá bán sản phẩm sẽ được dùng làm quỹ quyên góp cho người vô gia cư (Homeless).<br><br>
+              <strong style="color: #38bdf8;">• Vai B (Người được mời):</strong> Bạn đang học cùng lớp tiếng Anh với A. Với A thì thỉnh thoảng bạn mới chào hỏi một chút ở lớp. A bắt chuyện với bạn. Hãy lắng nghe kỹ câu chuyện và đón nhận/đồng ý lời rủ rê từ A.
             </div>
           </div>
         </div>

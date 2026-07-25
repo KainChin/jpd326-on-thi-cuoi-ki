@@ -32,22 +32,14 @@ window.Bamen2 = (function() {
 
         <!-- SITUATIONS OVERVIEW (ĐÃ ĐẶT TRÊN BAMEN) -->
         <div id="bamen2-situations-container" style="display: ${window._showSitBamen2 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh & Dịch nghĩa Situations mở rộng (Dekiru Nihongo N3):</div>
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 2 - Bài 8 N3):</div>
           <img src="assets/images/situation2.jpg" alt="Situation 2" onclick="App.openImageModal('assets/images/situation2.jpg', 'Situation 2')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer; margin-bottom: 12px;">
           
-          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.6;">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 6px;">📝 Bản dịch nghĩa & Ngữ pháp trọng tâm (Bài 7 N3):</div>
-            <div style="margin-bottom: 8px;">
-              <strong style="color: #f59e0b;">1. Từ chối cuộc hẹn vì bận thi:</strong><br>
-              🇯🇵 「明日は試験だから、遊ぶどころではないよ。」<br>
-              🇻🇳 <em>(Mai thi rồi, tớ không có tâm trí/thời gian đâu mà đi chơi.)</em><br>
-              💡 <em>Cấu trúc: 〜どころではない (Không phải lúc / Không tâm trí nào...)</em>
-            </div>
-            <div>
-              <strong style="color: #f59e0b;">2. Mời rủ lịch sự & Cảm thán thời gian:</strong><br>
-              🇯🇵 「お時間もよかったらこのお菓子をどうぞ。」<br>
-              🇻🇳 <em>(Nếu được xin mời anh/chị dùng thử chút bánh này ạ.)</em><br>
-              💡 <em>Cấu trúc: 〜もよかったら (Nếu được thì xin mời...)</em>
+          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.7;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📌 場面 5 (Bài 8): Xin phép Cửa hàng trưởng cho nghỉ làm thêm</div>
+            <div style="background: #1e293b; padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">• Vai A (Nhân viên):</strong> Bạn đang làm công việc bán thời gian (arubaito). Bạn muốn nghỉ làm 1 tuần vào cuối tháng sau vì bạn thân của bạn kết hôn nên bạn muốn về quê. Hãy xin phép Cửa hàng trưởng một cách lịch sự để được nghỉ phép.<br><br>
+              <strong style="color: #38bdf8;">• Vai B (Cửa hàng trưởng):</strong> Bạn là Cửa hàng trưởng (Tencho). Quán rất bận rộn vào thời điểm cuối tháng. Hãy lắng nghe kỹ câu chuyện của A, xác nhận xem có ai làm thay ca cho A hay không, sau đó mới đưa ra sự đồng ý/cho phép nghỉ.
             </div>
           </div>
         </div>

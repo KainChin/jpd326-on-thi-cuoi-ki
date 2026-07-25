@@ -32,22 +32,15 @@ window.Bamen3 = (function() {
 
         <!-- SITUATIONS OVERVIEW (ĐÃ ĐẶT TRÊN BAMEN) -->
         <div id="bamen3-situations-container" style="display: ${window._showSitBamen3 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh & Dịch nghĩa Situations mở rộng (Dekiru Nihongo N3):</div>
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Bản Dịch Đề Bài Thi Nói (Đồ Họa Trong Ảnh Situation 3 - Bài 10 N3):</div>
           <img src="assets/images/situation3.jpg" alt="Situation 3" onclick="App.openImageModal('assets/images/situation3.jpg', 'Situation 3')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer; margin-bottom: 12px;">
           
-          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.6;">
-            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 6px;">📝 Bản dịch nghĩa & Ngữ pháp trọng tâm (Bài 8 N3):</div>
-            <div style="margin-bottom: 8px;">
-              <strong style="color: #f59e0b;">1. Xin phép nghỉ làm/học khiêm tốn:</strong><br>
-              🇯🇵 「熱が出たものだから、本日休ませていただけませんか。」<br>
-              🇻🇳 <em>(Vì em bị sốt nên anh/chị cho phép em xin nghỉ hôm nay được không ạ?)</em><br>
-              💡 <em>Cấu trúc: 〜させていただけませんか (Xin phép cho em làm...)</em>
-            </div>
-            <div>
-              <strong style="color: #f59e0b;">2. Khuyến khích & Trấn an bạn bè:</strong><br>
-              🇯🇵 「毎日練習したんだから合格するに決まっているよ。」<br>
-              🇻🇳 <em>(Cậu đã luyện tập hàng ngày rồi thì nhất định sẽ đỗ thôi.)</em><br>
-              💡 <em>Cấu trúc: 〜に決まっている (Chắc chắn là / Nhất định là...)</em>
+          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.7;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📌 場面 6 (Bài 10): Để quên ví ở quán Cafe & Nhờ gửi bưu điện</div>
+            <div style="background: #1e293b; padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">• Vai A (Khách hàng):</strong> Bạn để quên chiếc ví ở quán cafe. Khi đang trên xe buýt lượt về thì bạn mới nhận ra điều đó. Hãy gọi điện cho quán cafe. Bạn nhớ mình đã ngồi ở ghế phía bên phải gần cửa sổ, nghĩ là đã để ví ở trên bàn nhưng không nhớ rõ. Nhờ quán gửi bưu điện trả phí người nhận (chakubarai) nếu tìm thấy.<br>
+              <em style="color: #f59e0b;">*Thông tin chiếc ví:</em> Hình vuông, màu xám, có họa tiết hoa, có ghi tên trên đó.<br><br>
+              <strong style="color: #38bdf8;">• Vai B (Nhân viên quán):</strong> Bạn là nhân viên quán cafe. Có cuộc gọi liên hệ tìm đồ thất lạc. Hãy hỏi khách về vị trí ngồi và đặc điểm đồ để quên (màu sắc, hình dáng...). Sau khi kiểm tra khu vực khách nói thì tìm thấy đồ. Hãy hỏi xem khách muốn xử lý thế nào.
             </div>
           </div>
         </div>
