@@ -4,8 +4,9 @@
  */
 window.Bamen1 = (function() {
   function render() {
-    if (window._showImgBamen1 === undefined) window._showImgBamen1 = true;
+    if (window._showImgBamen1 === undefined) window._showImgBamen1 = false;
     if (window._showScriptBamen1 === undefined) window._showScriptBamen1 = true;
+    if (window._showSitBamen1 === undefined) window._showSitBamen1 = true;
 
     const imgDisplay = window._showImgBamen1 ? 'block' : 'none';
     const scriptDisplay = window._showScriptBamen1 ? 'block' : 'none';
