@@ -24,6 +24,18 @@ window.Bamen1 = (function() {
           </div>
         </div>
 
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 15px;">
+          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(1)">
+            ${window._showSitBamen1 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
+          </button>
+        </div>
+
+        <!-- SITUATIONS OVERVIEW (ĐÃ ĐẶT TRÊN BAMEN) -->
+        <div id="bamen1-situations-container" style="display: ${window._showSitBamen1 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh Situations mở rộng (Dekiru Nihongo N3):</div>
+          <img src="assets/images/situation1.jpg" alt="Situation 1" onclick="App.openImageModal('assets/images/situation1.jpg', 'Situation 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
+        </div>
+
         <!-- IMAGES SECTION -->
         <div id="bamen1-img-container" style="display: ${imgDisplay}; text-align: center; margin-bottom: 20px;">
           <img src="assets/images/bamen1.jpg" alt="場面 1" onclick="App.openImageModal('assets/images/bamen1.jpg', '場面 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
@@ -90,17 +102,6 @@ window.Bamen1 = (function() {
               <div><strong style="color: #f43f5e;">B:</strong> へえ。じゃあ、今夜はそれを飲んでみるよ。ありがとう。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Chà. Vậy đêm nay tôi sẽ uống thử xem sao. Cảm ơn nhé.)</span></div>
             </div>
           </div>
-        <div style="display: flex; justify-content: flex-end; margin-top: 15px;">
-          <button class="kanji-detail-btn" style="background: #10b981; color: white;" onclick="App.toggleBamenSituations(1)">
-            ${window._showSitBamen1 ? '💡 Ẩn Situations Ôn Tập N3' : '💡 Xem thêm Situations Ôn Tập N3'}
-          </button>
-        </div>
-
-        <!-- SITUATIONS OVERVIEW -->
-        <div id="bamen1-situations-container" style="display: ${window._showSitBamen1 ? 'block' : 'none'}; margin-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh Situations mở rộng (Dekiru Nihongo N3):</div>
-          <img src="assets/images/situation1.jpg" alt="Situation 1" onclick="App.openImageModal('assets/images/situation1.jpg', 'Situation 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
-        </div>
       </div>
     `;
   }
