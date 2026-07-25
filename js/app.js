@@ -216,12 +216,7 @@ window.App = (function() {
 
           <!-- IMAGES SECTION -->
           <div id="bamen1-img-container" style="display: ${imgDisplay}; text-align: center; margin-bottom: 20px;">
-            <div style="position: relative; display: inline-block; cursor: pointer;" onclick="App.openImageModal('bamen1.jpg', '場面 1')">
-              <img src="bamen1.jpg" alt="場面 1" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; transition: transform 0.2s ease-in-out;">
-              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); color: #38bdf8; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; border: 1px solid #38bdf8; font-weight: 600; pointer-events: none;">
-                🔍 Chạm để phóng to
-              </div>
-            </div>
+            <img src="bamen1.jpg" alt="場面 1" onclick="App.openImageModal('bamen1.jpg', '場面 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
           </div>
 
           <!-- SCRIPTS SECTION -->
