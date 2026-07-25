@@ -13,6 +13,10 @@ window.App = (function() {
     renderSituations();
     renderSpeakingList();
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+    window.addEventListener("scroll", () => {
+      const btn = document.getElementById("btn-scroll-top");
+      if (btn) btn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
   }
 
   function showView(viewName) {
@@ -232,10 +236,22 @@ window.App = (function() {
   }
 
   function toggleBamenSituations(bamenNum = 1) {
-    if (bamenNum === 1) window._showSitBamen1 = !window._showSitBamen1;
-    if (bamenNum === 2) window._showSitBamen2 = !window._showSitBamen2;
-    if (bamenNum === 3) window._showSitBamen3 = !window._showSitBamen3;
-    if (bamenNum === 4) window._showSitBamen4 = !window._showSitBamen4;
+    if (bamenNum === 1) {
+      window._showSitBamen1 = !window._showSitBamen1;
+      if (window._showSitBamen1) window._showImgBamen1 = false;
+    }
+    if (bamenNum === 2) {
+      window._showSitBamen2 = !window._showSitBamen2;
+      if (window._showSitBamen2) window._showImgBamen2 = false;
+    }
+    if (bamenNum === 3) {
+      window._showSitBamen3 = !window._showSitBamen3;
+      if (window._showSitBamen3) window._showImgBamen3 = false;
+    }
+    if (bamenNum === 4) {
+      window._showSitBamen4 = !window._showSitBamen4;
+      if (window._showSitBamen4) window._showImgBamen4 = false;
+    }
     renderSituations();
   }
 
