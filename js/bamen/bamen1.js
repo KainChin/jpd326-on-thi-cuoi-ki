@@ -4,7 +4,7 @@
  */
 window.Bamen1 = (function() {
   function render() {
-    if (window._showImgBamen1 === undefined) window._showImgBamen1 = false;
+    if (window._showImgBamen1 === undefined) window._showImgBamen1 = true;
     if (window._showScriptBamen1 === undefined) window._showScriptBamen1 = true;
     if (window._showSitBamen1 === undefined) window._showSitBamen1 = true;
 
