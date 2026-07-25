@@ -26,7 +26,7 @@ window.Bamen3 = (function() {
 
         <!-- IMAGES SECTION -->
         <div id="bamen3-img-container" style="display: ${imgDisplay}; text-align: center; margin-bottom: 20px;">
-          <img src="bamen3.jpg" alt="場面 3" onclick="App.openImageModal('bamen3.jpg', '場面 3')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
+          <img src="assets/images/bamen3.jpg" alt="場面 3" onclick="App.openImageModal('assets/images/bamen3.jpg', '場面 3')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
         </div>
 
         <!-- SCRIPTS SECTION -->
