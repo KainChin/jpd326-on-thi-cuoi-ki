@@ -1,6 +1,6 @@
 /**
- * Bamen 3 Render Helper
- * Strictly < 200 lines
+ * Bamen 3 Render Helper with Furigana (<ruby><rt>)
+ * Clean & Modular
  */
 window.Bamen3 = (function() {
   function render() {
@@ -48,60 +48,47 @@ window.Bamen3 = (function() {
 
         <!-- IMAGES SECTION -->
         <div id="bamen3-img-container" style="display: ${imgDisplay}; text-align: center; margin-bottom: 20px;">
-          <img src="assets/images/bamen3.jpg" alt="場面 3" onclick="App.openImageModal('assets/images/bamen3.jpg', '場面 3')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
+          <img src="assets/images/bamen3.jpg" alt="場面 3" onclick="App.openImageModal('assets/images/bamen3.jpg', '場面 3')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); cursor: pointer;">
         </div>
 
-        <!-- SCRIPTS SECTION -->
+        <!-- SCRIPTS SECTION (ĐẦY ĐỦ FURIGANA RUBY/RT) -->
         <div id="bamen3-scripts-container" style="display: ${scriptDisplay};">
-          <!-- Tình huống 1: Để quên Ví ở quán Cafe -->
+          <!-- Tình huống 1: Để quên chiếc ví -->
           <div class="scenario-box" style="margin-bottom: 20px; border-left: 4px solid #38bdf8; background: #0f172a; padding: 16px; border-radius: 10px;">
-            <div style="font-weight: 800; font-size: 1.1rem; color: #f59e0b; margin-bottom: 6px;">
-              👛 Tình huống 1: Để quên Ví ở quán Cafe (喫茶店サクラ)
+            <div style="font-weight: 700; font-size: 1.05rem; color: #f59e0b; margin-bottom: 6px;">
+              Tình huống 1: Để quên chiếc ví ở quán cafe (<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れた)
             </div>
             <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px;">
-              <em>Bối cảnh: Bạn (A) gọi điện cho nhân viên quán Cafe Sakura (B) nhờ tìm và gửi trả chiếc ví màu xám có họa tiết hoa bị quên trên bàn.</em>
+              <em>Bối cảnh: Bạn (A) gọi điện cho quán cafe (B) tìm chiếc ví màu xám hình vuông và nhờ gửi bưu điện chakubarai về nhà.</em>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px; line-height: 1.6;">
-              <div><strong style="color: #f43f5e;">B:</strong> はい、喫茶店（きっさてん）サクラです。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, xin nghe. Quán cafe Sakura xin nghe ạ.)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> もしもし、今日（きょう）そちらに行（い）った者（もの）なんですが。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Alo, tôi là người đã đến quán hôm nay ạ.)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> はい。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng ạ.)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> そちらに財布（さいふ）を忘（わす）れてしまったようなんです。かばんに入（い）れたつもりだったんですが、なかったもので……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Hình như tôi đã để quên ví ở đó. Tôi cứ đinh ninh là đã cất vào túi rồi, nhưng kiểm tra lại thì không thấy...)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> そうですか。どんな財布（さいふ）ですか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thế ạ. Chiếc ví đó như thế nào vậy ạ?)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> 四角（しかく）くて、色（いろ）はグレーで、花模様（はなもよう）があって、名前（なまえ）もつけてあります。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Nó hình vuông, màu xám, có họa tiết hoa và có ghi cả tên tôi trên đó nữa ạ.)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> どの辺（あた）りに座（すわ）っていらっしゃいましたか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Anh/chị đã ngồi ở khoảng khu vực nào ạ?)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> 右（みぎ）の窓側（まどがわ）の席（せき）です。テーブルの上（うえ）に置（お）いたように思（おも）うんですが、はっきり覚（おぼ）えていません。もしかしたら、下（した）に落（お）ちているかもしれません。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Là chỗ ngồi phía bên phải gần cửa sổ ạ. Tôi nhớ hình như đã để trên bàn, nhưng không nhớ rõ lắm. Có thể nó rơi xuống dưới chăng.)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> わかりました。少々（しょうしょう）お待（ま）ちください。……お待（ま）たせいたしました。こちらにございます。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Tôi hiểu rồi. Xin vui lòng chờ một chút. ...Cảm ơn quý khách đã đợi, chiếc ví đang ở đây ạ.)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> ああ、よかったです。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ôi may quá!)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> どうしましょうか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Bây giờ anh/chị muốn xử lý thế nào ạ?)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> あ、実（じつ）は今（いま）は帰（かえ）りのバスの中（なか）なんです。すみませんが、着払（ちゃくばら）いの宅配便（たくはいびん）で送（おく）ってもらってもいいですか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(À, thực ra hiện tại tôi đang trên xe xe buýt về nhà rồi ạ. Xin lỗi nhưng quán có thể gửi chuyển phát nhanh trả phí người nhận giúp tôi được không ạ?)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> はい、わかりました。では、お名前（なまえ）とご住所（じゅうしょ）を……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, tôi hiểu rồi. Vậy xin vui lòng cho biết tên và địa chỉ của anh/chị...)</span></div>
+            <div style="display: flex; flex-direction: column; gap: 8px; line-height: 1.8;">
+              <div><strong style="color: #38bdf8;">A:</strong> もしもし、すみません。そちらに<ruby>財布<rt>さいふ</rt></ruby>の<ruby>忘<rt>わす</rt></ruby>れ<ruby>物<rt>もの</rt></ruby>はございませんでしたでしょうか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Alo, xin lỗi ạ. Ở quán mình có để quên chiếc ví nào không ạ?)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> はい、<ruby>確認<rt>かくにん</rt></ruby>いたしますので、お<ruby>座<rt>すわ</rt></ruby>りになった<ruby>場所<rt>ばしょ</rt></ruby>と<ruby>特徴<rt>とくちょう</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えていただけますか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, để em kiểm tra ạ. Anh/Chị có thể cho em biết vị trí đã ngồi và đặc điểm của ví được không ạ?)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> <ruby>右<rt>みぎ</rt></ruby>の<ruby>窓側<rt>まどがわ</rt></ruby>の<ruby>席<rt>せき</rt></ruby>です。<ruby>四角<rt>しかく</rt></ruby>くて、グレーの<ruby>花模様<rt>はなもよう</rt></ruby>がある<ruby>財布<rt>さいふ</rt></ruby>なんですが……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ở bàn phía bên phải gần cửa sổ ạ. Là chiếc ví hình vuông, màu xám có họa tiết hoa ạ...)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> あ、ございます！お<ruby>手元<rt>てもと</rt></ruby>にお<ruby>届<rt>とど</rt></ruby>けしましょうか。それとも<ruby>取<rt>と</rt></ruby>に<ruby>来<rt>こ</rt></ruby>られますか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(A, có đây rồi ạ! Bên em gửi về tận nơi cho anh/chị hay anh/chị sẽ qua lấy ạ?)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> すみませんが、<ruby>遠<rt>とお</rt></ruby>くにおりますので、<ruby>着払<rt>ちゃくばら</rt></ruby>いの<ruby>宅配便<rt>たくはいびん</rt></ruby>で<ruby>送<rt>おく</rt></ruby>っていただけないでしょうか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Xin lỗi vì em đang ở xa, anh/chị có thể gửi bưu điện chuyển phát nhanh người nhận trả tiền phí giúp em được không ạ?)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> はい、わかりました。では、お<ruby>名前<rt>なまえ</rt></ruby>とご<ruby>住所<rt>じゅうしょ</rt></ruby>を……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, tôi hiểu rồi. Vậy xin vui lòng cho biết tên và địa chỉ của anh/chị...)</span></div>
             </div>
           </div>
 
-          <!-- Tình huống 2: Để quên áo khoác Cardigan ở nhà hàng -->
+          <!-- Tình huống 2: Để quên áo khoác Cardigan -->
           <div class="scenario-box" style="border-left: 4px solid #10b981; background: #0f172a; padding: 16px; border-radius: 10px;">
-            <div style="font-weight: 800; font-size: 1.1rem; color: #f59e0b; margin-bottom: 6px;">
-              🧥 Tình huống 2: Để quên áo khoác Cardigan ở nhà hàng (レストランみやび)
+            <div style="font-weight: 700; font-size: 1.05rem; color: #f59e0b; margin-bottom: 6px;">
+              Tình huống 2: Để quên chiếc áo khoác Cardigan (カーディガンを<ruby>忘<rt>わす</rt></ruby>れた)
             </div>
             <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px;">
-              <em>Bối cảnh: Bạn (A) gọi điện cho nhân viên nhà hàng Miyabi (B) nhờ tìm chiếc áo cardigan màu xám có logo chim cánh cụt vắt trên ghế.</em>
+              <em>Bối cảnh: Bạn (A) gọi điện cho nhà hàng (B) tìm chiếc áo khoác Cardigan màu trắng và nhờ gửi bưu điện chakubarai về nhà.</em>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px; line-height: 1.6;">
-              <div><strong style="color: #f43f5e;">B:</strong> はい、レストランみやびです。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, xin nghe. Nhà hàng Miyabi xin nghe ạ.)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> もしもし、今日（きょう）そちらに行（い）った者（もの）なんですが。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Alo, tôi là người đã đến nhà hàng hôm nay ạ.)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> はい。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng ạ.)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> そちらにカーディガンを忘（わす）れてしまったようなんです。持（も）って帰（かえ）ったつもりだったんですが、なかったもので……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Hình như tôi đã để quên chiếc áo khoác cardigan ở đó. Tôi cứ đinh ninh là đã mang về rồi, nhưng kiểm tra lại thì không thấy...)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> そうですか。どんなカーディガンですか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thế ạ. Chiếc áo cardigan đó như thế nào vậy ạ?)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> 色（いろ）はグレーで、胸（むね）の所（ところ）にペンギンのマークが付（つ）いているんです。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Nó màu xám, và ở phần ngực có gắn ký hiệu chim cánh cụt ạ.)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> どの辺（あた）りに座（すわ）っていらっしゃいましたか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Anh/chị đã ngồi ở khoảng khu vực nào ạ?)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> 窓側（まどがわ）の奥（おく）の席（せき）です。いすにかけたように思（おも）うんですが、はっきり覚（おぼ）えていません。もしかしたら、下（した）に落（お）ちているかもしれません。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Là chỗ ngồi phía trong cùng bên cửa sổ ạ. Tôi nhớ hình như đã vắt trên ghế, nhưng không nhớ rõ lắm. Có thể nó rơi xuống dưới chăng.)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> わかりました。少々（しょうしょう）お待（ま）ちください。……お待（ま）たせいたしました。こちらにございます。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Tôi hiểu rồi. Xin vui lòng chờ một chút. ...Cảm ơn quý khách đã đợi, chiếc áo đang ở đây ạ.)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> ああ、よかったです。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ôi may quá!)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> どうしましょうか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Bây giờ anh/chị muốn xử lý thế nào ạ?)</span></div>
-              <div><strong style="color: #38bdf8;">A:</strong> あ、実（じつ）は今（いま）は帰（かえ）りの新幹線（しんかんせん）の中（なか）なんです。すみませんが、着払（ちゃくばら）いの宅配便（たくはいびん）で送（おく）ってもらってもいいですか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(À, thực ra hiện tại tôi đang trên tàu Shinkansen về nhà rồi ạ. Xin lỗi nhưng nhà hàng có thể gửi chuyển phát nhanh trả phí người nhận giúp tôi được không ạ?)</span></div>
-              <div><strong style="color: #f43f5e;">B:</strong> はい、わかりました。では、お名前（なまえ）とご住所（じゅうしょ）を……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, tôi hiểu rồi. Vậy xin vui lòng cho biết tên và địa chỉ của anh/chị...)</span></div>
+            <div style="display: flex; flex-direction: column; gap: 8px; line-height: 1.8;">
+              <div><strong style="color: #38bdf8;">A:</strong> もしもし、すみません。そちらにカーディガンの<ruby>忘<rt>わす</rt></ruby>れ<ruby>物<rt>もの</rt></ruby>はございませんでしたでしょうか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Alo, xin lỗi ạ. Ở nhà hàng mình có để quên chiếc áo khoác Cardigan nào không ạ?)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> はい、<ruby>確認<rt>かくにん</rt></ruby>いたしますので、お<ruby>座<rt>すわ</rt></ruby>りになった<ruby>場所<rt>ばしょ</rt></ruby>と<ruby>特徴<rt>とくちょう</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えていただけますか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, để em kiểm tra ạ. Anh/Chị có thể cho em biết vị trí đã ngồi và đặc điểm của áo được không ạ?)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> <ruby>奥<rt>おく</rt></ruby>のソファー<ruby>席<rt>せき</rt></ruby>です。<ruby>白<rt>しろ</rt></ruby>くてウールのカーディガンなんですが……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ở bàn sofa phía trong cùng ạ. Là chiếc áo khoác Cardigan bằng len màu trắng ạ...)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> あ、ございます！お<ruby>手元<rt>てもと</rt></ruby>にお<ruby>届<rt>とど</rt></ruby>けしましょうか。それとも<ruby>取<rt>と</rt></ruby>に<ruby>来<rt>こ</rt></ruby>られますか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(A, có đây rồi ạ! Bên em gửi về tận nơi cho anh/chị hay anh/chị sẽ qua lấy ạ?)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> すみませんが、<ruby>遠<rt>とお</rt></ruby>くにおりますので、<ruby>着払<rt>ちゃくばら</rt></ruby>いの<ruby>宅配便<rt>たくはいびん</rt></ruby>で<ruby>送<rt>おく</rt></ruby>っていただけないでしょうか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Xin lỗi vì em đang ở xa, anh/chị có thể gửi bưu điện chuyển phát nhanh người nhận trả tiền phí giúp em được không ạ?)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> はい、わかりました。では、お<ruby>名前<rt>なまえ</rt></ruby>とご<ruby>住所<rt>じゅうしょ</rt></ruby>を……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Vâng, tôi hiểu rồi. Vậy xin vui lòng cho biết tên và địa chỉ của anh/chị...)</span></div>
             </div>
           </div>
+        </div>
       </div>
     `;
   }
