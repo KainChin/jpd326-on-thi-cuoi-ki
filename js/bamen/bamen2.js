@@ -32,8 +32,24 @@ window.Bamen2 = (function() {
 
         <!-- SITUATIONS OVERVIEW (ĐÃ ĐẶT TRÊN BAMEN) -->
         <div id="bamen2-situations-container" style="display: ${window._showSitBamen2 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh Situations mở rộng (Dekiru Nihongo N3):</div>
-          <img src="assets/images/situation2.jpg" alt="Situation 2" onclick="App.openImageModal('assets/images/situation2.jpg', 'Situation 2')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh & Dịch nghĩa Situations mở rộng (Dekiru Nihongo N3):</div>
+          <img src="assets/images/situation2.jpg" alt="Situation 2" onclick="App.openImageModal('assets/images/situation2.jpg', 'Situation 2')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer; margin-bottom: 12px;">
+          
+          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.6;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 6px;">📝 Bản dịch nghĩa & Ngữ pháp trọng tâm (Bài 7 N3):</div>
+            <div style="margin-bottom: 8px;">
+              <strong style="color: #f59e0b;">1. Từ chối cuộc hẹn vì bận thi:</strong><br>
+              🇯🇵 「明日は試験だから、遊ぶどころではないよ。」<br>
+              🇻🇳 <em>(Mai thi rồi, tớ không có tâm trí/thời gian đâu mà đi chơi.)</em><br>
+              💡 <em>Cấu trúc: 〜どころではない (Không phải lúc / Không tâm trí nào...)</em>
+            </div>
+            <div>
+              <strong style="color: #f59e0b;">2. Mời rủ lịch sự & Cảm thán thời gian:</strong><br>
+              🇯🇵 「お時間もよかったらこのお菓子をどうぞ。」<br>
+              🇻🇳 <em>(Nếu được xin mời anh/chị dùng thử chút bánh này ạ.)</em><br>
+              💡 <em>Cấu trúc: 〜もよかったら (Nếu được thì xin mời...)</em>
+            </div>
+          </div>
         </div>
 
         <!-- IMAGES SECTION -->

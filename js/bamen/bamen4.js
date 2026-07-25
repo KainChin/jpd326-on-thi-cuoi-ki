@@ -34,10 +34,26 @@ window.Bamen4 = (function() {
 
         <!-- SITUATIONS OVERVIEW (ĐẶT TRÊN BAMEN) -->
         <div id="bamen4-situations-container" style="display: ${window._showSitBamen4 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh Situations mở rộng (Dekiru Nihongo N3 - Bamen 4):</div>
-          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh & Dịch nghĩa Situations mở rộng (Dekiru Nihongo N3 - Bamen 4):</div>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px;">
             <img src="assets/images/situation4_1.jpg" alt="Situation 4.1" onclick="App.openImageModal('assets/images/situation4_1.jpg', 'Situation 4.1')" style="max-width: 48%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
             <img src="assets/images/situation4_2.jpg" alt="Situation 4.2" onclick="App.openImageModal('assets/images/situation4_2.jpg', 'Situation 4.2')" style="max-width: 48%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
+          </div>
+          
+          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.6;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 6px;">📝 Bản dịch nghĩa & Ngữ pháp trọng tâm (Bài 9 - 10 N3):</div>
+            <div style="margin-bottom: 8px;">
+              <strong style="color: #f59e0b;">1. Tiếp đón khách hàng & Nhờ vả lịch sự:</strong><br>
+              🇯🇵 「少々お待ちください。確認したいことがあるんですが、お時間よろしいでしょうか。」<br>
+              🇻🇳 <em>(Xin quý khách vui lòng đợi một chút ạ. Tôi có điều muốn xác nhận, xin hỏi anh/chị có thời gian không ạ?)</em><br>
+              💡 <em>Cấu trúc: お・ご〜ください (Xin hãy...) / 〜たいことがあるんですが (Tôi có việc muốn...)</em>
+            </div>
+            <div>
+              <strong style="color: #f59e0b;">2. Báo cáo công việc ngay sau khi hoàn thành:</strong><br>
+              🇯🇵 「資料ができ次第すぐにご報告いたします。」<br>
+              🇻🇳 <em>(Ngay sau khi làm xong tài liệu em sẽ báo cáo ngay ạ.)</em><br>
+              💡 <em>Cấu trúc: 〜次第 (Ngay sau khi...)</em>
+            </div>
           </div>
         </div>
 

@@ -32,8 +32,24 @@ window.Bamen1 = (function() {
 
         <!-- SITUATIONS OVERVIEW (ĐÃ ĐẶT TRÊN BAMEN) -->
         <div id="bamen1-situations-container" style="display: ${window._showSitBamen1 ? 'block' : 'none'}; margin-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 15px; text-align: center;">
-          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh Situations mở rộng (Dekiru Nihongo N3):</div>
-          <img src="assets/images/situation1.jpg" alt="Situation 1" onclick="App.openImageModal('assets/images/situation1.jpg', 'Situation 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer;">
+          <div style="font-weight: 700; color: #f59e0b; margin-bottom: 12px; font-size: 1rem; text-align: left;">📚 Hình ảnh & Dịch nghĩa Situations mở rộng (Dekiru Nihongo N3):</div>
+          <img src="assets/images/situation1.jpg" alt="Situation 1" onclick="App.openImageModal('assets/images/situation1.jpg', 'Situation 1')" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 2px solid #334155; cursor: pointer; margin-bottom: 12px;">
+          
+          <div style="text-align: left; background: #0f172a; padding: 14px; border-radius: 10px; line-height: 1.6;">
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 6px;">📝 Bản dịch nghĩa & Ngữ pháp trọng tâm (Bài 6 N3):</div>
+            <div style="margin-bottom: 8px;">
+              <strong style="color: #f59e0b;">1. Giới thiệu địa hình quê hương:</strong><br>
+              🇯🇵 「私の故郷は美しい山に囲まれています。」<br>
+              🇻🇳 <em>(Quê hương tôi được bao bọc bởi những ngọn núi tuyệt đẹp.)</em><br>
+              💡 <em>Cấu trúc: 〜に囲まれている (Được bao quanh / bao bọc bởi...)</em>
+            </div>
+            <div>
+              <strong style="color: #f59e0b;">2. Chuẩn bị ứng phó thiên tai:</strong><br>
+              🇯🇵 「地震に備えて非常避難場所を確認しておきましょう。」<br>
+              🇻🇳 <em>(Hãy cùng kiểm tra trước nơi sơ tán khẩn cấp để phòng khi có động đất.)</em><br>
+              💡 <em>Cấu trúc: 〜に備えて (Chuẩn bị sẵn sàng cho...)</em>
+            </div>
+          </div>
         </div>
 
         <!-- IMAGES SECTION -->
