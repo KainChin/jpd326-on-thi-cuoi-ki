@@ -61,13 +61,13 @@ window.SPEAKING_DATA = [
     questionJp: "あなたは人に「ごめんなさい」という時、直接言いますか、それともメッセージですか。どうしてですか。",
     questionFurigana: "あなたは<ruby>人<rt>ひと</rt></ruby>に「ごめんなさい」という<ruby>時<rt>とき</rt></ruby>、<ruby>直接<rt>ちょくせつ</rt></ruby><ruby>言<rt>い</rt></ruby>いますか、それともメッセージですか。どうしてですか。",
     questionVi: "Khi bạn xin lỗi ai đó, bạn thường xin lỗi trực tiếp hay qua tin nhắn? Tại sao?",
-    answerFurigana: "<ruby>私<rt>わたし</rt></ruby>は<ruby>直接<rt>ちょくせつ</rt></ruby><ruby>言<rt>い</rt></ruby>います。<ruby>自分<rt>じぶん</rt></ruby>の<ruby>気持<rt>きも</rt></ruby>ちが<ruby>相手<rt>あいて</rt></ruby>によく<ruby>伝<rt>つた</rt></ruby>わるからです。また、<ruby>相手<rt>あいて</rt></ruby>の<ruby>表情<rt>ひょうじょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることで、<ruby>許<rt>ゆる</rt></ruby>してもらえたかもわかります。ですから、できるだけ<ruby>直接<rt>ちょくせつ</rt></ruby>「ごめんなさい」と<ruby>言<rt>い</rt></ruby>うようにしています。",
-    answerVi: "Tôi xin lỗi trực tiếp. Bởi vì cảm xúc của tôi sẽ truyền đạt tới đối phương tốt hơn. Ngoài ra, bằng việc quan sát nét mặt của đối phương, tôi cũng biết được mình đã được tha lỗi hay chưa. Vì vậy, tôi luôn cố gắng nói 'xin lỗi' trực tiếp.",
+    answerFurigana: "<ruby>私<rt>わたし</rt></ruby>はできるだけ<ruby>直接<rt>ちょくせつ</rt></ruby>「ごめんなさい」と<ruby>言<rt>い</rt></ruby>うようにしています。メッセージより<ruby>直接<rt>ちょくせつ</rt></ruby><ruby>言<rt>い</rt></ruby>ったほうが、<ruby>自分<rt>じぶん</rt></ruby>の<ruby>気持<rt>きも</rt></ruby>ちや<ruby>本心<rt>ほんしん</rt></ruby>が<ruby>相手<rt>あいて</rt></ruby>によく<ruby>伝<rt>つた</rt></ruby>わると<ruby>思<rt>おも</rt></ruby>うからです。また、<ruby>相手<rt>あいて</rt></ruby>の<ruby>表情<rt>ひょうじょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることで、ちゃんと<ruby>許<rt>ゆる</rt></ruby>してもらえたかどうかも<ruby>分<rt>わ</rt></ruby>かります。だから、<ruby>顔<rt>かお</rt></ruby>を<ruby>見<rt>み</rt></ruby>て<ruby>謝<rt>あやま</rt></ruby>ることが<ruby>大切<rt>たいせつ</rt></ruby>だと<ruby>思<rt>おも</rt></ruby>います。",
+    answerVi: "Tôi luôn cố gắng nói 'xin lỗi' trực tiếp. Vì tôi nghĩ so với nhắn tin thì việc nói trực tiếp sẽ giúp cảm xúc và sự chân thành của mình truyền tới đối phương tốt hơn. Hơn nữa, thông qua việc nhìn nét mặt của đối phương, tôi cũng biết được mình đã thực sự được tha lỗi hay chưa. Vì vậy, tôi nghĩ việc nhìn mặt nhau để xin lỗi là rất quan trọng.",
     kanjiNotes: [
       { char: "直接", amHan: "TRỰC TIẾP", meaning: "Trực tiếp" },
-      { char: "伝わる", amHan: "TRUYỀN", meaning: "Truyền đạt, thấu hiểu" },
+      { char: "本心", amHan: "BỔN TÂM", meaning: "Sự chân thành, thật lòng" },
       { char: "表情", amHan: "BIỂU TÌNH", meaning: "Nét mặt, biểu cảm" },
-      { char: "許す", amHan: "HỨA", meaning: "Tha lỗi, tha thứ" }
+      { char: "謝る", amHan: "TẠ", meaning: "Xin lỗi" }
     ]
   },
   {
