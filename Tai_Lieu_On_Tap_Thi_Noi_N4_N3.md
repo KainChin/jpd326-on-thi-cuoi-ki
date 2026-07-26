@@ -18,9 +18,9 @@
 *(Ở thành phố/tỉnh của bạn có lễ hội/sự kiện gì? Hãy giới thiệu về lễ hội/sự kiện đó.)*
 
 * **Câu trả lời mẫu:**
-  > ベトナムには、様々なお祭りがあるんですけど、例えばテトや中秋節などです。僕は食べるのが好きな人なので、今日は食べ物について話しますね。まず、私の町では毎年、大きな食べ物のお祭りがあるんですけど、お祭りと言えば、歩行者天国(ほこうしゃてんごく-phố đi bộ)をイメージする人が多いんです。そこには、ベトナムの有名な料理、例えばフォーやバインミーのお店がたくさんあるんです。その時には、おいしいものを食べたり、写真を撮ったりする人でとても賑やかになるんです。私はよく友達と一緒に行くんですけど、とても楽しいです。
+  > ベトナムではテト（旧正月）が一番大切なお祭りです。テトの時には、家族が集まって伝統的な料理を食べたり、親戚の家を訪問したりします。街には花がたくさん飾られて、とても賑やかで楽しいです。
 * **Dịch nghĩa:**
-  > *(Ở Việt Nam có nhiều lễ hội khác nhau như Tết hay Tết Trung Thu. Vì tôi là người thích ăn uống nên hôm nay tôi sẽ nói về đồ ăn nhé. Đầu tiên, ở thành phố của tôi hàng năm đều có lễ hội ẩm thực lớn. Nhắc đến lễ hội thì nhiều người sẽ nhớ ngay đến Phố đi bộ. Ở đó có rất nhiều cửa hàng bán các món ăn nổi tiếng của Việt Nam như Phở hay Bánh mì. Vào lúc đó, nơi đây rất náo nhiệt bởi những người đến ăn đồ ngon và chụp ảnh. Tôi thường đi cùng bạn bè, rất vui.)*
+  > *(Ở Việt Nam, Tết (Tết Nguyên Đán) là lễ hội quan trọng nhất. Vào dịp Tết, gia đình quây quần ăn các món ăn truyền thống, đi chúc Tết họ hàng. Trên đường phố trang trí rất nhiều hoa, rất náo nhiệt và vui vẻ.)*
 
 ---
 

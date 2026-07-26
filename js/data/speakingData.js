@@ -23,11 +23,12 @@ window.SPEAKING_DATA = [
     questionJp: "あなたの町にどんな行事がありますか。その行事を紹介してください。",
     questionFurigana: "あなたの<ruby>町<rt>まち</rt></ruby>にどんな<ruby>行事<rt>ぎょうじ</rt></ruby>がありますか。その行事を<ruby>紹介<rt>しょうかい</rt></ruby>してください。",
     questionVi: "Ở thành phố/tỉnh của bạn có lễ hội/sự kiện gì? Hãy giới thiệu về nó.",
-    answerFurigana: "ベトナムにはテトや<ruby>中秋節<rt>ちゅうしゅうせつ</rt></ruby>などのお<ruby>祭<rt>まつ</rt></ruby>りがあります。<ruby>私<rt>わたし</rt></ruby>の<ruby>町<rt>まち</rt></ruby>では<ruby>毎年<rt>まいとし</rt></ruby>、<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>のお<ruby>祭<rt>まつ</rt></ruby>りがあり、<ruby>歩行者天国<rt>ほこうしゃてんごく</rt></ruby>でフォーやバインミーの<ruby>店<rt>みせ</rt></ruby>がたくさん<ruby>出<rt>で</rt></ruby>ます。おいしいものを<ruby>食<rt>た</rt></ruby>べたり<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ったりして、とても<ruby>賑<rt>にぎ</rt></ruby>やかで<ruby>楽<rt>たの</rt></ruby>しいです。",
-    answerVi: "Ở Việt Nam có Tết và Trung Thu. Thành phố tôi hàng năm có lễ hội ẩm thực ở Phố đi bộ với nhiều quán Phở, Bánh mì. Mọi người ăn đồ ngon, chụp ảnh rất náo nhiệt và vui vẻ.",
+    answerFurigana: "ベトナムではテト（<ruby>旧正月<rt>きゅうしょうがつ</rt></ruby>）が<ruby>一番<rt>いちばん</rt></ruby><ruby>大切<rt>たいせつ</rt></ruby>なお<ruby>祭<rt>まつ</rt></ruby>りです。テトの<ruby>時<rt>とき</rt></ruby>には、<ruby>家族<rt>かぞく</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まって<ruby>伝統的<rt>でんとうてき</rt></ruby>な<ruby>料理<rt>りょうり</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたり、<ruby>親戚<rt>しんせき</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>を<ruby>訪問<rt>ほうもん</rt></ruby>したりします。<ruby>街<rt>まち</rt></ruby>には<ruby>花<rt>はな</rt></ruby>がたくさん<ruby>飾<rt>かざ</rt></ruby>られて、とても<ruby>賑<rt>にぎ</rt></ruby>やかで<ruby>楽<rt>たの</rt></ruby>しいです。",
+    answerVi: "Ở Việt Nam, Tết (Tết Nguyên Đán) là lễ hội quan trọng nhất. Vào dịp Tết, gia đình quây quần ăn các món ăn truyền thống, đi chúc Tết họ hàng. Trên đường phố trang trí rất nhiều hoa, rất náo nhiệt và vui vẻ.",
     kanjiNotes: [
-      { char: "中秋節", amHan: "TRUNG THU TIẾT", meaning: "Tết Trung Thu" },
-      { char: "歩行者天国", amHan: "BỘ HÀNH GIẢ THIÊN QUỐC", meaning: "Phố đi bộ" },
+      { char: "旧正月", amHan: "CỰU CHÍNH NGUYỆT", meaning: "Tết Nguyên Đán" },
+      { char: "伝統的", amHan: "TRUYỀN THỐNG ĐÍCH", meaning: "Mang tính truyền thống" },
+      { char: "親戚", amHan: "THÂN THÍCH", meaning: "Họ hàng" },
       { char: "賑やか", amHan: "CHẨN", meaning: "Náo nhiệt" }
     ]
   },
