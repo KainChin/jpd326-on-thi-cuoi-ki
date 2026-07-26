@@ -61,12 +61,12 @@ window.SPEAKING_DATA = [
     questionJp: "あなたは人に「ごめんなさい」という時、直接言いますか、それともメッセージですか。どうしてですか。",
     questionFurigana: "あなたは<ruby>人<rt>ひと</rt></ruby>に「ごめんなさい」という<ruby>時<rt>とき</rt></ruby>、<ruby>直接<rt>ちょくせつ</rt></ruby><ruby>言<rt>い</rt></ruby>いますか、それともメッセージですか。どうしてですか。",
     questionVi: "Khi bạn xin lỗi ai đó, bạn thường xin lỗi trực tiếp hay qua tin nhắn? Tại sao?",
-    answerFurigana: "<ruby>私<rt>わたし</rt></ruby>は<ruby>直接<rt>ちょくせつ</rt></ruby><ruby>言<rt>い</rt></ruby>います。<ruby>自分<rt>じぶん</rt></ruby>の<ruby>気持<rt>きも</rt></ruby>ちが<ruby>相手<rt>あいて</rt></ruby>によく<ruby>伝<rt>つた</rt></ruby>わると<ruby>思<rt>おも</rt></ruby>うからです。また、<ruby>相手<rt>あいて</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>本心<rt>ほんしん</rt></ruby>や<ruby>正直<rt>しょうじき</rt></ruby>な<ruby>気持<rt>きも</rt></ruby>ちがわかると<ruby>思<rt>おも</rt></ruby>います。そして、<ruby>相手<rt>あいて</rt></ruby>の<ruby>表情<rt>ひょうじょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることもできるので、ちゃんと<ruby>許<rt>ゆる</rt></ruby>してもらえたかどうかもわかります。ですから、<ruby>私<rt>わたし</rt></ruby>はできるだけ<ruby>直接<rt>ちょくせつ</rt></ruby>「ごめんなさい」と<ruby>言<rt>い</rt></ruby>うようにしています。",
-    answerVi: "Tôi xin lỗi trực tiếp. Bởi vì tôi nghĩ cảm xúc của mình sẽ truyền đạt tới đối phương tốt hơn. Ngoài ra, tôi nghĩ đối phương cũng hiểu được sự chân thành và thành thật của mình. Hơn nữa, vì có thể nhìn được nét mặt của đối phương nên tôi cũng biết được họ đã thực sự tha lỗi cho mình hay chưa. Vì vậy, tôi luôn cố gắng nói 'xin lỗi' trực tiếp.",
+    answerFurigana: "<ruby>私<rt>わたし</rt></ruby>は<ruby>直接<rt>ちょくせつ</rt></ruby><ruby>言<rt>い</rt></ruby>います。<ruby>自分<rt>じぶん</rt></ruby>の<ruby>気持<rt>きも</rt></ruby>ちが<ruby>相手<rt>あいて</rt></ruby>によく<ruby>伝<rt>つた</rt></ruby>わるからです。また、<ruby>相手<rt>あいて</rt></ruby>の<ruby>表情<rt>ひょうじょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることで、<ruby>許<rt>ゆる</rt></ruby>してもらえたかもわかります。ですから、できるだけ<ruby>直接<rt>ちょくせつ</rt></ruby>「ごめんなさい」と<ruby>言<rt>い</rt></ruby>うようにしています。",
+    answerVi: "Tôi xin lỗi trực tiếp. Bởi vì cảm xúc của tôi sẽ truyền đạt tới đối phương tốt hơn. Ngoài ra, bằng việc quan sát nét mặt của đối phương, tôi cũng biết được mình đã được tha lỗi hay chưa. Vì vậy, tôi luôn cố gắng nói 'xin lỗi' trực tiếp.",
     kanjiNotes: [
       { char: "直接", amHan: "TRỰC TIẾP", meaning: "Trực tiếp" },
-      { char: "本心", amHan: "BỔN TÂM", meaning: "Lòng chân thành, bản tâm" },
-      { char: "正直", amHan: "CHÍNH TRỰC", meaning: "Thành thật, trung thực" },
+      { char: "伝わる", amHan: "TRUYỀN", meaning: "Truyền đạt, thấu hiểu" },
+      { char: "表情", amHan: "BIỂU TÌNH", meaning: "Nét mặt, biểu cảm" },
       { char: "許す", amHan: "HỨA", meaning: "Tha lỗi, tha thứ" }
     ]
   },
