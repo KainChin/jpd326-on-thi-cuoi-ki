@@ -51,13 +51,23 @@ window.Bamen4 = (function() {
             </div>
 
             <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">Tình huống 2 (Ảnh Situation 4.2): Rủ tham gia Hoạt động Tình nguyện (ボランティア活動)</div>
-            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px;">
-              <strong style="color: #f43f5e;">Vai A (Người mời):</strong> Bạn đã quyết định tham gia hoạt động tình nguyện. Bạn muốn B - người cùng học lớp tiếng Anh trung cấp với bạn đến tham gia cùng. Với B thì thỉnh thoảng bạn mới chào hỏi một chút. Khi gặp ở lớp học, hãy giải thích/giới thiệu về hoạt động tình nguyện, hỏi xem lịch trình/thời gian của B có tiện không và đưa ra lời rủ rê.<br>
+            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px; margin-bottom: 14px;">
+              <strong style="color: #f43f5e;">Vai A (Người mời):</strong> Bạn đã quyết định tham gia hoạt động tình nguyện. Bạn muốn B - người cùng học lớp tiếng Anh trung cấp với bạn đến tham gia cùng. Với B thì thỉnh thoại mới chào hỏi một chút. Khi gặp ở lớp học, hãy giải thích/giới thiệu về hoạt động tình nguyện, hỏi xem lịch trình/thời gian của B có tiện không và đưa ra lời rủ rê.<br>
               <em style="color: #fbbf24;">*Thông tin hoạt động tình nguyện:</em><br>
               - Thời gian: Từ 8h đến 10h sáng Thứ 7 hàng tuần.<br>
               - Dạy tiếng Anh trình độ sơ cấp cho các bé ở cô nhi viện địa phương (孤児院).<br>
               - Người tham gia hoạt động sau đó có thể tham gia khóa học tiếng Anh trung cấp miễn phí.<br><br>
               <strong style="color: #38bdf8;">Vai B (Người được mời):</strong> Bạn đang học cùng lớp tiếng Anh trung cấp với A. Với A thì thỉnh thoảng bạn mới chào hỏi một chút ở lớp. A bắt chuyện với bạn. Hãy lắng nghe kỹ câu chuyện và đón nhận/đồng ý lời rủ rê từ A.
+            </div>
+
+            <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px;">Tình huống 3 (Ảnh Đề Thi Thực Tế): Rủ tham gia Quán ăn trẻ em (こども食堂)</div>
+            <div style="background: rgba(30, 41, 69, 0.6); padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #f43f5e;">Vai A (Người mời):</strong> Bạn quyết định tham gia phụ giúp ở "Quán ăn trẻ em" (こども食堂). Bạn muốn rủ B - người học cùng lớp tiếng Anh trung cấp tham gia. Với B thì thỉnh thoảng mới chào hỏi. Khi gặp ở lớp, hãy giải thích hoạt động, hỏi lịch trình tiện không và đưa ra lời rủ rê.<br>
+              <em style="color: #fbbf24;">*Thông tin hoạt động:</em><br>
+              - Thời gian: Thứ 7 hàng tuần, từ 10:00 sáng đến 1:00 chiều (13:00).<br>
+              - Nội dung: Nấu ăn và phục vụ món ăn cho các em nhỏ (子どもたちに料理を作って出します).<br>
+              - Quyền lợi: Được tham gia lớp học nấu ăn miễn phí (無料の料理教室).<br><br>
+              <strong style="color: #38bdf8;">Vai B (Người được mời):</strong> Học cùng lớp tiếng Anh trung cấp với A. Nghe A rủ rê, lắng nghe kỹ thông tin và chấp nhận/đồng ý lời mời của A.
             </div>
           </div>
         </div>
@@ -96,10 +106,10 @@ window.Bamen4 = (function() {
             </div>
           </div>
 
-          <!-- Tình huống 2: Rủ đi làm tình nguyện -->
-          <div class="scenario-box" style="border-left: 4px solid #10b981; background: #0f172a; padding: 16px; border-radius: 10px;">
+          <!-- Tình huống 2: Rủ đi làm tình nguyện cô nhi viện -->
+          <div class="scenario-box" style="margin-bottom: 20px; border-left: 4px solid #10b981; background: #0f172a; padding: 16px; border-radius: 10px;">
             <div style="font-weight: 800; font-size: 1.1rem; color: #f59e0b; margin-bottom: 6px;">
-              🌱 Tình huống 2: Rủ đi làm tình nguyện (ボランティア活動)
+              🌱 Tình huống 2: Rủ đi làm tình nguyện Dạy Tiếng Anh (ボランティア活動)
             </div>
             <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px;">
               <em>Bối cảnh: Bạn (A) rủ bạn (B) tham gia dạy tiếng Anh sơ cấp tại cô nhi viện địa phương và nhận suất học tiếng Anh miễn phí.</em>
@@ -118,6 +128,31 @@ window.Bamen4 = (function() {
               <div><strong style="color: #38bdf8;">A:</strong> しかも、<ruby>後<rt>あと</rt></ruby>で<ruby>英語<rt>えいご</rt></ruby>の<ruby>中級<rt>ちゅうきゅう</rt></ruby>コースに<ruby>無料<rt>むりょう</rt></ruby>で<ruby>参加<rt>さんか</rt></ruby>できるんです。例えば、私達もタダで<ruby>英語<rt>えいご</rt></ruby>の<ruby>勉強<rt>べんきょう</rt></ruby>ができるんです。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Hơn nữa, sau đó bọn mình có thể tham gia khóa học tiếng Anh trung cấp miễn phí đấy. Ví dụ bọn mình cũng có thể học tiếng Anh miễn phí.)</span></div>
               <div><strong style="color: #f43f5e;">B:</strong> ああ、いいね。あ、でも、<ruby>英語<rt>えいご</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えたことがなくても<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>？<br><span style="color: #94a3b8; font-size: 0.88rem;">(A, hay đấy. Nhưng mà chưa từng dạy tiếng Anh bao giờ có sao không?)</span></div>
               <div><strong style="color: #38bdf8;">A:</strong> あ、そのときは、<ruby>初級<rt>しょきゅう</rt></ruby>レベルだし、サポートがあるから<ruby>安心<rt>あんしん</rt></ruby>です。<br><span style="color: #94a3b8; font-size: 0.88rem;">(A, lúc đó thì trình độ sơ cấp thôi và có người hỗ trợ nên cứ yên tâm nhé.)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> そうなんだ。じゃ、<ruby>行<rt>い</rt></ruby>ってみようかな。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thế à. Vậy để tớ thử đi xem sao.)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> わあ、ありがとうございます！<br><span style="color: #94a3b8; font-size: 0.88rem;">(Oa, cảm ơn bạn nhiều nhé!)</span></div>
+            </div>
+          </div>
+
+          <!-- Tình huống 3: Rủ đi Quán ăn trẻ em -->
+          <div class="scenario-box" style="border-left: 4px solid #a855f7; background: #0f172a; padding: 16px; border-radius: 10px;">
+            <div style="font-weight: 800; font-size: 1.1rem; color: #f59e0b; margin-bottom: 6px;">
+              🍲 Tình huống 3: Rủ đi làm tình nguyện Quán ăn trẻ em (こども食堂)
+            </div>
+            <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px;">
+              <em>Bối cảnh: Bạn (A) rủ bạn (B) cùng phụ giúp nấu ăn cho trẻ em ở Quán ăn trẻ em và nhận suất học nấu ăn miễn phí.</em>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px; line-height: 1.8;">
+              <div><strong style="color: #38bdf8;">A:</strong> こんにちは。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Xin chào.)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> こんにちは。<ruby>今日<rt>きょう</rt></ruby>は<ruby>空<rt>あ</rt></ruby>いてますね。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Chào bạn. Hôm nay rảnh rỗi nhỉ.)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> あのう、Bさんはボランティア<ruby>活動<rt>かつどう</rt></ruby>って<ruby>興味<rt>きょうみ</rt></ruby>がありますか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Này, bạn B có hứng thú với hoạt động tình nguyện không?)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> え？<br><span style="color: #94a3b8; font-size: 0.88rem;">(Hả?)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> <ruby>実<rt>じつ</rt></ruby>は<ruby>今度<rt>こんど</rt></ruby>、「こども<ruby>食堂<rt>しょくどう</rt></ruby>」の<ruby>手伝<rt>てつだ</rt></ruby>いというボランティア<ruby>活動<rt>かつどう</rt></ruby>に<ruby>参加<rt>さんか</rt></ruby>することにしたんです。それにBさんにも<ruby>来<rt>き</rt></ruby>てもらいたいなと<ruby>思<rt>おも</rt></ruby>って……。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thực ra sắp tới tớ đã quyết định tham gia hoạt động tình nguyện phụ giúp ở Quán ăn trẻ em. Tớ muốn rủ B cùng tham gia...)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> へえ、そうなんだ。<ruby>毎週<rt>まいしゅう</rt></ruby>いつなんですか。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ồ, ra vậy. Hàng tuần là vào khi nào thế?)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> <ruby>毎週<rt>まいしゅう</rt></ruby><ruby>土曜日<rt>どようび</rt></ruby>の<ruby>午前<rt>ごぜん</rt></ruby>10<ruby>時<rt>じ</rt></ruby>から<ruby>午後<rt>ごご</rt></ruby>１<ruby>時<rt>じ</rt></ruby>までなんですけど、子どもたちに<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby>って<ruby>出<rt>だ</rt></ruby>すんです。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thứ 7 hàng tuần từ 10h sáng đến 1h chiều, bọn mình nấu ăn và phục vụ món ăn cho các em nhỏ.)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> へえ、<ruby>面白<rt>おもしろ</rt></ruby>そう。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Ồ, nghe thú vị đấy.)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> しかも、<ruby>参加<rt>さんか</rt></ruby>した<ruby>人<rt>ひと</rt></ruby>は<ruby>無料<rt>むりょう</rt></ruby>で<ruby>料理<rt>りょうり</rt></ruby><ruby>教室<rt>きょうしつ</rt></ruby>に<ruby>参加<rt>さんか</rt></ruby>できるんですよ。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Hơn nữa, người tham gia còn được tham gia lớp học nấu ăn miễn phí nữa đấy.)</span></div>
+              <div><strong style="color: #f43f5e;">B:</strong> ああ、いいね。あ、でも、<ruby>料理<rt>りょうり</rt></ruby>があまり<ruby>上手<rt>じょうず</rt></ruby>じゃなくても<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>？<br><span style="color: #94a3b8; font-size: 0.88rem;">(A, hay đấy. Nhưng mà nấu ăn không giỏi lắm có sao không?)</span></div>
+              <div><strong style="color: #38bdf8;">A:</strong> あ、そのときはみんなで<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>作<rt>つく</rt></ruby>るし、サポートもあるから<ruby>安心<rt>あんしん</rt></ruby>です。<br><span style="color: #94a3b8; font-size: 0.88rem;">(A, lúc đó mọi người cùng làm và có hỗ trợ nên cứ yên tâm nhé.)</span></div>
               <div><strong style="color: #f43f5e;">B:</strong> そうなんだ。じゃ、<ruby>行<rt>い</rt></ruby>ってみようかな。<br><span style="color: #94a3b8; font-size: 0.88rem;">(Thế à. Vậy để tớ thử đi xem sao.)</span></div>
               <div><strong style="color: #38bdf8;">A:</strong> わあ、ありがとうございます！<br><span style="color: #94a3b8; font-size: 0.88rem;">(Oa, cảm ơn bạn nhiều nhé!)</span></div>
             </div>
