@@ -75,13 +75,12 @@ window.SPEAKING_DATA = [
     questionJp: "人から悩みをシェアしてもらったことがありますか。そのとき、あなたの気持ちはどうでしたか。",
     questionFurigana: "<ruby>人<rt>ひと</rt></ruby>から<ruby>悩み<rt>なやみ</rt></ruby>をシェアしてもらったことがありますか。そのとき、あなたの<ruby>気持<rt>きも</rt></ruby>ちはどうでしたか。",
     questionVi: "Bạn đã bao giờ được ai đó chia sẻ tâm sự hoặc nỗi lo với mình chưa? Khi đó bạn cảm感じ thế nào?",
-    answerFurigana: "<ruby>私<rt>わたし</rt></ruby>は<ruby>友達<rt>ともだち</rt></ruby>から<ruby>勉強<rt>べんきょう</rt></ruby>や<ruby>将来<rt>しょうらい</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>についての<ruby>悩み<rt>なやみ</rt></ruby>をシェアしてもらったことがあります。<ruby>友達<rt>ともだち</rt></ruby>が<ruby>私<rt>わたし</rt></ruby>を<ruby>信頼<rt>しんらい</rt></ruby>できる<ruby>人<rt>ひと</rt></ruby>だと<ruby>思<rt>おも</rt></ruby>ってくれたので、とても<ruby>嬉<rt>うれ</rt></ruby>しかったです。<ruby>私<rt>わたし</rt></ruby>はアドバイスをすることが<ruby>苦手<rt>にがて</rt></ruby>ですが、<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>くことが<ruby>上手<rt>じょうず</rt></ruby>だと<ruby>思<rt>おも</rt></ruby>うので、<ruby>親身<rt>しんみ</rt></ruby>になって<ruby>最後<rt>さいご</rt></ruby>まで<ruby>聞<rt>き</rt></ruby>きました。",
-    answerVi: "Tôi từng được bạn bè chia sẻ trăn trở về việc học và định hướng công việc tương lai. Tôi rất vui vì bạn ấy coi mình là người đáng tin cậy. Dù không giỏi cho lời khuyên nhưng tôi là người biết lắng nghe, nên tôi đã hết lòng lắng nghe bạn ấy tâm sự cho đến cuối cùng.",
+    answerFurigana: "<ruby>私<rt>わたし</rt></ruby>は<ruby>友達<rt>ともだち</rt></ruby>から<ruby>勉強<rt>べんきょう</rt></ruby>の<ruby>悩み<rt>なやみ</rt></ruby>をシェアしてもらったことがあります。<ruby>友達<rt>ともだち</rt></ruby>が<ruby>私<rt>わたし</rt></ruby>を<ruby>信頼<rt>しんらい</rt></ruby>してくれたので、とてもうれしかったです。<ruby>私<rt>わたし</rt></ruby>は<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>くことが<ruby>好<rt>す</rt></ruby>きなので、<ruby>最後<rt>さいご</rt></ruby>までしっかり<ruby>聞<rt>き</rt></ruby>きました。",
+    answerVi: "Tôi từng được bạn bè chia sẻ nỗi lo về việc học. Tôi đã rất vui vì bạn ấy tin tưởng mình. Vì tôi thích lắng nghe nên tôi đã lắng nghe thật kỹ cho tới cuối cùng.",
     kanjiNotes: [
       { char: "悩み", amHan: "NÃO", meaning: "Nỗi lo trăn trở" },
-      { char: "信頼できる", amHan: "TÍN LẠI", meaning: "Đáng tin cậy" },
-      { char: "苦手", amHan: "KHỔ THỦ", meaning: "Kém, không giỏi" },
-      { char: "親身になって", amHan: "THÂN THÂN", meaning: "Hết lòng, chân thành" }
+      { char: "信頼する", amHan: "TÍN LẠI", meaning: "Tin tưởng" },
+      { char: "話を聞く", amHan: "THOẠI VĂN", meaning: "Lắng nghe câu chuyện" }
     ]
   },
   {
